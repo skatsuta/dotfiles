@@ -489,10 +489,12 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'scrooloose/syntastic'
-"Vim to Haskell: A collection of vimscripts for Haskell development.
+" Vim to Haskell: A collection of vimscripts for Haskell development.
 NeoBundle 'dag/vim2hs'
-"Run commands quickly.
+" Run commands quickly.
 NeoBundle 'thinca/vim-quickrun'
+" Provides insert mode auto-completion for quotes, parens, brackets, etc.
+NeoBundle 'Raimondi/delimitMate'
 
 " Required:
 call neobundle#end()
