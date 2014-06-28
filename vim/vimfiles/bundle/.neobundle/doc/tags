@@ -30,6 +30,8 @@
 :DelimitMateReload	delimitMate.txt	/*:DelimitMateReload*
 :DelimitMateSwitch	delimitMate.txt	/*:DelimitMateSwitch*
 :DelimitMateTest	delimitMate.txt	/*:DelimitMateTest*
+:HLint	vim2hs.txt	/*:HLint*
+:HPaste	vim2hs.txt	/*:HPaste*
 :NeoBundle	neobundle.txt	/*:NeoBundle*
 :NeoBundleCheck	neobundle.txt	/*:NeoBundleCheck*
 :NeoBundleCheckUpdate	neobundle.txt	/*:NeoBundleCheckUpdate*
@@ -57,6 +59,10 @@
 :NeoBundleUpdate	neobundle.txt	/*:NeoBundleUpdate*
 :NeoBundleUpdate!	neobundle.txt	/*:NeoBundleUpdate!*
 :NeoBundleUpdatesLog	neobundle.txt	/*:NeoBundleUpdatesLog*
+:PointFree	vim2hs.txt	/*:PointFree*
+compiler-cabal	vim2hs.txt	/*compiler-cabal*
+compiler-hlint	vim2hs.txt	/*compiler-hlint*
+compiler-jmacro	vim2hs.txt	/*compiler-jmacro*
 delimitMate	delimitMate.txt	/*delimitMate*
 delimitMate#JumpAny()	delimitMate.txt	/*delimitMate#JumpAny()*
 delimitMate#ShouldJump()	delimitMate.txt	/*delimitMate#ShouldJump()*
@@ -138,6 +144,11 @@ fugitive-statusline	fugitive.txt	/*fugitive-statusline*
 fugitive-y_CTRL-G	fugitive.txt	/*fugitive-y_CTRL-G*
 fugitive-~	fugitive.txt	/*fugitive-~*
 fugitive.txt	fugitive.txt	/*fugitive.txt*
+g:haskell_autotags	vim2hs.txt	/*g:haskell_autotags*
+g:haskell_tabular	vim2hs.txt	/*g:haskell_tabular*
+g:haskell_tags_generator	vim2hs.txt	/*g:haskell_tags_generator*
+g:hlint_args	vim2hs.txt	/*g:hlint_args*
+g:hpaste_author	vim2hs.txt	/*g:hpaste_author*
 g:neobundle#default_options	neobundle.txt	/*g:neobundle#default_options*
 g:neobundle#default_site	neobundle.txt	/*g:neobundle#default_site*
 g:neobundle#enable_name_conversion	neobundle.txt	/*g:neobundle#enable_name_conversion*
@@ -233,6 +244,15 @@ neobundle-unite-sources	neobundle.txt	/*neobundle-unite-sources*
 neobundle-usage	neobundle.txt	/*neobundle-usage*
 neobundle-variables	neobundle.txt	/*neobundle-variables*
 neobundle.txt	neobundle.txt	/*neobundle.txt*
+quickfix-cabal	vim2hs.txt	/*quickfix-cabal*
+quickfix-hlint	vim2hs.txt	/*quickfix-hlint*
+quickfix-jmacro	vim2hs.txt	/*quickfix-jmacro*
 unite-action-neobundle-lazy	neobundle.txt	/*unite-action-neobundle-lazy*
 unite-action-neobundle-search	neobundle.txt	/*unite-action-neobundle-search*
 unite-kind-neobundle	neobundle.txt	/*unite-kind-neobundle*
+vim2hs	vim2hs.txt	/*vim2hs*
+vim2hs-commands	vim2hs.txt	/*vim2hs-commands*
+vim2hs-compilers	vim2hs.txt	/*vim2hs-compilers*
+vim2hs-options	vim2hs.txt	/*vim2hs-options*
+vim2hs-tabular	vim2hs.txt	/*vim2hs-tabular*
+vim2hs.txt	vim2hs.txt	/*vim2hs.txt*
