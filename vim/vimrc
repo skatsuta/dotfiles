@@ -273,8 +273,9 @@ nnoremap l <Right>
 if has('folding')
   nnoremap <expr> l foldlevel(line('.')) ? "\<Right>zo" : "\<Right>"
 endif
-" q で保存
-nnoremap q :w<CR>
+" <C-s> で保存
+inoremap <C-s> <ESC>:w<CR>a
+nnoremap <C-s> :w<CR>
 
 "----------------------------------------
 " 挿入モード
