@@ -597,7 +597,7 @@ execute "NeoBundle 'Shougo/vimproc.vim'," . string({
 " Use lazy load
 NeoBundleLazy 'dag/vim2hs'
 " Source if the file type is Haskell
-autocmd FileType hs NeoBundleSource vim2hs
+autocmd FileType haskell NeoBundleSource vim2hs
 
 
 "===================================
