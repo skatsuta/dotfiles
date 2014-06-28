@@ -486,8 +486,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here:
 NeoBundle 'tpope/vim-fugitive'
-" Vim to Haskell: A collection of vimscripts for Haskell development.
-NeoBundle 'dag/vim2hs'
 " Run commands quickly.
 NeoBundle 'thinca/vim-quickrun'
 " Provides insert mode auto-completion for quotes, parens, brackets, etc.
@@ -578,7 +576,7 @@ omap z <Plug>(easymotion-s) " surround.vimとかぶるので`z`"
 
 "===================================
 " vimproc
-
+"
 " Interactive command execution in Vim.
 "===================================
 let vimproc_updcmd = has('win64') ?
@@ -591,6 +589,17 @@ execute "NeoBundle 'Shougo/vimproc.vim'," . string({
       \     'unix' : 'make -f make_unix.mak',
       \    },
       \ })
+
+
+"===================================
+" vim2hs
+"
+" Vim to Haskell: A collection of vimscripts for Haskell development.
+"===================================
+" Use lazy load
+NeoBundleLazy 'dag/vim2hs'
+" Source if a file type is Haskell
+autocmd FileType hs NeoBundleSource vim2hs
 
 
 " Disable auto comment out
