@@ -566,10 +566,13 @@ NeoBundle 'Lokaltog/vim-easymotion'
 let g:EasyMotion_do_mapping = 0
 " Enable smartcase
 let g:EasyMotion_smartcase = 1
-" Use migemo
-let g:EasyMotion_use_migemo = 1
-" 2-key find motion
-map <Space> <Plug>(easymotion-s2)
+" Jump to anywhere you want by just `4` or `3` key strokes without thinking!
+" `s{char}{char}{target}`
+nmap s <Plug>(easymotion-s2)
+xmap s <Plug>(easymotion-s2)
+omap z <Plug>(easymotion-s2)  " Avoid conflict with surround.vim
+" Of course, you can map to any key you want such as `<Space>`
+" map <Space>(easymotion-s2)
 
 
 "===================================
