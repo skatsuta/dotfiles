@@ -125,6 +125,7 @@ if [ "$TMUX" = "" ]; then tmux; fi
 #==============================
 #  Aliases
 #==============================
+alias vi='vim'
 alias lt='ls -t'
 alias rm='rm -i'
 alias cp='cp -i'
