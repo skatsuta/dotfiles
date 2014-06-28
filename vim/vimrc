@@ -73,8 +73,10 @@ endif
 "set noswapfile
 "viminfoを作成しない
 "set viminfo=
-"クリップボードを共有
-set clipboard+=unnamed
+" tmux が起動していないときのみクリップボードを共有する
+if $TMUX == ''
+  set clipboard+=unnamed
+endif
 "8進数を無効にする。<C-a>,<C-x>に影響する
 set nrformats-=octal
 "キーコードやマッピングされたキー列が完了するのを待つ時間(ミリ秒)
