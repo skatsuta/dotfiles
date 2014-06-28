@@ -1,9 +1,9 @@
-"=====================================================================
+"==========================================================================
 "  Description: Vim の設定ファイル
 "       Author: Soshi Katsuta
 "  Last Change: 27-Jun-2014.
 "      Version: 7.3
-"=====================================================================
+"==========================================================================
 "
 " Vi 互換にしない
 set nocompatible
@@ -392,7 +392,7 @@ autocmd BufNewFile *.txt 0r $MY_VIMRUNTIME/template/txt.txt
 "----------------------------------------
 " 各種プラグイン設定
 "----------------------------------------
-"===== Latex Suite =====
+"===== Latex Suite ==========
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 filetype plugin on
 " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
@@ -466,14 +466,13 @@ let g:Tex_FoldedEnvironments='verbatim,comment,eq,gather,aligned,align,figure,
   \ alertblock,exampleblock,frame'
 
 
-"==============================
+"===================================
 "
 "  NeoBundle
 "
-"==============================
+"===================================
 if has('vim_starting')
-  set nocompatible               " Be iMproved
-
+  set nocompatible
   " Required:
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
@@ -486,9 +485,7 @@ call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here:
-NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'scrooloose/syntastic'
 " Vim to Haskell: A collection of vimscripts for Haskell development.
 NeoBundle 'dag/vim2hs'
 " Run commands quickly.
@@ -507,11 +504,12 @@ filetype plugin indent on
 NeoBundleCheck
 
 
-"==============================
+"=================================a
+" neocomplete
 "
-"  neocomplete
-"
-"==============================
+" Next generation completion framework
+"===================================
+NeoBundle 'Shougo/neocomplete.vim'
 " Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
 " Use smartcase.
@@ -540,11 +538,12 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 "autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 
-"==============================
+"===================================
+" Syntastic
 "
-"  Syntastic
-"
-"==============================
+" Syntax checking hacks for vim
+"===================================
+NeoBundle 'scrooloose/syntastic'
 " Use the |:sign| interface to mark syntax errors.
 let g:syntastic_enable_signs=1
 " Automatically open the |location-list| (see |syntastic-error-window|)
@@ -552,12 +551,11 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 
 
-"==============================
-"
+"===================================
 " caw.vim
-" Sophisticated comment plugin
 "
-"==============================
+" Sophisticated comment plugin
+"===================================
 NeoBundle "tyru/caw.vim"
 nmap <Leader>c <Plug>(caw:i:toggle)
 vmap <Leader>c <Plug>(caw:i:toggle)
