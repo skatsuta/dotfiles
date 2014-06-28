@@ -3,3 +3,5 @@
 	email = katsuta_soshi@cyberagent.co.jp
 [color]
 	ui = true
+[push]
+	default = matching
