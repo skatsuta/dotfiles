@@ -488,6 +488,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'tpope/vim-fugitive'
 " Provides insert mode auto-completion for quotes, parens, brackets, etc.
 NeoBundle 'Raimondi/delimitMate'
+" Powerful shell implemented by vim.
+NeoBundle 'Shougo/vimshell.vim'
 
 " Required:
 call neobundle#end()
