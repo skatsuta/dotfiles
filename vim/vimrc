@@ -1,7 +1,7 @@
 "==========================================================================
 "  Description: Vim の設定ファイル
 "       Author: Soshi Katsuta
-"  Last Change: 27-Jun-2014.
+"  Last Change: 02-Jul-2014.
 "      Version: 7.3
 "==========================================================================
 "
@@ -492,6 +492,8 @@ NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'Shougo/vimshell.vim'
 " This plugin inserts and updates a time stamp automatically.
 NeoBundle 'autodate.vim'
+" Provides support for expanding abbreviations similar to emmet.
+NeoBundle 'mattn/emmet-vim'
 
 " Required:
 call neobundle#end()
