@@ -66,6 +66,7 @@ export PATH="$HOME/bin:$PATH"
 
 export JAVA_HOME=$(/usr/libexec/java_home)
 # export MANPATH="/usr/local/man:$MANPATH"
+export MAVEN_REPOSITORY="$HOME/.m2/repository"
 
 # 履歴ファイルの保存先
 export HISTFILE=${HOME}/.zsh_history
