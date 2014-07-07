@@ -1,7 +1,7 @@
 "==========================================================================
 "  Description: Vim の設定ファイル
 "       Author: Soshi Katsuta
-"  Last Change: 02-Jul-2014.
+"  Last Change: 07-Jul-2014.
 "      Version: 7.3
 "==========================================================================
 "
@@ -189,6 +189,8 @@ set colorcolumn=80
 "if has("win32)
 "endif
 "colorscheme consoleBlack
+" Highlight Groovy scripts
+au BufNewFile,BufRead *.gradle setf groovy
 
 
 """"""""""""""""""""""""""""""
