@@ -1,0 +1,30 @@
+{
+	"add_to_PATH":
+	[
+		"/Users/soshi/.cabal/bin"
+	],
+	"auto_build_mode": "normal-then-warnings",
+	"auto_complete_imports": true,
+	"auto_complete_language_pragmas": true,
+	"auto_completion_popup": false,
+	"auto_run_tests": true,
+	"cabal_dev_sandbox": "",
+	"cabal_dev_sandbox_list":
+	[
+	],
+	"cache_path": ".",
+	"enable_auto_build": true,
+	"enable_auto_check": true,
+	"enable_auto_lint": true,
+	"enable_ghc_mod": true,
+	"enable_hdevtools": false,
+	"enable_hdocs": false,
+	"ghc_opts":
+	[
+	],
+	"hdevtools_socket": "",
+	"inhibit_completions": false,
+	"inspect_modules": true,
+	"show_output_window": true,
+	"use_cabal_dev": false
+}
