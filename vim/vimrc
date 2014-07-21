@@ -181,11 +181,11 @@ set ruler
 if &t_Co > 2 || has('gui_running')
   syntax on
 endif
-" Highlight the column in 80 letters
-set colorcolumn=80
+" Highlight the column
+set colorcolumn=100
 "色テーマ設定
 "gvimの色テーマは.gvimrcで指定する
-"	colorscheme BasicBlack
+"colorscheme BasicBlack
 "if has("win32)
 "endif
 "colorscheme consoleBlack
