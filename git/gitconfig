@@ -6,3 +6,5 @@
 [push]
   default = simple
 
+[merge]
+	ff = false
