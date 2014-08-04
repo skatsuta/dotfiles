@@ -1,7 +1,7 @@
 "==========================================================================
 "  Description: Vim の設定ファイル
 "       Author: Soshi Katsuta
-"  Last Change: 07-Jul-2014.
+"  Last Change: 21-Jul-2014.
 "      Version: 7.3
 "==========================================================================
 "
@@ -181,11 +181,11 @@ set ruler
 if &t_Co > 2 || has('gui_running')
   syntax on
 endif
-" Highlight the column in 80 letters
-set colorcolumn=80
+" Highlight the column
+set colorcolumn=100
 "色テーマ設定
 "gvimの色テーマは.gvimrcで指定する
-"	colorscheme BasicBlack
+"colorscheme BasicBlack
 "if has("win32)
 "endif
 "colorscheme consoleBlack
@@ -378,18 +378,18 @@ endif
 "  au BufEnter * execute ":silent! lcd " . escape(expand("%:p:h"), ' ')
 "endif
 
-" テンプレート自動読み込み設定
-"C:.c
-autocmd BufNewFile *.c 0r $MY_VIMRUNTIME/template/c.txt
-"C++:.cpp,.cc
-autocmd BufNewFile *.cpp 0r $MY_VIMRUNTIME/template/cpp.txt
-autocmd BufNewFile *.cc 0r $MY_VIMRUNTIME/template/cpp.txt
-"Java
-autocmd BufNewFile *.java 0r $MY_VIMRUNTIME/template/java.txt
-"TeX
-autocmd BufNewFile *.tex 0r $MY_VIMRUNTIME/template/tex.txt
-"TXT
-autocmd BufNewFile *.txt 0r $MY_VIMRUNTIME/template/txt.txt
+"" テンプレート自動読み込み設定
+""C:.c
+"autocmd BufNewFile *.c 0r $MY_VIMRUNTIME/template/c.txt
+""C++:.cpp,.cc
+"autocmd BufNewFile *.cpp 0r $MY_VIMRUNTIME/template/cpp.txt
+"autocmd BufNewFile *.cc 0r $MY_VIMRUNTIME/template/cpp.txt
+""Java
+"autocmd BufNewFile *.java 0r $MY_VIMRUNTIME/template/java.txt
+""TeX
+"autocmd BufNewFile *.tex 0r $MY_VIMRUNTIME/template/tex.txt
+""TXT
+"autocmd BufNewFile *.txt 0r $MY_VIMRUNTIME/template/txt.txt
 
 "----------------------------------------
 " 各種プラグイン設定
@@ -497,6 +497,14 @@ NeoBundle 'autodate.vim'
 " Provides support for expanding abbreviations similar to emmet.
 NeoBundle 'mattn/emmet-vim'
 
+"----- Haskell -----
+" Vim configuration files for Haskell code
+NeoBundleLazy 'kana/vim-filetype-haskell'
+autocmd FileType haskell NeoBundleSource vim-filetype-haskell
+" A completion plugin for Haskell, using ghc-mod
+NeoBundleLazy 'eagletmt/neco-ghc'
+autocmd FileType haskell NeoBundleSource neco-ghc
+
 " Required:
 call neobundle#end()
 
@@ -561,8 +569,8 @@ let g:syntastic_auto_loc_list=1
 " Sophisticated comment plugin
 "===================================
 NeoBundle 'tyru/caw.vim'
-nmap <Leader>c <Plug>(caw:i:toggle)
-vmap <Leader>c <Plug>(caw:i:toggle)
+nnoremap <Leader>c <Plug>(caw:i:toggle)
+vnoremap <Leader>c <Plug>(caw:i:toggle)
 
 "===================================
 " EasyMotion
@@ -629,6 +637,20 @@ let g:quickrun_config._ = {'runner' : 'vimproc'}
 "===================================
 NeoBundle 'Shougo/unite.vim'
 
+
+"===================================
+" ghcmod.vim
+"
+" Happy Haskell programming on Vim, powered by ghc-mod
+"===================================
+NeoBundleLazy 'eagletmt/ghcmod-vim'
+autocmd FileType haskell NeoBundleSource ghcmod-vim
+" \t で型判定
+nnoremap <Leader>t :GhcModType<CR>
+vnoremap <Leader>t :GhcModType<CR>
+" \T で型判定のハイライトを消す
+nnoremap <Leader>T :GhcModTypeClear<CR>
+vnoremap <Leader>T :GhcModTypeClear<CR>
 
 
 " Disable auto comment out

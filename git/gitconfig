@@ -4,4 +4,8 @@
 [color]
 	ui = true
 [push]
-	default = matching
+  default = simple
+[merge]
+	ff = false
+[core]
+	editor = vim
