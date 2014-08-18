@@ -1,7 +1,7 @@
 "==========================================================================
 "  Description: Vim の設定ファイル
 "       Author: Soshi Katsuta
-"  Last Change: 21-Jul-2014.
+"  Last Change: 16-Aug-2014.
 "      Version: 7.3
 "==========================================================================
 "
@@ -84,7 +84,7 @@ set timeoutlen=3500
 "編集結果非保存のバッファから、新しいバッファを開くときに警告を出さない
 set hidden
 "ヒストリの保存数
-set history=50
+set history=10000
 "日本語の行の連結時には空白を入力しない
 set formatoptions+=mM
 "Visual blockモードでフリーカーソルを有効にする
@@ -186,6 +186,7 @@ set colorcolumn=100
 "色テーマ設定
 "gvimの色テーマは.gvimrcで指定する
 "colorscheme BasicBlack
+colorscheme default
 "if has("win32)
 "endif
 "colorscheme consoleBlack
@@ -486,24 +487,59 @@ call neobundle#begin(expand('~/.vim/bundle'))
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" My Bundles here:
+"========== General ==========
+" Next generation completion framework
+NeoBundle 'Shougo/neocomplete.vim'
+" Unite and create user interfaces.
+NeoBundle 'Shougo/unite.vim'
+" MRU plugin includes unite.vim MRU sources
+NeoBundle 'Shougo/neomru.vim'
+" Powerful shell implemented by vim.
+NeoBundle 'Shougo/vimshell.vim'
+" neo-snippet plugin contains neocomplcache snippets source
+NeoBundle 'Shougo/neosnippet'
+" The standard snippets repository for neosnippet
+NeoBundle 'Shougo/neosnippet-snippets'
+" Syntax checking hacks for vim
+NeoBundle 'scrooloose/syntastic'
+" Sophisticated comment plugin
+NeoBundle 'tyru/caw.vim'
+" Vim motions on speed!
+NeoBundle 'Lokaltog/vim-easymotion'
+" Git wrapper
 NeoBundle 'tpope/vim-fugitive'
 " Provides insert mode auto-completion for quotes, parens, brackets, etc.
 NeoBundle 'Raimondi/delimitMate'
-" Powerful shell implemented by vim.
-NeoBundle 'Shougo/vimshell.vim'
 " This plugin inserts and updates a time stamp automatically.
 NeoBundle 'autodate.vim'
 " Provides support for expanding abbreviations similar to emmet.
 NeoBundle 'mattn/emmet-vim'
+" Run commands quickly.
+NeoBundle 'thinca/vim-quickrun'
+" A Vim plugin for visually displaying indent levels in code
+NeoBundle 'nathanaelkane/vim-indent-guides'
+" Monokai theme
+NeoBundle 'tomasr/molokai'
 
-"----- Haskell -----
+"========== Haskell ==========
 " Vim configuration files for Haskell code
 NeoBundleLazy 'kana/vim-filetype-haskell'
 autocmd FileType haskell NeoBundleSource vim-filetype-haskell
 " A completion plugin for Haskell, using ghc-mod
 NeoBundleLazy 'eagletmt/neco-ghc'
 autocmd FileType haskell NeoBundleSource neco-ghc
+" Vim to Haskell: A collection of vimscripts for Haskell development.
+NeoBundleLazy 'dag/vim2hs'
+autocmd FileType haskell NeoBundleSource vim2hs
+" Happy Haskell programming on Vim, powered by ghc-mod
+NeoBundleLazy 'eagletmt/ghcmod-vim'
+autocmd FileType haskell NeoBundleSource ghcmod-vim
+
+"========== Scala ==========
+" Integration of Scala into Vim
+NeoBundleLazy 'derekwyatt/vim-scala'
+autocmd FileType scala NeoBundleSource vim-scala
+
 
 " Required:
 call neobundle#end()
@@ -516,12 +552,11 @@ filetype plugin indent on
 NeoBundleCheck
 
 
-"=================================a
+"===================================
 " neocomplete
 "
 " Next generation completion framework
 "===================================
-NeoBundle 'Shougo/neocomplete.vim'
 " Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
 " Use smartcase.
@@ -532,6 +567,13 @@ let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 " Use fuzzy completion.
 let g:neocomplete#enable_fuzzy_completion = 1
+
+" Define dictionaries
+let g:neocomplete#sources#dictionary#dictionaries = {
+  \ 'default' : '',
+  \ 'vimshell' : $HOME.'/.vimshell_hist',
+  \ 'scala' : $HOME.'/.vim/dict/scala.dict',
+  \ }
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
@@ -555,7 +597,6 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 "
 " Syntax checking hacks for vim
 "===================================
-NeoBundle 'scrooloose/syntastic'
 " Use the |:sign| interface to mark syntax errors.
 let g:syntastic_enable_signs=1
 " Automatically open the |location-list| (see |syntastic-error-window|)
@@ -568,7 +609,6 @@ let g:syntastic_auto_loc_list=1
 "
 " Sophisticated comment plugin
 "===================================
-NeoBundle 'tyru/caw.vim'
 nnoremap <Leader>c <Plug>(caw:i:toggle)
 vnoremap <Leader>c <Plug>(caw:i:toggle)
 
@@ -577,7 +617,6 @@ vnoremap <Leader>c <Plug>(caw:i:toggle)
 "
 " Vim motions on speed!
 "===================================
-NeoBundle 'Lokaltog/vim-easymotion'
 "Disable default mappings
 let g:EasyMotion_do_mapping = 0
 " Enable smartcase
@@ -613,8 +652,6 @@ execute "NeoBundle 'Shougo/vimproc.vim'," . string({
 "
 " Vim to Haskell: A collection of vimscripts for Haskell development.
 "===================================
-" Use lazy load
-NeoBundleLazy 'dag/vim2hs'
 " Source if the file type is Haskell
 autocmd FileType haskell NeoBundleSource vim2hs
 
@@ -624,10 +661,11 @@ autocmd FileType haskell NeoBundleSource vim2hs
 "
 " Run commands quickly.
 "===================================
-NeoBundle 'thinca/vim-quickrun'
 let g:quickrun_config = {}
 " Use vimproc to run
 let g:quickrun_config._ = {'runner' : 'vimproc'}
+" Scala 用
+nnoremap <silent> <Leader>r :QuickRun -cmdopt ''<CR>
 
 
 "===================================
@@ -635,7 +673,14 @@ let g:quickrun_config._ = {'runner' : 'vimproc'}
 "
 " Unite and create user interfaces.
 "===================================
-NeoBundle 'Shougo/unite.vim'
+let g:unite_enable_start_insert=1
+let g:unite_source_history_yank_enable=1
+let g:unite_source_file_mru_limit=20
+nnoremap <silent> ,uy :<C-u>Unite history/yank<CR>
+nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
 
 
 "===================================
@@ -643,7 +688,6 @@ NeoBundle 'Shougo/unite.vim'
 "
 " Happy Haskell programming on Vim, powered by ghc-mod
 "===================================
-NeoBundleLazy 'eagletmt/ghcmod-vim'
 autocmd FileType haskell NeoBundleSource ghcmod-vim
 " \t で型判定
 nnoremap <Leader>t :GhcModType<CR>
@@ -651,6 +695,19 @@ vnoremap <Leader>t :GhcModType<CR>
 " \T で型判定のハイライトを消す
 nnoremap <Leader>T :GhcModTypeClear<CR>
 vnoremap <Leader>T :GhcModTypeClear<CR>
+
+
+"===================================
+" vim-indent-guides
+"
+" A Vim plugin for visually displaying indent levels in code
+"===================================
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_auto_colors=0
+let g:indent_guides_guide_size=1
+autocmd VimEnter,ColorScheme * :hi IndentGuidesOdd  ctermbg=110
+autocmd VimEnter,ColorScheme * :hi IndentGuidesEven ctermbg=140
+
 
 
 " Disable auto comment out
