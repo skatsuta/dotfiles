@@ -49,7 +49,7 @@ alias zshconfig="vim ~/.zshrc"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git git-flow hub osx bundler brew brew-cask docker redis-cli cabal npm capistrano gem ruby \
-  sbt scala)
+  sbt scala vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
