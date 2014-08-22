@@ -1,7 +1,7 @@
 "==========================================================================
 "  Description: Vim の設定ファイル
 "       Author: Soshi Katsuta
-"  Last Change: 16-Aug-2014.
+"  Last Change: 22-Aug-2014.
 "      Version: 7.3
 "==========================================================================
 "
@@ -206,7 +206,7 @@ au BufNewFile,BufRead *.gradle setf groovy
 
 " ステータスラインの表示を ファイル名 (ファイルパス)		[ファイル形式][文字コード][改行コード][行,列] にする
 " http://hail2u.net/blog/software/optimize-vim-statusline.html を参照
-set statusline=%{expand('%:p:t')}\ %<\(%{expand('%:p:h')}\)%=\ %m%r%y%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}[%3l,%3c]
+set statusline=%{expand('%:p:t')}\ %<\(%{expand('%:p:h')}\)%=\ %{fugitive#statusline()}%m%r%y%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}[%3l,%3c]
 
 "FencB() : カーソル上の文字コードをエンコードに応じた表示にする
 function! FencB()
@@ -708,6 +708,15 @@ let g:indent_guides_guide_size=1
 autocmd VimEnter,ColorScheme * :hi IndentGuidesOdd  ctermbg=110
 autocmd VimEnter,ColorScheme * :hi IndentGuidesEven ctermbg=140
 
+
+"===================================
+" vim-fugitive
+"
+" A Git wrapper so awsome, it should be illegal
+"===================================
+nnoremap <silent> <Leader>gb :Gblame<CR>
+nnoremap <silent> <Leader>gd :Gdiff<CR>
+nnoremap <silent> <Leader>gs :Gstatus<CR>
 
 
 " Disable auto comment out
