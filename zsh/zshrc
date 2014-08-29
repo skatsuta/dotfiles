@@ -65,10 +65,12 @@ export PATH="/opt/local/bin:$PATH"
 export PATH="/opt/local/sbin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.cabal/bin:$PATH"
+export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
 
+export MANPATH="/usr/local/man:$MANPATH"
 export JAVA_HOME=$(/usr/libexec/java_home)
-# export MANPATH="/usr/local/man:$MANPATH"
 export MAVEN_REPOSITORY="$HOME/.m2/repository"
+export ANDROID_HOME="/usr/local/Cellar/android-sdk/23.0.2"
 
 # 履歴ファイルの保存先
 export HISTFILE=${HOME}/.zsh_history
