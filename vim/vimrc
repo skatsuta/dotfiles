@@ -1,8 +1,6 @@
 "==========================================================================
 "  Description: Vim の設定ファイル
 "       Author: Soshi Katsuta
-"  Last Change: 28-Aug-2014.
-"      Version: 7.3
 "==========================================================================
 "
 " Vi 互換にしない
@@ -520,6 +518,11 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 " Monokai theme
 NeoBundle 'tomasr/molokai'
+" Alpaca
+NeoBundle 'alpaca-tc/alpaca_powertabline'
+" Powerline is a statusline plugin for vim, and provides statuslines and
+" prompts for several other applications
+NeoBundle 'Lokaltog/powerline'
 
 "========== Haskell ==========
 " Vim configuration files for Haskell code

@@ -48,27 +48,24 @@ alias zshconfig="vim ~/.zshrc"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow hub osx bundler brew brew-cask docker redis-cli cabal npm capistrano gem ruby \
-  sbt scala vagrant)
+plugins=(git git-flow hub osx bundler brew brew-cask docker redis-cli cabal npm capistrano gem \ 
+  ruby sbt scala vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
 ## PATH
-export PATH="/bin:$PATH"
-export PATH="/sbin:$PATH"
-export PATH="/usr/bin:$PATH"
-export PATH="/usr/sbin:$PATH"
-export PATH="/usr/local/bin:$PATH"
-export PATH="/opt/local/bin:$PATH"
-export PATH="/opt/local/sbin:$PATH"
-export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/.cabal/bin:$PATH"
-
+export MANPATH=/usr/local/man:$MANPATH
 export JAVA_HOME=$(/usr/libexec/java_home)
-# export MANPATH="/usr/local/man:$MANPATH"
-export MAVEN_REPOSITORY="$HOME/.m2/repository"
+export ANDROID_HOME=/usr/local/Cellar/android-sdk/23.0.2
+
+# デフォルトでは /usr/bin/ が /usr/local/bin/ より先にあるので /usr/local/bin/ を優先させる
+export PATH=/usr/local/bin:$PATH
+export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.cabal/bin:$PATH
+# android コマンドは /usr/local/bin/android を優先させる
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 # 履歴ファイルの保存先
 export HISTFILE=${HOME}/.zsh_history
@@ -101,6 +98,8 @@ autoload -U compinit
 compinit
 # Disable start/stop control
 stty -ixon
+# PATH の重複エントリを削除する
+typeset -U path PATH
 
 
 # You may need to manually set your language environment
@@ -166,7 +165,7 @@ bindkey '^z' zaw-git-files
 #==============================
 #  Docker
 #==============================
-export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375
+export DOCKER_HOST=tcp://192.168.59.103:2375
 alias docker="sudo docker -H $DOCKER_HOST"
 
 #==============================
@@ -174,4 +173,11 @@ alias docker="sudo docker -H $DOCKER_HOST"
 #==============================
 # Always run as daemon
 export GRADLE_OPTS='-Dorg.gradle.daemon=true'
+
+#==============================
+#  zsh-notify
+#==============================
+source ~/.zsh/zsh-notify/notify.plugin.zsh
+export SYS_NOTIFIER="/usr/local/bin/terminal-notifier"
+export NOTIFY_COMMAND_COMPLETE_TIMEOUT=10
 
