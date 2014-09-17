@@ -99,8 +99,6 @@ set wildmenu
 if has('mouse')
   set mouse=a
 endif
-"pluginを使用可能にする（VIM-LaTeX のところで指定してるのでコメントアウト）
-"filetype plugin indent on
 " バックアップディレクトリを .vimbackup/ にする
 set backupdir=$HOME/.vimbackup
 set directory=$HOME/.vimbackup
@@ -108,7 +106,10 @@ set directory=$HOME/.vimbackup
 set mouse=a
 " screen 対応
 set ttymouse=xterm2
-
+" 遅延再描画を有効化する
+set lazyredraw
+" ターミナルとの接続を素早くする
+set ttyfast
 
 
 "----------------------------------------
@@ -188,6 +189,11 @@ colorscheme default
 "if has("win32)
 "endif
 "colorscheme consoleBlack
+
+
+"---------------------------------
+" シンタックスハイライト
+"---------------------------------
 " Highlight Groovy scripts
 au BufNewFile,BufRead *.gradle setf groovy
 
