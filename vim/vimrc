@@ -99,8 +99,6 @@ set wildmenu
 if has('mouse')
   set mouse=a
 endif
-"pluginを使用可能にする（VIM-LaTeX のところで指定してるのでコメントアウト）
-"filetype plugin indent on
 " バックアップディレクトリを .vimbackup/ にする
 set backupdir=$HOME/.vimbackup
 set directory=$HOME/.vimbackup
@@ -108,7 +106,10 @@ set directory=$HOME/.vimbackup
 set mouse=a
 " screen 対応
 set ttymouse=xterm2
-
+" 遅延再描画を有効化する
+set lazyredraw
+" ターミナルとの接続を素早くする
+set ttyfast
 
 
 "----------------------------------------
@@ -188,6 +189,11 @@ colorscheme default
 "if has("win32)
 "endif
 "colorscheme consoleBlack
+
+
+"---------------------------------
+" シンタックスハイライト
+"---------------------------------
 " Highlight Groovy scripts
 au BufNewFile,BufRead *.gradle setf groovy
 
@@ -466,93 +472,100 @@ let g:Tex_FoldedEnvironments='verbatim,comment,eq,gather,aligned,align,figure,
   \ problem,proof,algorithm,cases,minipage,enumerate,subequations,block,
   \ alertblock,exampleblock,frame'
 
-
 "===================================
 "
 "  NeoBundle
 "
 "===================================
+" Only use for vimproc.vim
+if !1 | finish | endif
+
 if has('vim_starting')
   set nocompatible
+
   " Required:
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 " Required:
-call neobundle#begin(expand('~/.vim/bundle'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-"========== General ==========
-" Next generation completion framework
-NeoBundle 'Shougo/neocomplete.vim'
-" Unite and create user interfaces.
-NeoBundle 'Shougo/unite.vim'
-" MRU plugin includes unite.vim MRU sources
-NeoBundle 'Shougo/neomru.vim'
-" Powerful shell implemented by vim.
-NeoBundle 'Shougo/vimshell.vim'
-" neo-snippet plugin contains neocomplcache snippets source
-NeoBundle 'Shougo/neosnippet'
-" The standard snippets repository for neosnippet
-NeoBundle 'Shougo/neosnippet-snippets'
-" Syntax checking hacks for vim
-NeoBundle 'scrooloose/syntastic'
-" Sophisticated comment plugin
-NeoBundle 'tyru/caw.vim'
-" Vim motions on speed!
-NeoBundle 'Lokaltog/vim-easymotion'
-" Git wrapper
-NeoBundle 'tpope/vim-fugitive'
-" Provides insert mode auto-completion for quotes, parens, brackets, etc.
-NeoBundle 'Raimondi/delimitMate'
-" This plugin inserts and updates a time stamp automatically.
-NeoBundle 'autodate.vim'
-" Provides support for expanding abbreviations similar to emmet.
-NeoBundle 'mattn/emmet-vim'
-" Run commands quickly.
-NeoBundle 'thinca/vim-quickrun'
-" A Vim plugin for visually displaying indent levels in code
-NeoBundle 'nathanaelkane/vim-indent-guides'
-" Monokai theme
-NeoBundle 'tomasr/molokai'
-" Alpaca
-NeoBundle 'alpaca-tc/alpaca_powertabline'
-" Powerline is a statusline plugin for vim, and provides statuslines and
-" prompts for several other applications
-NeoBundle 'Lokaltog/powerline'
-
-"========== Haskell ==========
-" Vim configuration files for Haskell code
-NeoBundleLazy 'kana/vim-filetype-haskell'
-autocmd FileType haskell NeoBundleSource vim-filetype-haskell
-" A completion plugin for Haskell, using ghc-mod
-NeoBundleLazy 'eagletmt/neco-ghc'
-autocmd FileType haskell NeoBundleSource neco-ghc
-" Vim to Haskell: A collection of vimscripts for Haskell development.
-NeoBundleLazy 'dag/vim2hs'
-autocmd FileType haskell NeoBundleSource vim2hs
-" Happy Haskell programming on Vim, powered by ghc-mod
-NeoBundleLazy 'eagletmt/ghcmod-vim'
-autocmd FileType haskell NeoBundleSource ghcmod-vim
-
-"========== Scala ==========
-" Integration of Scala into Vim
-NeoBundleLazy 'derekwyatt/vim-scala'
-autocmd FileType scala NeoBundleSource vim-scala
-
-
-" Required:
 call neobundle#end()
 
 " Required:
 filetype plugin indent on
 
 " If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
+" this will conviniently prompt you to install them.
 NeoBundleCheck
+
+
+"===================================
+"
+"  VIM-PLUG
+"
+"===================================
+call plug#begin('~/.vim/plugged')
+
+"========== General ==========
+" Next generation completion framework
+Plug 'Shougo/neocomplete.vim'
+" Unite and create user interfaces.
+Plug 'Shougo/unite.vim'
+" MRU plugin includes unite.vim MRU sources
+Plug 'Shougo/neomru.vim'
+" Powerful shell implemented by vim.
+Plug 'Shougo/vimshell.vim'
+" neo-snippet plugin contains neocomplcache snippets source
+Plug 'Shougo/neosnippet'
+" The standard snippets repository for neosnippet
+Plug 'Shougo/neosnippet-snippets'
+" Syntax checking hacks for vim
+Plug 'scrooloose/syntastic'
+" Sophisticated comment plugin
+Plug 'tyru/caw.vim'
+" Vim motions on speed!
+Plug 'Lokaltog/vim-easymotion'
+" Git wrapper
+Plug 'tpope/vim-fugitive'
+" Provides insert mode auto-completion for quotes, parens, brackets, etc.
+Plug 'Raimondi/delimitMate'
+" This plugin inserts and updates a time stamp automatically.
+Plug 'autodate.vim'
+" Provides support for expanding abbreviations similar to emmet.
+Plug 'mattn/emmet-vim'
+" Run commands quickly.
+Plug 'thinca/vim-quickrun'
+" A Vim plugin for visually displaying indent levels in code
+Plug 'nathanaelkane/vim-indent-guides'
+" Monokai theme
+Plug 'tomasr/molokai'
+" Alpaca
+Plug 'alpaca-tc/alpaca_powertabline'
+" Powerline is a statusline plugin for vim, and provides statuslines and prompts
+" for several other applications
+Plug 'Lokaltog/powerline'
+
+"========== Haskell ==========
+" Vim configuration files for Haskell code
+Plug 'kana/vim-filetype-haskell', { 'for': 'haskell' }
+" A completion plugin for Haskell, using ghc-mod
+Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
+" Vim to Haskell: A collection of vimscripts for Haskell development.
+Plug 'dag/vim2hs', { 'for': 'haskell' }
+" Happy Haskell programming on Vim, powered by ghc-mod
+Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
+
+"========== Scala ==========
+" Integration of Scala into Vim
+Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
+
+call plug#end()
+
 
 
 "===================================
@@ -605,6 +618,8 @@ let g:syntastic_enable_signs=1
 " Automatically open the |location-list| (see |syntastic-error-window|)
 " when a buffer has errors.
 let g:syntastic_auto_loc_list=1
+" Ignore AngularJS's directives
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
 
 "===================================
@@ -724,5 +739,4 @@ nnoremap <silent> <Leader>gs :Gstatus<CR>
 
 " Disable auto comment out
 autocmd Filetype * set formatoptions-=ro
-
 
