@@ -182,3 +182,9 @@ source ~/.zsh/zsh-notify/notify.plugin.zsh
 export SYS_NOTIFIER="/usr/local/bin/terminal-notifier"
 export NOTIFY_COMMAND_COMPLETE_TIMEOUT=10
 
+#==============================
+#  rbenv
+#==============================
+# Load rbenv automatically
+eval "$(rbenv init -)"
+
