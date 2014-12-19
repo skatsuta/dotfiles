@@ -49,7 +49,7 @@ alias zshconfig="vim ~/.zshrc"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git git-flow hub osx bundler brew brew-cask docker redis-cli cabal npm capistrano gem \ 
-  ruby sbt scala vagrant)
+  ruby sbt scala vagrant bower golang node tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -66,6 +66,7 @@ export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.cabal/bin:$PATH
 # android コマンドは /usr/local/bin/android を優先させる
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=$HOME/.ssh/sh:$PATH
 
 # 履歴ファイルの保存先
@@ -181,4 +182,10 @@ export GRADLE_OPTS='-Dorg.gradle.daemon=true'
 source ~/.zsh/zsh-notify/notify.plugin.zsh
 export SYS_NOTIFIER="/usr/local/bin/terminal-notifier"
 export NOTIFY_COMMAND_COMPLETE_TIMEOUT=10
+
+#==============================
+#  rbenv
+#==============================
+# Load rbenv automatically
+eval "$(rbenv init -)"
 
