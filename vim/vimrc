@@ -564,6 +564,9 @@ Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
 " Integration of Scala into Vim
 Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 
+"========== Golang ==========
+Plug 'fatih/vim-go', { 'for': 'go' }
+
 call plug#end()
 
 
