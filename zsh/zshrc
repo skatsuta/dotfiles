@@ -71,6 +71,7 @@ export PATH=$HOME/.cabal/bin:$PATH
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=$HOME/.ssh/sh:$PATH
+export PATH=$GOPATH/bin:$PATH
 
 # 履歴ファイルの保存先
 export HISTFILE=${HOME}/.zsh_history
