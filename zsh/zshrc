@@ -142,6 +142,7 @@ alias ggp='gradle && git push origin'
 alias gfe='git fetch'
 alias gdf='git diff HEAD..FETCH_HEAD'
 alias gmf='git merge FETCH_HEAD'
+alias gs='git status'
 
 
 #==============================
