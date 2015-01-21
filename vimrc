@@ -66,6 +66,8 @@ if version >= 703
   set undofile
   "アンドゥの保存場所(7.3)
   set undodir=./.vimundo
+  "Delete comment character when joining commented lines
+  set formatoptions+=j
 endif
 " .swp ファイルを作成しない
 "set noswapfile
@@ -99,9 +101,9 @@ set wildmenu
 if has('mouse')
   set mouse=a
 endif
-" バックアップディレクトリを .vimbackup/ にする
-set backupdir=$HOME/.vimbackup
-set directory=$HOME/.vimbackup
+" バックアップディレクトリ
+set backupdir=/tmp
+set directory=/tmp
 " マウスモード有効
 set mouse=a
 " screen 対応
@@ -472,37 +474,6 @@ let g:Tex_FoldedEnvironments='verbatim,comment,eq,gather,aligned,align,figure,
   \ problem,proof,algorithm,cases,minipage,enumerate,subequations,block,
   \ alertblock,exampleblock,frame'
 
-"===================================
-"
-"  NeoBundle
-"
-"===================================
-" Only use for vimproc.vim
-if !1 | finish | endif
-
-if has('vim_starting')
-  set nocompatible
-
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-call neobundle#end()
-
-" Required:
-filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conviniently prompt you to install them.
-NeoBundleCheck
-
 
 "===================================
 "
@@ -524,6 +495,8 @@ Plug 'Shougo/vimshell.vim'
 Plug 'Shougo/neosnippet'
 " The standard snippets repository for neosnippet
 Plug 'Shougo/neosnippet-snippets'
+" Interactive command execution in Vim.
+Plug 'Shougo/vimproc.vim'
 " Syntax checking hacks for vim
 Plug 'scrooloose/syntastic'
 " Sophisticated comment plugin
@@ -658,23 +631,6 @@ omap z <Plug>(easymotion-s2)  " Avoid conflict with surround.vim
 "===================================
 let vimproc_updcmd = has('win64') ?
       \ 'tools\\update-dll-mingw 64' : 'tools\\update-dll-mingw 32'
-execute "NeoBundle 'Shougo/vimproc.vim'," . string({
-      \ 'build' : {
-      \     'windows' : vimproc_updcmd,
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ })
-
-
-"===================================
-" vim2hs
-"
-" Vim to Haskell: A collection of vimscripts for Haskell development.
-"===================================
-" Source if the file type is Haskell
-autocmd FileType haskell NeoBundleSource vim2hs
 
 
 "===================================
