@@ -59,6 +59,11 @@ export MANPATH=/usr/local/man:$MANPATH
 export JAVA_HOME=$(/usr/libexec/java_home)
 export ANDROID_HOME=/usr/local/Cellar/android-sdk/23.0.2
 export GOPATH=$HOME/golang
+# SSH で日本語入力ができなくなる問題への対策
+# (参考: http://qiita.com/suin/items/629372fd08ee9e9cf727)
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # デフォルトでは /usr/bin/ が /usr/local/bin/ より先にあるので /usr/local/bin/ を優先させる
 export PATH=/usr/local/bin:$PATH
@@ -105,16 +110,6 @@ stty -ixon
 typeset -U path PATH
 
 
-# You may need to manually set your language environment
-export LANG=ja_JP.UTF-8
-
-# Preferred editor for local and remote sessions
- if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
- else
-   export EDITOR='vim'
- fi
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -126,7 +121,6 @@ export LANG=ja_JP.UTF-8
 
 # tmux
 [[ "$TMUX" = "" ]] && exec tmux
-#if [ "$TMUX" = "" ]; then tmux; fi
 
 #==============================
 #  Aliases
@@ -142,6 +136,7 @@ alias gmf='git merge FETCH_HEAD'
 alias gs='git status'
 alias gp='git push'
 alias gc='git commit'
+alias gco='git checkout'
 
 
 #==============================
