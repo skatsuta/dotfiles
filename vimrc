@@ -540,6 +540,10 @@ Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 "========== Golang ==========
 Plug 'fatih/vim-go', { 'for': 'go' }
 
+"========== Nginx ==========
+" Nginx syntax highlighting
+Plug 'evanmiller/nginx-vim-syntax'
+
 call plug#end()
 
 
@@ -694,6 +698,14 @@ autocmd VimEnter,ColorScheme * :hi IndentGuidesEven ctermbg=140
 nnoremap <silent> <Leader>gb :Gblame<CR>
 nnoremap <silent> <Leader>gd :Gdiff<CR>
 nnoremap <silent> <Leader>gs :Gstatus<CR>
+
+
+"===================================
+" nginx-vim-syntax
+"
+" Nginx syntax highlighting
+"===================================
+au BufNewFile,BufRead *.conf set filetype=nginx
 
 
 " Disable auto comment out
