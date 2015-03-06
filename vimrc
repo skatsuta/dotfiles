@@ -695,6 +695,21 @@ nnoremap <silent> <Leader>gb :Gblame<CR>
 nnoremap <silent> <Leader>gd :Gdiff<CR>
 nnoremap <silent> <Leader>gs :Gstatus<CR>
 
+"===================================
+" vim-go
+"
+" Go development plugin for Vim
+"===================================
+let g:go_fmt_command = "goimports"
+
+"===================================
+" gocode
+"
+" An autocompletion daemon for the Go programming language
+"===================================
+exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+set completeopt=menu,preview
+
 
 " Disable auto comment out
 autocmd Filetype * set formatoptions-=ro
