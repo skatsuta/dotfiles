@@ -173,7 +173,7 @@ set list
 "どの文字でタブや改行を表示するかを設定
 set listchars=tab:^\ ,trail:~
 "タブをスペースに展開する (noexpandtab:展開しない)
-set expandtab
+"set expandtab
 "折り畳み機能の設定 (indent: インデントに合わせて折り畳む)
 "set foldmethod=syntax
 "ルーラーを表示 (noruler:非表示)
