@@ -540,6 +540,10 @@ Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 "========== Golang ==========
 Plug 'fatih/vim-go', { 'for': 'go' }
 
+"========== Nginx ==========
+" Nginx syntax highlighting
+Plug 'evanmiller/nginx-vim-syntax'
+
 call plug#end()
 
 
@@ -709,6 +713,14 @@ let g:go_fmt_command = "goimports"
 "===================================
 exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
 set completeopt=menu,preview
+
+
+"===================================
+" nginx-vim-syntax
+"
+" Nginx syntax highlighting
+"===================================
+au BufNewFile,BufRead *.conf set filetype=nginx
 
 
 " Disable auto comment out
