@@ -171,9 +171,9 @@ set display=lastline
 "Tab、行末の半角スペースを明示的に表示する
 set list
 "どの文字でタブや改行を表示するかを設定
-set listchars=tab:^\ ,trail:~
+set listchars=tab:»\ ,trail:~
 "タブをスペースに展開する (noexpandtab:展開しない)
-set expandtab
+"set expandtab
 "折り畳み機能の設定 (indent: インデントに合わせて折り畳む)
 "set foldmethod=syntax
 "ルーラーを表示 (noruler:非表示)
@@ -698,6 +698,21 @@ autocmd VimEnter,ColorScheme * :hi IndentGuidesEven ctermbg=140
 nnoremap <silent> <Leader>gb :Gblame<CR>
 nnoremap <silent> <Leader>gd :Gdiff<CR>
 nnoremap <silent> <Leader>gs :Gstatus<CR>
+
+"===================================
+" vim-go
+"
+" Go development plugin for Vim
+"===================================
+let g:go_fmt_command = "goimports"
+
+"===================================
+" gocode
+"
+" An autocompletion daemon for the Go programming language
+"===================================
+exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+set completeopt=menu,preview
 
 
 "===================================
