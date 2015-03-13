@@ -189,6 +189,16 @@ colorscheme default
 
 
 "---------------------------------
+" Golang
+"---------------------------------
+filetype off
+filetype plugin indent off
+set runtimepath+=/usr/local/opt/go/libexec/misc/vim
+filetype plugin indent on
+filetype on
+
+
+"---------------------------------
 " シンタックスハイライト
 "---------------------------------
 " Highlight Groovy scripts
