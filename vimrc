@@ -714,13 +714,22 @@ let g:go_fmt_command = "goimports"
 exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
 set completeopt=menu,preview
 
-
 "===================================
 " nginx-vim-syntax
 "
 " Nginx syntax highlighting
 "===================================
 au BufNewFile,BufRead *.conf set filetype=nginx
+
+"===================================
+" golint
+"
+" Linter for Go source code
+"===================================
+" Add golint to Vim runtime path
+set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+" Automatically run golint on save
+autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
 
 " Disable auto comment out
