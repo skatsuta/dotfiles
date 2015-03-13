@@ -185,12 +185,7 @@ endif
 " Highlight the column
 set colorcolumn=100
 "色テーマ設定
-"gvimの色テーマは.gvimrcで指定する
-"colorscheme BasicBlack
 colorscheme default
-"if has("win32)
-"endif
-"colorscheme consoleBlack
 
 
 "---------------------------------
@@ -705,6 +700,11 @@ nnoremap <silent> <Leader>gs :Gstatus<CR>
 " Go development plugin for Vim
 "===================================
 let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 
 "===================================
 " gocode
@@ -714,13 +714,20 @@ let g:go_fmt_command = "goimports"
 exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
 set completeopt=menu,preview
 
-
 "===================================
 " nginx-vim-syntax
 "
 " Nginx syntax highlighting
 "===================================
 au BufNewFile,BufRead *.conf set filetype=nginx
+
+"===================================
+" golint
+"
+" A linter for Go source code
+"===================================
+set runtimepath+=$GOPATH/src/github.com/golang/lint/misc/vim
+autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
 
 " Disable auto comment out
