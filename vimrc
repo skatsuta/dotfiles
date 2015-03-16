@@ -699,11 +699,11 @@ nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
 "===================================
 autocmd FileType haskell NeoBundleSource ghcmod-vim
 " \t で型判定
-nnoremap <Leader>t :GhcModType<CR>
-vnoremap <Leader>t :GhcModType<CR>
+au FileType hs nnoremap <Leader>t :GhcModType<CR>
+au FileType hs vnoremap <Leader>t :GhcModType<CR>
 " \T で型判定のハイライトを消す
-nnoremap <Leader>T :GhcModTypeClear<CR>
-vnoremap <Leader>T :GhcModTypeClear<CR>
+au FileType hs nnoremap <Leader>T :GhcModTypeClear<CR>
+au FileType hs vnoremap <Leader>T :GhcModTypeClear<CR>
 
 
 "===================================
@@ -727,6 +727,7 @@ nnoremap <silent> <Leader>gb :Gblame<CR>
 nnoremap <silent> <Leader>gd :Gdiff<CR>
 nnoremap <silent> <Leader>gs :Gstatus<CR>
 
+
 "===================================
 " vim-go
 "
@@ -739,6 +740,7 @@ let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
+
 "===================================
 " gocode
 "
@@ -747,6 +749,7 @@ let g:go_highlight_build_constraints = 1
 exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
 set completeopt=menu,preview
 
+
 "===================================
 " nginx-vim-syntax
 "
@@ -754,13 +757,34 @@ set completeopt=menu,preview
 "===================================
 au BufNewFile,BufRead *.conf set filetype=nginx
 
+
 "===================================
 " golint
 "
 " A linter for Go source code
 "===================================
+" Add golint to Vim runtime path
 set runtimepath+=$GOPATH/src/github.com/golang/lint/misc/vim
+" Automatically run on save
 autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+
+
+"===================================
+" errcheck
+"
+" errcheck is a program for checking for unchecked errors in Go programs
+"===================================
+" Automatically run on save
+autocmd BufWritePost,FileWritePost *.go execute 'GoErrCheck' | cwindow
+
+
+"===================================
+" godef
+"
+" Print where symbols are defined in Go source code
+"===================================
+au FileType go nnoremap <Leader>dv :vsp <CR>:exe "GoDef"<CR>
+au FileType go nnoremap <Leader>ds :sp  <CR>:exe "GoDef"<CR>
 
 
 " Disable auto comment out
