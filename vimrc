@@ -185,12 +185,17 @@ endif
 " Highlight the column
 set colorcolumn=100
 "色テーマ設定
-"gvimの色テーマは.gvimrcで指定する
-"colorscheme BasicBlack
 colorscheme default
-"if has("win32)
-"endif
-"colorscheme consoleBlack
+
+
+"---------------------------------
+" Golang
+"---------------------------------
+filetype off
+filetype plugin indent off
+set runtimepath+=/usr/local/opt/go/libexec/misc/vim
+filetype plugin indent on
+filetype on
 
 
 "---------------------------------
@@ -589,6 +594,29 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 
 
 "===================================
+" neonsnippet
+"
+" neo-snippet plugin contains neocomplete snippets source
+"===================================
+" Plugin key mappings
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_or_jump)
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
+
+
+"===================================
 " Syntastic
 "
 " Syntax checking hacks for vim
@@ -705,6 +733,11 @@ nnoremap <silent> <Leader>gs :Gstatus<CR>
 " Go development plugin for Vim
 "===================================
 let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 
 "===================================
 " gocode
@@ -724,10 +757,10 @@ au BufNewFile,BufRead *.conf set filetype=nginx
 "===================================
 " golint
 "
-" Linter for Go source code
+" A linter for Go source code
 "===================================
 " Add golint to Vim runtime path
-set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+set runtimepath+=$GOPATH/src/github.com/golang/lint/misc/vim
 " Automatically run golint on save
 autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
