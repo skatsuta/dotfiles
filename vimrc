@@ -779,6 +779,16 @@ autocmd BufWritePost,FileWritePost *.go execute 'GoErrCheck' | cwindow
 
 
 "===================================
+" govet
+"
+" Vet examines Go source code and reports suspicious constructs, such as
+" Printf calls whose arguments do not align with the format string.
+"===================================
+" Automatically run on save
+autocmd BufWritePost,FileWritePost *.go execute 'GoVet' | cwindow
+
+
+"===================================
 " godef
 "
 " Print where symbols are defined in Go source code
