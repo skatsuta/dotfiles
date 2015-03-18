@@ -527,6 +527,10 @@ Plug 'alpaca-tc/alpaca_powertabline'
 " Powerline is a statusline plugin for vim, and provides statuslines and prompts
 " for several other applications
 Plug 'Lokaltog/powerline'
+" Ctags generator for Vim
+Plug 'szw/vim-tags'
+" Vim plugin that displays tags in a window, ordered by scope
+Plug 'majutsushi/tagbar'
 
 "========== Haskell ==========
 " Vim configuration files for Haskell code
@@ -786,6 +790,40 @@ autocmd BufWritePost,FileWritePost *.go execute 'GoErrCheck' | cwindow
 au FileType go nnoremap <Leader>dv :vsp <CR>:exe "GoDef"<CR>
 au FileType go nnoremap <Leader>ds :sp  <CR>:exe "GoDef"<CR>
 
+
+"===================================
+" gotags & tagbar
+"
+" ctags-compatible tag generator for Go
+"===================================
+nmap <F8> :TagbarToggle<CR>
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
 
 " Disable auto comment out
 autocmd Filetype * set formatoptions-=ro
