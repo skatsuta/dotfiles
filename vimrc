@@ -549,9 +549,11 @@ Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 "========== Golang ==========
 Plug 'fatih/vim-go', { 'for': 'go' }
 
-"========== Nginx ==========
-" Nginx syntax highlighting
+"========== Systax Highlighting ==========
+" Nginx
 Plug 'evanmiller/nginx-vim-syntax'
+" TOML
+Plug 'cespare/vim-toml'
 
 call plug#end()
 
