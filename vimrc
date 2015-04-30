@@ -549,11 +549,17 @@ Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 "========== Golang ==========
 Plug 'fatih/vim-go', { 'for': 'go' }
 
+"========== JavaScript ==========
+" Vastly improved Javascript indentation and syntax support in Vim.
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+
 "========== Systax Highlighting ==========
 " Nginx
 Plug 'evanmiller/nginx-vim-syntax'
 " TOML
 Plug 'cespare/vim-toml'
+" EJS
+Plug 'briancollins/vim-jst'
 
 call plug#end()
 
