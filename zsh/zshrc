@@ -51,21 +51,23 @@ alias zshconfig="vim ~/.zshrc"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 
-# User configuration
+#===== User configuration =====
 
-## PATH
+# Environmental Variables
 export ZSH_HOME=$HOME/.zsh
 export MANPATH=/usr/local/man:$MANPATH
 export JAVA_HOME=$(/usr/libexec/java_home)
 export ANDROID_HOME=/usr/local/Cellar/android-sdk/23.0.2
 export GOPATH=$HOME/golang
 export LESS=-qRn
+export EDITOR=vim
 # SSH で日本語入力ができなくなる問題への対策
 # (参考: http://qiita.com/suin/items/629372fd08ee9e9cf727)
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+# PATH
 # デフォルトでは /usr/bin/ が /usr/local/bin/ より先にあるので /usr/local/bin/ を優先させる
 export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/bin:$PATH
