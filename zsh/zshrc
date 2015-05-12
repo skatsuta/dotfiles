@@ -140,7 +140,7 @@ alias gs='git status'
 alias gp='git push'
 alias gc='git commit'
 alias gco='git checkout'
-alias fuck='eval $(thefuck $(fc -ln -1))'
+alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 
 
 #==============================
