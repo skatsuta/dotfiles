@@ -72,6 +72,7 @@ export LC_ALL=en_US.UTF-8
 export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.cabal/bin:$PATH
+export PATH=$HOME/.pyenv/shims:$PATH
 # android コマンドは /usr/local/bin/android を優先させる
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export PATH=$HOME/.nodebrew/current/bin:$PATH
