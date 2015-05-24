@@ -133,15 +133,19 @@ alias vi='vim'
 alias lt='ls -t'
 alias rm='rm -i'
 alias cp='cp -i'
+alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+
+# Git
 alias git='hub'
-alias gfe='git fetch'
-alias gdf='git fetch && git diff HEAD..FETCH_HEAD'
+alias gf='git fetch && git diff HEAD..FETCH_HEAD'
 alias gmf='git merge FETCH_HEAD --ff'
 alias gs='git status'
 alias gp='git push'
 alias gc='git commit'
 alias gco='git checkout'
-alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+alias gm='git merge'
+alias gb='git branch'
+alias gr='git reset'
 
 
 #==============================
