@@ -61,6 +61,7 @@ export ANDROID_HOME=/usr/local/Cellar/android-sdk/23.0.2
 export GOPATH=$HOME/golang
 export LESS=-qRn
 export EDITOR=vim
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # SSH で日本語入力ができなくなる問題への対策
 # (参考: http://qiita.com/suin/items/629372fd08ee9e9cf727)
 export LANG=en_US.UTF-8
