@@ -202,6 +202,12 @@ export GRADLE_OPTS='-Dorg.gradle.daemon=true'
 eval "$(rbenv init -)"
 
 #==============================
+#  pyenv
+#==============================
+# Load pyenv automatically
+eval "$(pyenv init -)"
+
+#==============================
 #  autojump
 #==============================
 [[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
