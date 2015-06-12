@@ -199,13 +199,17 @@ export GRADLE_OPTS='-Dorg.gradle.daemon=true'
 #  rbenv
 #==============================
 # Load rbenv automatically
-eval "$(rbenv init -)"
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)"
+fi
 
 #==============================
 #  pyenv
 #==============================
 # Load pyenv automatically
-eval "$(pyenv init -)"
+if which pyenv > /dev/null; then
+  eval "$(pyenv init -)"
+fi
 
 #==============================
 #  autojump
