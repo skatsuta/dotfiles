@@ -551,6 +551,9 @@ Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 "========== Golang ==========
 Plug 'fatih/vim-go', { 'for': 'go' }
 
+"========== Rust ==========
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+
 "========== JavaScript ==========
 " Vastly improved Javascript indentation and syntax support in Vim.
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
