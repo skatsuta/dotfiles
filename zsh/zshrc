@@ -62,56 +62,56 @@ export GOPATH=$HOME/golang
 export LESS=-qRn
 export EDITOR=vim
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-# SSH で日本語入力ができなくなる問題への対策
+# enable Japanese input via SSH to set the following environmental variables
 # (参考: http://qiita.com/suin/items/629372fd08ee9e9cf727)
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # PATH
-# デフォルトでは /usr/bin/ が /usr/local/bin/ より先にあるので /usr/local/bin/ を優先させる
+# set /usr/local/bin before /usr/bin
 export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.cabal/bin:$PATH
 export PATH=$HOME/.pyenv/shims:$PATH
-# android コマンドは /usr/local/bin/android を優先させる
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=$HOME/.ssh/sh:$PATH
 export PATH=$GOPATH/bin:$PATH
 
-# 履歴ファイルの保存先
+# location to save command histories
 export HISTFILE=${HOME}/.zsh_history
-# メモリに保存される履歴の件数
+# number of histories saved in memory
 export HISTSIZE=1000
-# 履歴ファイルに保存される履歴の件数
+# number of histories saved in file
 export SAVEHIST=100000
-# 重複を記録しない
+# ignore duplicate command
 setopt hist_ignore_dups
-# スクリーン間で履歴を共有する
+# share history between screens
 setopt share_history
-# 開始と終了を記録
+# save the start and end
 setopt EXTENDED_HISTORY
-# ヒストリに追加されるコマンド行が古いものと同じなら古いものを削除
+# remove old command if added one is same
 setopt hist_ignore_all_dups
-# スペースで始まるコマンド行はヒストリリストから削除
+# remove command that starts with space from history
 setopt hist_ignore_space
-# ヒストリを呼び出してから実行する間に一旦編集可能
+# don't execute the line directly
 setopt hist_verify
-# 余分な空白は詰めて記録
+# remove unnecessary whitespaces
 setopt hist_reduce_blanks
-# 古いコマンドと同じものは無視
+# ignore commands already saved in history
 setopt hist_save_no_dups
+# don't save history command itself
 # historyコマンドは履歴に登録しない
 setopt hist_no_store
-# 補完時にヒストリを自動的に展開
+# expand history automatically at completion
 setopt hist_expand
-# 補完
+# enable completion
 autoload -U compinit
 compinit
 # Disable start/stop control
 stty -ixon
-# PATH の重複エントリを削除する
+# remove duplicate entries in PATH
 typeset -U path PATH
 
 
@@ -161,8 +161,10 @@ zstyle ':completion:*' recent-dirs-insert both
 #==============================
 #  zaw
 #==============================
-source ~/.zsh/zaw/zaw.zsh
-# 絞り込みをcase-insensitive に
+if [[ -s "${HOME}/.zsh/zaw/zaw.zsh" ]]; then
+  source "${HOME}/.zsh/zaw/zaw.zsh"
+fi
+# enable case-insensitive
 zstyle ':filter-select' case-insensitive yes
 bindkey '^@' zaw
 bindkey '^r' zaw-history
@@ -190,7 +192,7 @@ export GRADLE_OPTS='-Dorg.gradle.daemon=true'
 #==============================
 #  zsh-notify
 #==============================
-# Yosemite と相性が悪いのでいったんコメントアウト
+# disable below because incompatible with Yosemite
 #source ~/.zsh/zsh-notify/notify.plugin.zsh
 #export SYS_NOTIFIER="/usr/local/bin/terminal-notifier"
 #export NOTIFY_COMMAND_COMPLETE_TIMEOUT=10
