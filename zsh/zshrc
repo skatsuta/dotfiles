@@ -224,3 +224,9 @@ if [[ -s "${ZSH_HOME}/incr/incr-0.2.zsh" ]]; then
   #source "${ZSH_HOME}/incr/incr-0.2.zsh"
 fi
 
+#==============================
+#  git-flow
+#==============================
+if [[ -s "${ZSH_HOME}/git-flow-completion/git-flow-completion.zsh" ]]; then
+  source "${ZSH_HOME}/git-flow-completion/git-flow-completion.zsh"
+fi
