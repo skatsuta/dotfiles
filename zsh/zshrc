@@ -232,3 +232,8 @@ fi
 if [[ -s "${ZSH_HOME}/git-flow-completion/git-flow-completion.zsh" ]]; then
   source "${ZSH_HOME}/git-flow-completion/git-flow-completion.zsh"
 fi
+
+#==============================
+#  fzf
+#==============================
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
