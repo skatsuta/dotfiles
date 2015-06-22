@@ -533,6 +533,8 @@ Plug 'Lokaltog/powerline'
 Plug 'szw/vim-tags'
 " Vim plugin that displays tags in a window, ordered by scope
 Plug 'majutsushi/tagbar'
+" surround.vim: quoting/parenthesizing made simple
+Plug 'tpope/vim-surround'
 
 "========== Haskell ==========
 " Vim configuration files for Haskell code
