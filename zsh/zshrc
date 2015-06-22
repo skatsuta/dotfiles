@@ -147,6 +147,8 @@ alias gco='git checkout'
 alias gm='git merge'
 alias gb='git branch'
 alias gr='git reset'
+alias gsh='git stash'
+alias gsp='git stash pop'
 
 
 #==============================
