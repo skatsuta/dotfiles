@@ -146,6 +146,7 @@ alias gb='git branch'
 alias gr='git reset'
 alias gsh='git stash'
 alias gsp='git stash pop'
+alias gam='git commit --amend'
 
 
 #==============================
