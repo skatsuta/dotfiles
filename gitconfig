@@ -1,23 +1,23 @@
 [user]
-	name  = Soshi Katsuta
-	email = katsuta_soshi@cyberagent.co.jp
+  name  = Soshi Katsuta
+  email = katsuta_soshi@cyberagent.co.jp
 
 [color]
-	ui = true
+  ui = true
 
 [push]
   default = simple
 
 [merge]
-	ff = false
+  ff = false
 
 [core]
-	editor = vim
+  editor = vim
 
 [filter "media"]
-	clean    = git media clean %f
-	smudge   = git media smudge %f
-	required = true
+  clean    = git media clean %f
+  smudge   = git media smudge %f
+  required = true
 
 [pull]
-	ff = only
+  ff = only
