@@ -55,7 +55,7 @@ export ZSH_HOME=$HOME/.zsh
 export MANPATH=/usr/local/man:$MANPATH
 export JAVA_HOME=$(/usr/libexec/java_home)
 export ANDROID_HOME=/usr/local/Cellar/android-sdk/23.0.2
-export GOPATH=$HOME/golang
+export GOPATH=$HOME
 export LESS=-qRn
 export EDITOR=vim
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
