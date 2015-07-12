@@ -843,3 +843,11 @@ let g:tagbar_type_go = {
 " Disable auto comment out
 autocmd Filetype * set formatoptions-=ro
 
+
+"===========================================
+" fzf
+"
+" A command line fussy finder written in Go
+"===========================================
+set runtimepath+=~/.fzf
+noremap <silent> ,f :FZF<CR>
