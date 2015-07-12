@@ -57,7 +57,8 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export ANDROID_HOME=/usr/local/Cellar/android-sdk/23.0.2
 export GOPATH=$HOME
 export LESS=-qRn
-export EDITOR=vim
+export VISUAL=vim
+export EDITOR=$VISUAL
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # enable Japanese input via SSH to set the following environmental variables
 # (参考: http://qiita.com/suin/items/629372fd08ee9e9cf727)
