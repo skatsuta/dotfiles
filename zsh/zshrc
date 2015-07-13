@@ -202,7 +202,7 @@ export GRADLE_OPTS='-Dorg.gradle.daemon=true'
 #  rbenv
 #==============================
 # Load rbenv automatically
-if which rbenv > /dev/null; then
+if command -v rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
 
@@ -210,14 +210,14 @@ fi
 #  pyenv
 #==============================
 # Load pyenv automatically
-if which pyenv > /dev/null; then
+if command -v pyenv > /dev/null; then
   eval "$(pyenv init -)"
 fi
 
 #==============================
 #  direnv
 #==============================
-if which direnv > /dev/null; then
+if command -v direnv > /dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
