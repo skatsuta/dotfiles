@@ -179,9 +179,10 @@ bindkey '^z' zaw-git-files
 #==============================
 #  Docker
 #==============================
-if command -v boot2docker > /dev/null && [ "$(boot2docker status)" = "running" ]; then
-  $(boot2docker shellinit 2>/dev/null)
-  export DOCKER_IP=$(boot2docker ip)
+DOCKER_MACHINE_NAME=${DOCKER_MACHINE_NAME:-dev}
+if command -v docker-machine > /dev/null; then
+  eval "$(docker-machine env $DOCKER_MACHINE_NAME)"
+  export DOCKER_IP=$(docker-machine ip $DOCKER_MACHINE_NAME)
 fi
 
 #==============================
