@@ -179,10 +179,15 @@ bindkey '^z' zaw-git-files
 #==============================
 #  Docker
 #==============================
-DOCKER_MACHINE_NAME=${DOCKER_MACHINE_NAME:-dev}
 if command -v docker-machine > /dev/null; then
-  eval "$(docker-machine env $DOCKER_MACHINE_NAME)"
-  export DOCKER_IP=$(docker-machine ip $DOCKER_MACHINE_NAME)
+  # check if active machine exists
+  docker-machine active > /dev/null 2>&1
+  if [ $? -eq 0 ]; then
+    # fetch the first active machine name
+    local machine=$(docker-machine active | head -n 1)
+    eval "$(docker-machine env $machine)"
+    export DOCKER_IP=$(docker-machine ip $machine)
+  fi
 fi
 
 #==============================
