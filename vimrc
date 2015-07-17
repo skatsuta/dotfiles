@@ -1,24 +1,20 @@
 "==========================================================================
-"  Description: Vim の設定ファイル
+"  Description: Vim configuration file
 "       Author: Soshi Katsuta
 "==========================================================================
 "
-" Vi 互換にしない
+" set inconpatible with vi
 set nocompatible
 scriptencoding utf-8
-" gVim のときのみ文字コードを utf-8 にする
-""if has('gui_running') && !has('unix')
+" set encoding to UTF-8 when running on GVim
 if has('gui_running')
   set encoding=utf-8
   set fileencodings=utf-8
 endif
 set fileformat=unix
-"scriptencodingと、このファイルのエンコーディングが一致するよう注意！
-"scriptencodingは、vimの内部エンコーディングと同じものを推奨します。
-"改行コードは set fileformat=unix に設定するとunixでも使えます。
 
 "----------------------------------------
-" ユーザーランタイムパス設定
+" User Runtime Path
 "----------------------------------------
 "Windows, unixでのruntimepathの違いを吸収するためのもの。
 "$MY_VIMRUNTIMEはユーザーランタイムディレクトリを示す。
