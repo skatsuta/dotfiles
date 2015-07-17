@@ -758,6 +758,13 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+" Run go tools automatically on save
+autocmd BufWritePost,FileWritePost *.go call GoTools() | cwindow
+function GoTools()
+  GoLint
+  GoVet
+  GoErrCheck
+endfunction
 
 
 "===================================
@@ -765,7 +772,6 @@ let g:go_highlight_build_constraints = 1
 "
 " An autocompletion daemon for the Go programming language
 "===================================
-exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
 set completeopt=menu,preview
 
 
@@ -775,26 +781,6 @@ set completeopt=menu,preview
 " Nginx syntax highlighting
 "===================================
 au BufNewFile,BufRead *.conf set filetype=nginx
-
-
-"===================================
-" golint
-"
-" A linter for Go source code
-"===================================
-" Add golint to Vim runtime path
-set runtimepath+=$GOPATH/src/github.com/golang/lint/misc/vim
-" Automatically run on save
-autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
-
-
-"===================================
-" errcheck
-"
-" errcheck is a program for checking for unchecked errors in Go programs
-"===================================
-" Automatically run on save
-autocmd BufWritePost,FileWritePost *.go execute 'GoErrCheck' | cwindow
 
 
 "===================================
