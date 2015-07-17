@@ -748,6 +748,14 @@ nnoremap <silent> <Leader>gs :Gstatus<CR>
 
 
 "===================================
+" nginx-vim-syntax
+"
+" Nginx syntax highlighting
+"===================================
+au BufNewFile,BufRead *.conf set filetype=nginx
+
+
+"===================================
 " vim-go
 "
 " Go development plugin for Vim
@@ -773,14 +781,6 @@ endfunction
 " An autocompletion daemon for the Go programming language
 "===================================
 set completeopt=menu,preview
-
-
-"===================================
-" nginx-vim-syntax
-"
-" Nginx syntax highlighting
-"===================================
-au BufNewFile,BufRead *.conf set filetype=nginx
 
 
 "===================================
