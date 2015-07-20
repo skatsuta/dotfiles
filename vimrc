@@ -531,6 +531,8 @@ Plug 'szw/vim-tags'
 Plug 'majutsushi/tagbar'
 " surround.vim: quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'
+" Search Dash.app from Vim
+Plug 'rizzatti/dash.vim'
 
 "========== Haskell ==========
 " Vim configuration files for Haskell code
@@ -833,3 +835,11 @@ autocmd Filetype * set formatoptions-=ro
 "===========================================
 set runtimepath+=~/.fzf
 noremap <silent> ,f :FZF<CR>
+
+
+"===========================================
+" dash.vim
+"
+" Search Dash.app from Vim
+"===========================================
+nmap <silent> <Leader>d <Plug>DashSearch
