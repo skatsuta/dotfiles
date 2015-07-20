@@ -784,8 +784,8 @@ set completeopt=menu,preview
 "
 " Print where symbols are defined in Go source code
 "===================================
-au FileType go nnoremap <Leader>dv :vsp <CR>:exe "GoDef"<CR>
-au FileType go nnoremap <Leader>ds :sp  <CR>:exe "GoDef"<CR>
+au FileType go nnoremap <Leader>gdv :vsp <CR>:exe "GoDef"<CR>
+au FileType go nnoremap <Leader>gds :sp  <CR>:exe "GoDef"<CR>
 
 
 "===================================
