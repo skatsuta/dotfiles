@@ -201,6 +201,8 @@ filetype on
 "---------------------------------
 " Highlight Groovy scripts
 au BufNewFile,BufRead *.gradle setf groovy
+" Highlight .envrc as well as shell script
+au BufNewFile,BufRead .envrc set filetype=sh
 
 
 """"""""""""""""""""""""""""""
