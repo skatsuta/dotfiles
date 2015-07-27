@@ -132,7 +132,6 @@ alias vi='vim'
 alias lt='ls -t'
 alias rm='rm -i'
 alias cp='cp -i'
-alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 
 # Git
 alias git='hub'
@@ -242,3 +241,8 @@ fi
 #  fzf
 #==============================
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#==============================
+#  thefuck
+#==============================
+eval "$(thefuck-alias)"
