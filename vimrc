@@ -560,6 +560,9 @@ Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 " Vastly improved Javascript indentation and syntax support in Vim.
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 
+"========== Elixir ==========
+Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+
 "========== Systax Highlighting ==========
 " Nginx
 Plug 'evanmiller/nginx-vim-syntax'
