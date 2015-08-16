@@ -643,13 +643,15 @@ endif
 "
 " Syntax checking hacks for vim
 "===================================
-" Use the |:sign| interface to mark syntax errors.
-let g:syntastic_enable_signs=1
+" Always stic any detected erros into the location-list
+let g:syntastic_always_populate_loc_list = 1
 " Automatically open the |location-list| (see |syntastic-error-window|)
 " when a buffer has errors.
 let g:syntastic_auto_loc_list=1
 " Ignore AngularJS's directives
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+" Run syntax checks when buffers are first loaded, as well as saving
+let g:syntastic_check_on_open = 1
 
 
 "===================================
