@@ -47,6 +47,12 @@ alias zshconfig="vim ~/.zshrc"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# Prompt
+if command -v git-radar > /dev/null; then
+  export PROMPT="${PROMPT%\$*}$(git-radar --zsh --fetch)
+$ "
+fi
+
 
 #===== User configuration =====
 
