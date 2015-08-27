@@ -6,7 +6,7 @@
   ui = true
 
 [push]
-  default = simple
+  default = current
 
 [merge]
   ff = false
