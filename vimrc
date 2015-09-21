@@ -500,6 +500,8 @@ Plug 'Shougo/vimshell.vim'
 Plug 'Shougo/neosnippet'
 " The standard snippets repository for neosnippet
 Plug 'Shougo/neosnippet-snippets'
+" Vim-SnipMate defalut snippets
+Plug 'honza/vim-snippets'
 " Interactive command execution in Vim.
 Plug 'Shougo/vimproc.vim'
 " Syntax checking hacks for vim
@@ -636,6 +638,10 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
+
+" load additional snippets
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#snippets_directory += '~/.vim/plugged/vim-snippets'
 
 
 "===================================
