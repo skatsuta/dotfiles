@@ -150,7 +150,7 @@ endif
 "括弧の対応表示時間 (noshowmatch:表示しない)
 set showmatch matchtime=1
 "タブを設定 (ts=tabstop, sw=shiftwidth, sts=softtabstop)
-set ts=4 sw=4 sts=0
+set ts=2 sw=2 sts=0
 "自動的にインデントする (noautoindent:インデントしない)
 set autoindent
 "Cインデントの設定
