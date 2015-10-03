@@ -129,6 +129,7 @@ typeset -U path PATH
 #  Aliases
 #==============================
 alias vi='vim'
+alias vr='vim -R'
 alias lt='ls -t'
 alias rm='rm -i'
 alias cp='cp -i'
