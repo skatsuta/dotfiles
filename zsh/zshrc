@@ -150,6 +150,8 @@ alias gr='git reset'
 alias gsh='git stash'
 alias gsp='git stash pop'
 alias gam='git commit --amend'
+alias grm='git remote'
+alias gup='git pull upstream master'
 
 
 #==============================
