@@ -135,6 +135,7 @@ alias vr='vim -R'
 alias lt='ls -t'
 alias rm='rm -i'
 alias cp='cp -i'
+alias esh='exec zsh'
 
 # Git
 alias git='hub'
