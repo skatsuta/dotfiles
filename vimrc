@@ -679,8 +679,8 @@ let g:syntastic_check_on_open = 1
 "
 " Sophisticated comment plugin
 "===================================
-nnoremap <Leader>c <Plug>(caw:i:toggle)
-vnoremap <Leader>c <Plug>(caw:i:toggle)
+nnoremap ,c <Plug>(caw:i:toggle)
+vnoremap ,c <Plug>(caw:i:toggle)
 
 "===================================
 " EasyMotion
@@ -718,7 +718,7 @@ let g:quickrun_config = {}
 " Use vimproc to run
 let g:quickrun_config._ = {'runner' : 'vimproc'}
 " Scala 用
-nnoremap <silent> <Leader>r :QuickRun -cmdopt ''<CR>
+nnoremap <silent> ,r :QuickRun -cmdopt ''<CR>
 
 
 "===================================
@@ -767,9 +767,9 @@ autocmd VimEnter,ColorScheme * :hi IndentGuidesEven ctermbg=140
 "
 " A Git wrapper so awsome, it should be illegal
 "===================================
-nnoremap <silent> <Leader>gb :Gblame<CR>
-nnoremap <silent> <Leader>gd :Gdiff<CR>
-nnoremap <silent> <Leader>gs :Gstatus<CR>
+nnoremap <silent> ,gbl :Gblame<CR>
+nnoremap <silent> ,gdf :Gdiff<CR>
+nnoremap <silent> ,gst :Gstatus<CR>
 
 
 "===================================
@@ -813,9 +813,9 @@ set completeopt=menu,preview
 "
 " Print where symbols are defined in Go source code
 "===================================
-au FileType go nnoremap <Leader>gd :GoDef<CR>
-au FileType go nnoremap <Leader>gdv :vsp <CR>:exe "GoDef"<CR>
-au FileType go nnoremap <Leader>gds :sp  <CR>:exe "GoDef"<CR>
+au FileType go nnoremap ,gd :GoDef<CR>
+au FileType go nnoremap ,gdv :vsp <CR>:exe "GoDef"<CR>
+au FileType go nnoremap ,gds :sp  <CR>:exe "GoDef"<CR>
 
 
 "===================================
@@ -870,7 +870,7 @@ noremap <silent> ,f :FZF<CR>
 "
 " Search Dash.app from Vim
 "===========================================
-nmap <silent> <Leader>d <Plug>DashSearch
+nmap <silent> ,d <Plug>DashSearch
 
 
 "===========================================
