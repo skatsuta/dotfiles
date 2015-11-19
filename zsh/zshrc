@@ -225,6 +225,13 @@ if command -v pyenv > /dev/null; then
 fi
 
 #==============================
+#  nvm
+#==============================
+# Load nvm automatically
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+
+#==============================
 #  direnv
 #==============================
 if command -v direnv > /dev/null; then
