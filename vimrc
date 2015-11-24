@@ -892,3 +892,16 @@ endif
 "===========================================
 let g:rsenseHome = '/usr/local/Cellar/rsense/0.3/libexec'
 let g:resenseUseOmniFunc = 1
+
+
+"===========================================
+" php.vim
+"===========================================
+" $VIMRUNTIME/syntax/php.vim
+let g:php_baselib = 1
+let g:php_htmlInStrings = 1
+let g:php_noShortTags = 1
+let g:php_sql_query = 1
+
+" $VIMRUNTIME/syntax/sql.vim
+let g:sql_type_default = 'mysql'
