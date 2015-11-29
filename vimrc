@@ -799,23 +799,16 @@ function GoTools()
   GoErrCheck
 endfunction
 
-
-"===================================
 " gocode
-"
-" An autocompletion daemon for the Go programming language
-"===================================
 set completeopt=menu,preview
 
-
-"===================================
 " godef
-"
-" Print where symbols are defined in Go source code
-"===================================
 au FileType go nnoremap ,gd :GoDef<CR>
 au FileType go nnoremap ,gdv :vsp <CR>:exe "GoDef"<CR>
 au FileType go nnoremap ,gds :sp  <CR>:exe "GoDef"<CR>
+
+" gorename
+au FileType go nnoremap ,gr :GoRename<CR>
 
 
 "===================================
