@@ -6,11 +6,8 @@
 " set inconpatible with vi
 set nocompatible
 scriptencoding utf-8
-" set encoding to UTF-8 when running on GVim
-if has('gui_running')
-  set encoding=utf-8
-  set fileencodings=utf-8
-endif
+set encoding=utf-8
+set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
 set fileformat=unix
 
 "----------------------------------------
