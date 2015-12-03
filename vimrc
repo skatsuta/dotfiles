@@ -895,3 +895,6 @@ let g:php_sql_query = 1
 
 " $VIMRUNTIME/syntax/sql.vim
 let g:sql_type_default = 'mysql'
+
+" syntax highlighting for .inc files
+au BufNewFile,BufRead *.inc set filetype=php
