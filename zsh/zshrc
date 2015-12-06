@@ -262,3 +262,20 @@ fi
 if command -v thefuck > /dev/null; then
   eval "$(thefuck --alias)"
 fi
+
+#==============================
+#  peco
+#==============================
+# list repos under ghq
+function peco-src() {
+  [ ! $(command -v ghq) ] && return
+  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco-src
+# shortcut key
+bindkey '^[' peco-src
