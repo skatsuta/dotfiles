@@ -534,6 +534,8 @@ Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
 " Search Dash.app from Vim
 Plug 'rizzatti/dash.vim'
+" Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'
+Plug 'rking/ag.vim'
 
 "========== Haskell ==========
 " Vim configuration files for Haskell code
