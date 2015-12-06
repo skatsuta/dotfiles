@@ -279,3 +279,14 @@ function peco-src() {
 zle -N peco-src
 # shortcut key
 bindkey '^[' peco-src
+
+
+#==============================
+#  agvi
+#==============================
+function agvi(){
+  local agfilepath="$(echo $(ag $@ | peco --query "$LBUFFER" | awk -F : '{print "+" $2 " \047" $1 "\047"}'))"
+  if [ "$agfilepath" != "" ]; then
+    eval $(echo "vim $agfilepath")
+  fi
+}
