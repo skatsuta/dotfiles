@@ -108,7 +108,7 @@ setopt hist_no_store
 setopt hist_expand
 # enable completion
 autoload -U compinit
-compinit
+compinit -C
 # Disable start/stop control
 stty -ixon
 # remove duplicate entries in PATH
