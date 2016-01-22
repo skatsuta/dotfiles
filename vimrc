@@ -780,6 +780,7 @@ let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
@@ -789,13 +790,20 @@ let g:go_metalinter_autosave = 1
 " gocode
 set completeopt=menu,preview
 
-" godef
-au FileType go nnoremap ,gd :GoDef<CR>
-au FileType go nnoremap ,gdv :vsp <CR>:exe "GoDef"<CR>
-au FileType go nnoremap ,gds :sp  <CR>:exe "GoDef"<CR>
-
-" gorename
-au FileType go nnoremap ,gr :GoRename<CR>
+" Key mappings
+au FileType go nmap <Leader>r <Plug>(go-run)
+au FileType go nmap <Leader>b <Plug>(go-build)
+au FileType go nmap <Leader>t <Plug>(go-test)
+au FileType go nmap <Leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <Leader>n <Plug>(go-rename)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
 
 
 "===================================
@@ -843,14 +851,6 @@ autocmd Filetype * set formatoptions-=ro
 "===========================================
 set runtimepath+=~/.fzf
 noremap <silent> ,f :FZF<CR>
-
-
-"===========================================
-" dash.vim
-"
-" Search Dash.app from Vim
-"===========================================
-nmap <silent> ,d <Plug>DashSearch
 
 
 "===========================================
