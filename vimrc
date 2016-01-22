@@ -95,6 +95,8 @@ set directory=/tmp
 set lazyredraw
 " Connect faster to TTY
 set ttyfast
+" Change Leader key to ','
+let mapleader=","
 
 
 "----------------------------------------
