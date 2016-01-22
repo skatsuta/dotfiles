@@ -790,13 +790,9 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+
 " Run go tools automatically on save
-autocmd BufWritePost,FileWritePost *.go call GoTools() | cwindow
-function GoTools()
-  GoLint
-  GoVet
-  GoErrCheck
-endfunction
+let g:go_metalinter_autosave = 1
 
 " gocode
 set completeopt=menu,preview
