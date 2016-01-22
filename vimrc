@@ -674,8 +674,8 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 "
 " Sophisticated comment plugin
 "===================================
-nnoremap ,c <Plug>(caw:i:toggle)
-vnoremap ,c <Plug>(caw:i:toggle)
+nnoremap <Leader>c <Plug>(caw:i:toggle)
+vnoremap <Leader>c <Plug>(caw:i:toggle)
 
 "===================================
 " EasyMotion
@@ -713,7 +713,7 @@ let g:quickrun_config = {}
 " Use vimproc to run
 let g:quickrun_config._ = {'runner' : 'vimproc'}
 " Scala 用
-nnoremap <silent> ,r :QuickRun -cmdopt ''<CR>
+nnoremap <silent> <Leader>r :QuickRun -cmdopt ''<CR>
 
 
 "===================================
@@ -724,11 +724,11 @@ nnoremap <silent> ,r :QuickRun -cmdopt ''<CR>
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable=1
 let g:unite_source_file_mru_limit=100
-nnoremap <silent> ,uy :<C-u>Unite history/yank<CR>
-nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
-nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
-nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
+nnoremap <silent> <Leader>uy :<C-u>Unite history/yank<CR>
+nnoremap <silent> <Leader>ub :<C-u>Unite buffer<CR>
+nnoremap <silent> <Leader>uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> <Leader>ur :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> <Leader>uu :<C-u>Unite file_mru buffer<CR>
 
 
 "===================================
@@ -762,9 +762,9 @@ autocmd VimEnter,ColorScheme * :hi IndentGuidesEven ctermbg=140
 "
 " A Git wrapper so awsome, it should be illegal
 "===================================
-nnoremap <silent> ,gbl :Gblame<CR>
-nnoremap <silent> ,gdf :Gdiff<CR>
-nnoremap <silent> ,gst :Gstatus<CR>
+nnoremap <silent> <Leader>gbl :Gblame<CR>
+nnoremap <silent> <Leader>gdf :Gdiff<CR>
+nnoremap <silent> <Leader>gst :Gstatus<CR>
 
 
 "===================================
@@ -854,13 +854,13 @@ autocmd Filetype * set formatoptions-=ro
 " A command line fussy finder written in Go
 "===========================================
 set runtimepath+=~/.fzf
-noremap <silent> ,f :FZF<CR>
+noremap <silent> <Leader>f :FZF<CR>
 
 
 "===========================================
 " pt (the platinum searcher)
 "===========================================
-nnoremap <silent> ,g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+nnoremap <silent> <Leader>g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 if executable('pt')
   let g:unite_source_grep_command = 'pt'
   let g:unite_source_grep_default_opts = '--nogroup --nocolor'
