@@ -857,6 +857,14 @@ set runtimepath+=~/.fzf
 noremap <silent> <Leader>f :FZF<CR>
 
 
+"==========================================="
+" dash.vim
+"
+" Search Dash.app from Vim
+"===========================================
+nmap <silent> <Leader>d <Plug>DashSearch
+
+
 "===========================================
 " pt (the platinum searcher)
 "===========================================
