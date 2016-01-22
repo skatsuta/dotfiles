@@ -664,6 +664,10 @@ let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 " Run syntax checks when buffers are first loaded, as well as saving
 let g:syntastic_check_on_open = 1
 
+" Prevent lagging when using vim-go and syntastic
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
 
 "===================================
 " caw.vim
