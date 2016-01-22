@@ -42,68 +42,58 @@ endif
 "scriptencoding cp932
 
 "----------------------------------------
-" システム設定
+" System Configuration
 "----------------------------------------
-"mswin.vimを読み込む
-"source $VIMRUNTIME/mswin.vim
-"behave mswin
-
-"ファイルの上書きの前にバックアップを作る/作らない
-"set writebackupを指定してもオプション 'backup' がオンでない限り、
-"バックアップは上書きに成功した後に削除される。
+" Do not create a backup before overwriting the file
 "set nowritebackup
-"バックアップ/スワップファイルを作成する/しない
+" Do not create a backup/swap file
 "set nobackup
+" Enable only if the version is 7.3 or greater
 if version >= 703
-  "再読込、vim終了後も継続するアンドゥ(7.3)
+  " Enable to keep remembering undos even if Vim reloads or restarts
   set undofile
-  "アンドゥの保存場所(7.3)
+  " Save location of undos
   set undodir=./.vimundo
-  "Delete comment character when joining commented lines
+  " Delete comment character when joining commented lines
   set formatoptions+=j
 endif
-" .swp ファイルを作成しない
+" Do not create .swp file
 "set noswapfile
-"viminfoを作成しない
+" Do not create viminfo
 "set viminfo=
-" tmux が起動していないときのみクリップボードを共有する
+" Share clipboard only if tmux is not running
 if $TMUX == ''
   set clipboard+=unnamed
 endif
-"8進数を無効にする。<C-a>,<C-x>に影響する
+" Disable octal; affects <C-a> and <C-x>
 set nrformats-=octal
-"キーコードやマッピングされたキー列が完了するのを待つ時間(ミリ秒)
-set timeoutlen=3500
-"編集結果非保存のバッファから、新しいバッファを開くときに警告を出さない
+" Timeout to wait for completing key input (miliseconds; default 1000)
+"set timeoutlen=3500
+" Do not show warnings when opening a new buffer from one that is not saved
 set hidden
-"ヒストリの保存数
+" The number of histories saved
 set history=10000
-"日本語の行の連結時には空白を入力しない
+" Do not insert a space when joining Japanese sentences
 set formatoptions+=mM
-"Visual blockモードでフリーカーソルを有効にする
+" Enable free cursor in visual block mode
 set virtualedit=block
-"カーソルキーで行末／行頭の移動可能に設定
+" Enable cursor keys to move beginning/end of line
 "set whichwrap=b,s,[,],<,>
-"バックスペースでインデントや改行を削除できるようにする
+" Enable backspace to delete indent and line break
 set backspace=indent,eol,start
-"□や○の文字があってもカーソル位置がずれないようにする
+" Set width of Asian characters to double size
 set ambiwidth=double
-"コマンドライン補完するときに強化されたものを使う(参照 :help wildmenu)
+" Use tab completion in command line mode (ref. :help wildmenu)
 set wildmenu
-"マウスを有効にする
-if has('mouse')
-  set mouse=a
-endif
-" バックアップディレクトリ
+" Enable mouse
+set mouse=a
+set ttymouse=xterm2
+" Backup directory
 set backupdir=/tmp
 set directory=/tmp
-" マウスモード有効
-set mouse=a
-" screen 対応
-set ttymouse=xterm2
-" 遅延再描画を有効化する
+" Enable lazy redraw
 set lazyredraw
-" ターミナルとの接続を素早くする
+" Connect faster to TTY
 set ttyfast
 
 
