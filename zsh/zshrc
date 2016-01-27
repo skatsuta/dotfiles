@@ -183,19 +183,6 @@ bindkey '^o' zaw-git-status
 bindkey '^z' zaw-git-files
 
 #==============================
-#  Docker
-#==============================
-if command -v docker-machine > /dev/null; then
-  # fetch the first running machine name
-  local default_machine=dev
-  local machine=$(docker-machine ls | grep Running | grep $default_machine | head -n 1 | awk '{ print $1 }')
-  if [ "$machine" != "" ]; then
-    eval "$(docker-machine env $machine)"
-    export DOCKER_IP=$(docker-machine ip $machine)
-  fi
-fi
-
-#==============================
 #  Gradle
 #==============================
 # Always run as daemon
