@@ -1,10 +1,17 @@
 #!/bin/bash
 
-brew update &&\
-brew upgrade --all &&\
-brew cask update && \
+set -u
+
+set -x
+brew update
+brew upgrade --all
+
+set +x
+brew cask update
 for c in `brew cask list`; do
   ! brew cask info $c | grep -qF "Not installed" || brew cask install --force $c
 done
+
+set -x
 brew cleanup
 brew cask cleanup
