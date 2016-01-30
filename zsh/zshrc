@@ -3,14 +3,12 @@
 #
 
 # Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+[[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]] && source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
 # Customize to your needs...
 
 # Example aliases
-alias zshconfig="vim ~/.zshrc"
+alias zshconfig="vim $HOME/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -54,7 +52,6 @@ alias zshconfig="vim ~/.zshrc"
 export ZSH_HOME=$HOME/.zsh
 export MANPATH=/usr/local/man:$MANPATH
 export JAVA_HOME=$(/usr/libexec/java_home)
-export ANDROID_HOME=/usr/local/Cellar/android-sdk/23.0.2
 export GOPATH=$HOME
 export LESS=-qRn
 export VISUAL=vim
@@ -62,7 +59,7 @@ export EDITOR=$VISUAL
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
 
-# enable Japanese input via SSH to set the following environmental variables
+# enable Japanese input via SSH by setting the following environmental variables
 # (ref: http://qiita.com/suin/items/629372fd08ee9e9cf727)
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
@@ -74,7 +71,6 @@ export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.cabal/bin:$PATH
 export PATH=$HOME/.pyenv/shims:$PATH
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=$HOME/.ssh/sh:$PATH
 export PATH=$GOPATH/bin:$PATH
@@ -115,15 +111,6 @@ stty -ixon
 typeset -U path PATH
 
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Start screen
-#[[ $TERM != "screen" ]] && exec screen
-
 # tmux
 [[ "$TMUX" = "" ]] && exec tmux
 
@@ -135,7 +122,7 @@ alias vr='vim -R'
 alias lt='ls -t'
 alias rm='rm -i'
 alias cp='cp -i'
-alias sz='source ~/.zshrc'
+alias sz="source $HOME/.zshrc"
 
 # Git
 alias git='hub'
@@ -168,9 +155,8 @@ zstyle ':completion:*' recent-dirs-insert both
 #==============================
 #  zaw
 #==============================
-if [[ -s "${HOME}/.zsh/zaw/zaw.zsh" ]]; then
-  source "${HOME}/.zsh/zaw/zaw.zsh"
-fi
+[[ -s "${HOME}/.zsh/zaw/zaw.zsh" ]] && source "${HOME}/.zsh/zaw/zaw.zsh"
+
 # enable case-insensitive
 zstyle ':filter-select' case-insensitive yes
 bindkey '^@' zaw
@@ -199,57 +185,50 @@ export GRADLE_OPTS='-Dorg.gradle.daemon=true'
 #==============================
 #  rbenv
 #==============================
-# Load rbenv automatically
-if command -v rbenv > /dev/null; then
-  eval "$(rbenv init -)"
-fi
+# Load rbenv if it exists
+command -v rbenv > /dev/null && eval "$(rbenv init -)"
 
 #==============================
 #  pyenv
 #==============================
-# Load pyenv automatically
-if command -v pyenv > /dev/null; then
-  eval "$(pyenv init -)"
-fi
+# Load pyenv if it exists
+command -v pyenv > /dev/null && eval "$(pyenv init -)"
 
 #==============================
 #  nvm
 #==============================
 # Load nvm automatically
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
 
 #==============================
 #  direnv
 #==============================
-if command -v direnv > /dev/null; then
-  eval "$(direnv hook zsh)"
-fi
+# Load direnv if it exists
+command -v direnv > /dev/null && eval "$(direnv hook zsh)"
 
 #==============================
 #  autojump
 #==============================
-[[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
+# Load autojump
+[[ -s $(brew --prefix)/etc/autojump.sh ]] && source $(brew --prefix)/etc/autojump.sh
 
 #============================================================
 #  Incremental completion on zsh
 #  (http://mimosa-pudica.net/zsh-incremental.html)
 #============================================================
-if [[ -s "${ZSH_HOME}/incr/incr-0.2.zsh" ]]; then
-  #source "${ZSH_HOME}/incr/incr-0.2.zsh"
-fi
+#[[ -s "${ZSH_HOME}/incr/incr-0.2.zsh" ]] && source "${ZSH_HOME}/incr/incr-0.2.zsh"
 
 #==============================
 #  fzf
 #==============================
-#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[[ -f $HOME/.fzf.zsh ]] && source $HOME/.fzf.zsh
 
 #==============================
 #  thefuck
 #==============================
-if command -v thefuck > /dev/null; then
-  eval "$(thefuck --alias)"
-fi
+# Load thefuck if it exists
+command -v thefuck > /dev/null && eval "$(thefuck --alias)"
 
 #==============================
 #  peco
@@ -267,7 +246,6 @@ function peco-src() {
 zle -N peco-src
 # shortcut key
 bindkey '^[' peco-src
-
 
 #==============================
 #  agvi
