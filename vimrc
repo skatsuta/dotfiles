@@ -3,7 +3,7 @@
 "       Author: Soshi Katsuta
 "==========================================================================
 "
-" set inconpatible with vi
+" Set inconpatible with vi
 set nocompatible
 scriptencoding utf-8
 set encoding=utf-8
@@ -13,9 +13,9 @@ set fileformat=unix
 "----------------------------------------
 " User Runtime Path
 "----------------------------------------
-"Windows, unixでのruntimepathの違いを吸収するためのもの。
-"$MY_VIMRUNTIMEはユーザーランタイムディレクトリを示す。
-":echo $MY_VIMRUNTIMEで実際のパスを確認できます。
+" Absorb the difference of runtime path between Windows and Unix
+" $MY_VIMRUNTIME points to the user's runtime directory
+" To check its value, `:echo $MY_VIMRUNTIME`
 if isdirectory($HOME . '/.vim')
   let $MY_VIMRUNTIME = $HOME.'/.vim'
 elseif isdirectory($HOME . '\vimfiles')
@@ -23,23 +23,10 @@ elseif isdirectory($HOME . '\vimfiles')
 elseif isdirectory($VIM . '\vimfiles')
   let $MY_VIMRUNTIME = $VIM.'\vimfiles'
 endif
-
-"ランタイムパスを通す必要のあるプラグインを使用する場合、
-"$MY_VIMRUNTIMEを使用すると Windows/Linuxで切り分ける必要が無くなります。
-"例) vimfiles/qfixapp (Linuxでは~/.vim/qfixapp)にランタイムパスを通す場合
+" If you want to use a plugin that needs to be placed in runtime path,
+" use $MY_VIMRUNTIME to avoid the difference between platforms.
+" For example, to use '~/.vim/qfixapp' in Linux,
 "set runtimepath+=$MY_VIMRUNTIME/qfixapp
-
-"----------------------------------------
-" 内部エンコーディング指定
-"----------------------------------------
-"内部エンコーディングのUTF-8化と文字コードの自動認識設定をencode.vimで行う。
-"オールインワンパッケージの場合 vimrcで設定されているので何もしない。
-"エンコーディング指定や文字コードの自動認識設定が適切に設定されている場合、
-"次行の encode.vim 読込部分はコメントアウトして下さい。
-"silent! source $MY_VIMRUNTIME/plugin/encode.vim
-"scriptencodingと異なる内部エンコーディングに変更する場合、
-"変更後にもscriptencodingを指定しておくと問題が起きにくくなります。
-"scriptencoding cp932
 
 "----------------------------------------
 " System Configuration
@@ -100,27 +87,25 @@ let mapleader=","
 
 
 "----------------------------------------
-" 検索
+" Search
 "----------------------------------------
-"検索の時に大文字小文字を区別しない
-"ただし大文字小文字の両方が含まれている場合は大文字小文字を区別する
+" Enable case-insensitive
 set ignorecase
+" Enable case-sensitive only if a query contains both uppercase and lowercase
 set smartcase
-"検索時にファイルの最後まで行ったら最初に戻る (nowrapscan:戻らない)
-set wrapscan
-"インクリメンタルサーチ
+" Enable incremental search
 set incsearch
-"検索文字の強調表示
+" Disable highlighting for search
 set nohlsearch
-"w,bの移動で認識する文字
+" Characters recognized as a 'word' (affects the movements of 'w' and 'b')
 "set iskeyword=a-z,A-Z,48-57,_,.,-,>
-"vimgrep をデフォルトのgrepとする場合internal
+" 'internal' means setting vimgrep as a default grep command
 "set grepprg=internal
 
 "----------------------------------------
-" 表示設定
+" Display Options
 "----------------------------------------
-"スプラッシュ(起動時のメッセージ)を表示しない
+" Do not show splash (starting message)
 set shortmess+=I
 "エラー時の音とビジュアルベルの抑制(gvimは.gvimrcで設定)
 set noerrorbells
@@ -186,7 +171,7 @@ filetype on
 
 
 "---------------------------------
-" シンタックスハイライト
+" Syntax Highlighting
 "---------------------------------
 " Highlight Groovy scripts
 au BufNewFile,BufRead *.gradle setf groovy
