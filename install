@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -u
+
+dir=$(dirname $0)
+files=(
+  gitconfig
+  gitignore_global
+  tmux.conf
+  vimrc
+  zpreztorc
+  zshrc
+)
+
+for f in "${files[@]}"; do
+  src=$dir/$f
+  dst=$HOME/.$f
+
+  # skip if already exists
+  [[ -f "$dst" ]] && continue
+
+  ln -s "$src" "$dst"
+  echo "Created symlink '$src' => '$dst'"
+done
