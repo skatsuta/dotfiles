@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -u
 
-dir=$(dirname $0)
+dir=$(cd "$(dirname $0)" && pwd)
 files=(
   gitconfig
   gitignore_global
