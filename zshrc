@@ -112,7 +112,7 @@ typeset -U path PATH
 
 
 # tmux
-[[ "$TMUX" = "" ]] && exec tmux
+[[ "$TMUX" = "" ]] && command -v tmux > /dev/null && exec tmux
 
 #==============================
 #  Aliases
