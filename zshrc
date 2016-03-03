@@ -256,3 +256,8 @@ function agvi(){
     eval $(echo "vim $agfilepath")
   fi
 }
+
+#==============================
+#  awscli
+#==============================
+source /usr/local/share/zsh/site-functions/_aws
