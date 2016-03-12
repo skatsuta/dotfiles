@@ -212,6 +212,8 @@ command -v direnv > /dev/null && eval "$(direnv hook zsh)"
 #==============================
 # Load autojump
 [[ -s $(brew --prefix)/etc/autojump.sh ]] && source $(brew --prefix)/etc/autojump.sh
+# remove 'jo' function for jo command
+unfunction jo
 
 #============================================================
 #  Incremental completion on zsh
