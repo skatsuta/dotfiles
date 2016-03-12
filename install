@@ -8,7 +8,7 @@ files=(
   tmux.conf
   vimrc
   zpreztorc
-  zshrc
+  zsh*
 )
 
 for f in "${files[@]}"; do
