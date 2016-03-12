@@ -1,6 +1,5 @@
 #!/bin/bash
-
-set -u
+set -eu
 
 set -x
 brew update
