@@ -1,0 +1,23 @@
+#
+# Aliases
+#
+# This file is loaded by .zshrc.
+
+# Git
+alias git='hub'
+alias gf='git fetch && git diff HEAD..FETCH_HEAD'
+alias gmf='git merge FETCH_HEAD --ff'
+alias gs='git status'
+alias gp='git push'
+alias gc='git commit -s'
+alias gco='git checkout'
+alias gm='git merge'
+alias gb='git branch'
+alias gr='git reset'
+alias gsh='git stash'
+alias gsp='git stash pop'
+alias gam='git commit --amend'
+alias grt='git remote'
+alias gup='git pull upstream master'
+alias grb='git rebase -i'
+

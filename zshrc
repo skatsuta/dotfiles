@@ -117,31 +117,14 @@ typeset -U path PATH
 #==============================
 #  Aliases
 #==============================
+source "$HOME/.zsh_alias"
+
 alias vi='vim'
 alias vr='vim -R'
 alias lt='ls -t'
 alias rm='rm -i'
 alias cp='cp -i'
 alias sz="source $HOME/.zshrc"
-
-# Git
-alias git='hub'
-alias gf='git fetch && git diff HEAD..FETCH_HEAD'
-alias gmf='git merge FETCH_HEAD --ff'
-alias gs='git status'
-alias gp='git push'
-alias gc='git commit -s'
-alias gco='git checkout'
-alias gm='git merge'
-alias gb='git branch'
-alias gr='git reset'
-alias gsh='git stash'
-alias gsp='git stash pop'
-alias gam='git commit --amend'
-alias grt='git remote'
-alias gup='git pull upstream master'
-alias grb='git rebase -i'
-
 
 #==============================
 #  cdr
