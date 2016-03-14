@@ -23,6 +23,7 @@ alias grb='git rebase -i'
 
 # AWS CLI
 alias ec2ls="aws ec2 describe-instances \
+  --output table \
   --query 'Reservations[].Instances[].{ \
     Name: Tags[?Key==\`Name\`].Value|[0], \
     ID: InstanceId, \
@@ -32,6 +33,7 @@ alias ec2ls="aws ec2 describe-instances \
     \"Security Groups\": join(\`, \`, SecurityGroups[].GroupName) \
   }'"
 alias ec2ls-sg="aws ec2 describe-security-groups \
+  --output table \
   --query 'SecurityGroups[].{ \
     Desc: Description, \
     ID: GroupId, \
