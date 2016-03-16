@@ -68,11 +68,9 @@ export LC_ALL=en_US.UTF-8
 # PATH
 # set /usr/local/bin before /usr/bin
 export PATH=/usr/local/bin:$PATH
-export PATH=$HOME/bin:$PATH
-export PATH=$HOME/.cabal/bin:$PATH
-export PATH=$HOME/.pyenv/shims:$PATH
-export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=$HOME/.ssh/sh:$PATH
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=$GOPATH/bin:$PATH
 
 # location to save command histories
