@@ -648,6 +648,8 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 " Run syntax checks when buffers are first loaded, as well as saving
 let g:syntastic_check_on_open = 1
+" Use eslint as JavaScript checker
+let g:syntastic_javascript_checkers = ['eslint']
 
 " Prevent lagging when using vim-go and syntastic
 "let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
