@@ -652,6 +652,9 @@ let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let g:syntastic_check_on_open = 1
 " Use eslint as JavaScript checker
 let g:syntastic_javascript_checkers = ['eslint']
+" Ruby
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+let g:syntastic_ruby_checkers = ['rubocop']
 
 " Prevent lagging when using vim-go and syntastic
 "let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
