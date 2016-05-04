@@ -548,8 +548,6 @@ Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 " A Ruby development tools for Emacs and Vim
 Plug 'marcus/rsense', { 'for': 'ruby' }
-" Neocomplete source for RSense
-Plug 'supermomonga/neocomplete-rsense.vim', { 'for': 'ruby' }
 
 "========== Systax Highlighting ==========
 " Nginx
