@@ -576,13 +576,17 @@ let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 " Use fuzzy completion.
 let g:neocomplete#enable_fuzzy_completion = 1
-
 " Define dictionaries
 let g:neocomplete#sources#dictionary#dictionaries = {
   \ 'default' : '',
   \ 'vimshell' : $HOME.'/.vimshell_hist',
   \ 'scala' : $HOME.'/.vim/dict/scala.dict',
   \ }
+" Omni completion
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.ruby = '[^.*\t]\.\w*\|\h\w*::'
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
