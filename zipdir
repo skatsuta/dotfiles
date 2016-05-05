@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Show help
+if [[ $1 = '--help' || $1 = '-h' ]]; then
+  echo "Usage: $0 [TARGET_DIR]"
+  echo "Zip each directory inside TARGET_DIR. If no argument is given, the current directory is regarded as TARGET_DIR."
+  exit 1
+fi
+
+# Zip each directory inside the given directory
+TARGET_DIR=${1:=.}
+cd "$TARGET_DIR"
+for i in *; do
+  if [[ -d "$i" ]]; then
+    zip -r "$i".zip "$i"
+  fi
+done
