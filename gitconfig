@@ -29,3 +29,6 @@
 
 [ghq]
   root = ~/src
+
+[diff]
+  compactionHeuristic = true
