@@ -8,7 +8,7 @@ if [[ $1 = '--help' || $1 = '-h' ]]; then
 fi
 
 # Zip each directory inside the given directory
-TARGET_DIR=${1:=.}
+TARGET_DIR=${1:-.}
 cd "$TARGET_DIR"
 for i in *; do
   if [[ -d "$i" ]]; then
