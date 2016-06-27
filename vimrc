@@ -107,56 +107,50 @@ set nohlsearch
 "----------------------------------------
 " Do not show splash (starting message)
 set shortmess+=I
-"エラー時の音とビジュアルベルの抑制(gvimは.gvimrcで設定)
+" Disable beeping and flash
 set noerrorbells
 set novisualbell
 set visualbell t_vb=
-"マクロ実行中などの画面再描画を行わない
+" Any action that is not typed will not cause the screen to redraw
 "set lazyredraw
-"Windowsでディレクトリパスの区切り文字表示に / を使えるようにする
+" A forward slash is used when expanding file names (even on Windows)
 set shellslash
-"行番号表示
+" Show line number
 set number
-if version >= 703
-  "相対行番号表示(7.3)
-  "set relativenumber
-endif
-"括弧の対応表示時間 (noshowmatch:表示しない)
+" Time to show the matching paren ('noshowmatch': not display)
 set showmatch matchtime=1
-"タブを設定 (ts=tabstop, sw=shiftwidth, sts=softtabstop)
+" Set the number of spaces that a <Tab> in the file counts for
+"   (ts=tabstop, sw=shiftwidth, sts=softtabstop)
 set ts=2 sw=2 sts=0
-"自動的にインデントする (noautoindent:インデントしない)
+" Copy indent from current line when starting a new line
 set autoindent
-"Cインデントの設定
-set cinoptions+=:0
-"タイトルを表示
+" The title of the window will be set to the value of a filename
 set title
-"コマンドラインの高さ (gvimはgvimrcで指定)
+" The number of screen lines to use for the command line
 set cmdheight=1
 set laststatus=2
-"コマンドをステータス行に表示
+" Show command in the last line of the screen
 set showcmd
-"画面最後の行をできる限り表示する
+" As much as possible of the last line in a window will be displayed
 set display=lastline
-"Tab、行末の半角スペースを明示的に表示する
+" Show special characters
 set list
-"どの文字でタブや改行を表示するかを設定
 set listchars=tab:»\ ,trail:~
 " Expand tabs into spaces (noexpandtab: no expanding)
 set expandtab
 " Don't extract tabs in Go file
 autocmd BufRead *.go set noexpandtab
-"折り畳み機能の設定 (indent: インデントに合わせて折り畳む)
+" Enable folding by syntax highlighting ('indent': by groups of lines with the same indent form)
 "set foldmethod=syntax
-"ルーラーを表示 (noruler:非表示)
+" Show the line and column number of the cursor position, separated by a comma
 set ruler
-" ハイライトを有効にする
+" Enable highlighting
 if &t_Co > 2 || has('gui_running')
   syntax on
 endif
 " Highlight the column
 set colorcolumn=100
-"色テーマ設定
+" Color scheme
 colorscheme default
 
 
