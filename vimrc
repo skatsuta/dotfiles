@@ -2,9 +2,7 @@
 "  Description: Vim configuration file
 "       Author: Soshi Katsuta
 "==========================================================================
-"
-" Set inconpatible with vi
-set nocompatible
+
 scriptencoding utf-8
 set encoding=utf-8
 set fileencodings=utf-8
