@@ -72,6 +72,7 @@ export PATH=$HOME/.ssh/sh:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=$GOPATH/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 
 # location to save command histories
 export HISTFILE=${HOME}/.zsh_history
