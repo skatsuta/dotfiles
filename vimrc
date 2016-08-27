@@ -877,6 +877,6 @@ let g:rustfmt_autosave = 1
 "===========================================
 " Racer
 "===========================================
-set hidden
-let g:racer_cmd = '$HOME/.cargo/bin/racer'
-let $RUST_SRC_PATH = '$HOME/src/github.com/rust-lang/rust/src/'
+"set hidden
+"let g:racer_cmd = '$HOME/.cargo/bin/racer'
+"let $RUST_SRC_PATH = '$HOME/src/github.com/rust-lang/rust/src/'
