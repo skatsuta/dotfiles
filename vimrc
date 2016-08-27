@@ -507,6 +507,7 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 
 "========== Rust ==========
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'racer-rust/vim-racer', { 'for': 'rust '}
 
 "========== JavaScript ==========
 " Vastly improved Javascript indentation and syntax support in Vim.
@@ -615,7 +616,7 @@ let g:neosnippet#snippets_directory = [
 "
 " Syntax checking hacks for vim
 "===================================
-" Always stic any detected erros into the location-list
+" Always stic any detected errors into the location-list
 let g:syntastic_always_populate_loc_list = 1
 " Automatically open the |location-list| (see |syntastic-error-window|)
 " when a buffer has errors.
@@ -866,3 +867,16 @@ let g:sql_type_default = 'mysql'
 
 " syntax highlighting for .inc files
 au BufNewFile,BufRead *.inc set filetype=php
+
+
+"===========================================
+" rust.vim
+"===========================================
+let g:rustfmt_autosave = 1
+
+"===========================================
+" Racer
+"===========================================
+set hidden
+let g:racer_cmd = '$HOME/.cargo/bin/racer'
+let $RUST_SRC_PATH = '$HOME/src/github.com/rust-lang/rust/src/'
