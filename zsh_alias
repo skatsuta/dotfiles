@@ -29,8 +29,7 @@ alias ec2ls="aws ec2 describe-instances \
     ID: InstanceId, \
     State: State.Name, \
     IP: PublicIpAddress, \
-    Type: InstanceType, \
-    \"Security Groups\": join(\`, \`, SecurityGroups[].GroupName) \
+    Type: InstanceType \
   }'"
 alias ec2ls-sg="aws ec2 describe-security-groups \
   --output table \
