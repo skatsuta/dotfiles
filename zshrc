@@ -245,3 +245,9 @@ function ptvi(){
 #  awscli
 #==============================
 source /usr/local/share/zsh/site-functions/_aws
+
+#==============================
+#  iTerm2
+#==============================
+# Shell Integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
