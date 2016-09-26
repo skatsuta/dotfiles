@@ -232,12 +232,12 @@ zle -N peco-src
 bindkey '^[' peco-src
 
 #==============================
-#  ptvi
+#  grep + vi
 #==============================
-function ptvi(){
-  local ptfilepath="$(echo $(pt $@ | peco --query "$LBUFFER" | awk -F : '{print "+" $2 " \047" $1 "\047"}'))"
-  if [ "$ptfilepath" != "" ]; then
-    eval $(echo "vim $ptfilepath")
+function grvi(){
+  local filepath="$(echo $(pt $@ | peco --query "$LBUFFER" | awk -F : '{print "+" $2 " \047" $1 "\047"}'))"
+  if [ "$filepath" != "" ]; then
+    eval $(echo "vim $filepath")
   fi
 }
 
