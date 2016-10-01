@@ -487,6 +487,8 @@ Plug 'tpope/vim-surround'
 Plug 'rizzatti/dash.vim'
 " Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'
 Plug 'rking/ag.vim'
+" Wisely add 'end' in Ruby, endfunction/endif/more in Vim script, etc
+Plug 'tpope/vim-endwise'
 
 "========== Haskell ==========
 " Vim configuration files for Haskell code
