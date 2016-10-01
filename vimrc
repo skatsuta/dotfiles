@@ -531,6 +531,8 @@ Plug 'evanmiller/nginx-vim-syntax'
 Plug 'cespare/vim-toml'
 " EJS
 Plug 'briancollins/vim-jst'
+" Slim
+Plug 'slim-template/vim-slim'
 
 call plug#end()
 
