@@ -77,7 +77,7 @@ export PATH=$HOME/.cargo/bin:$PATH
 # location to save command histories
 export HISTFILE=${HOME}/.zsh_history
 # number of histories saved in memory
-export HISTSIZE=10000
+export HISTSIZE=100000
 # number of histories saved in file
 export SAVEHIST=1000000
 # ignore duplicate command
