@@ -84,8 +84,8 @@ export SAVEHIST=1000000
 setopt hist_ignore_dups
 # share history between screens
 setopt share_history
-# save the start and end
-setopt EXTENDED_HISTORY
+# save each command's beginning timestamp and the duration to the history file
+setopt extended_history
 # remove old command if added one is same
 setopt hist_ignore_all_dups
 # remove command that starts with space from history
