@@ -3,7 +3,7 @@ set -u
 
 set -x
 brew update
-brew upgrade --all
+brew upgrade
 
 set +x
 brew cask update
