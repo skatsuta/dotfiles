@@ -42,4 +42,4 @@ alias ec2ls-sg="aws ec2 describe-security-groups \
   }'"
 
 # MFA ($MFA_KEY has to be set via direnv)
-alias mfa="oathtool --totp -b $MFA_KEY | pbcopy"
+alias mfa="oathtool --totp -b $MFA_KEY | tee /dev/tty | pbcopy"
