@@ -34,9 +34,9 @@ alias ec2ls="aws ec2 describe-instances \
 alias ec2ls-sg="aws ec2 describe-security-groups \
   --output table \
   --query 'SecurityGroups[].{ \
-    Desc: Description, \
     ID: GroupId, \
-    Name: GroupName, \
+    VpcId: VpcId, \
+    Name: Tags[?Key==\`Name\`].Value|[0], \
     Port: IpPermissions[0].FromPort, \
     CIDR: join(\`, \`, IpPermissions[].IpRanges[].CidrIp|[0:2]) \
   }'"
