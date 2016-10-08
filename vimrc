@@ -523,8 +523,6 @@ Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 " rails.vim: Ruby on Rails power tools
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
-" A Ruby development tools for Emacs and Vim
-Plug 'marcus/rsense', { 'for': 'ruby' }
 
 "========== Systax Highlighting ==========
 " Nginx
@@ -846,15 +844,6 @@ if executable('pt')
   let g:unite_source_grep_recursive_opt = ''
   let g:unite_source_grep_encoding = 'utf-8'
 endif
-
-
-"===========================================
-" RSense
-"
-" A Ruby development tools for Emacs and Vim
-"===========================================
-let g:rsenseHome = '/usr/local/Cellar/rsense/0.3/libexec'
-let g:resenseUseOmniFunc = 1
 
 
 "===========================================
