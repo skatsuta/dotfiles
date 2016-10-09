@@ -244,7 +244,8 @@ function grvi(){
 #==============================
 #  awscli
 #==============================
-source /usr/local/share/zsh/site-functions/_aws
+# Load completion functions for AWS CLI if it exists
+[[ -f /usr/local/share/zsh/site-functions/_aws ]] && source /usr/local/share/zsh/site-functions/_aws
 
 #==============================
 #  iTerm2
