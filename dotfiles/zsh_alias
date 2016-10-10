@@ -22,7 +22,7 @@ alias gup='git pull upstream master'
 alias grb='git rebase -i --autosquash'
 
 # AWS CLI
-alias ec2ls="aws ec2 describe-instances \
+alias lsec2="aws ec2 describe-instances \
   --output table \
   --query 'Reservations[].Instances[].{ \
     Name: Tags[?Key==\`Name\`].Value|[0], \
@@ -31,7 +31,7 @@ alias ec2ls="aws ec2 describe-instances \
     IP: PublicIpAddress, \
     Type: InstanceType \
   }'"
-alias ec2ls-sg="aws ec2 describe-security-groups \
+alias lssg="aws ec2 describe-security-groups \
   --output table \
   --query 'SecurityGroups[].{ \
     ID: GroupId, \
