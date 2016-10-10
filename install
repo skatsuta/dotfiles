@@ -1,24 +1,12 @@
-#!/usr/bin/env bash
-set -u
+#!/usr/bin/env bash -u
 
-DIR=$(cd "$(dirname $0)" && pwd)
-FILES=(
-  gitconfig
-  gitignore_global
-  tmux.conf
-  vimrc
-  gvimrc
-  zpreztorc
-  zsh*
-)
+DIR="$(cd "$(dirname $0)" && pwd)/dotfiles"
 
-for f in "${FILES[@]}"; do
-  src=$DIR/$f
-  dst=$HOME/.$f
+for file in `ls "$DIR"`; do
+  DEST="$HOME/.$file"
 
   # skip if already exists
-  [[ -f "$dst" ]] && continue
+  [[ -f "$DEST" ]] && continue
 
-  ln -s "$src" "$dst"
-  echo "Created symlink '$src' => '$dst'"
+  ln -s "$DIR/$file" "$DEST"
 done
