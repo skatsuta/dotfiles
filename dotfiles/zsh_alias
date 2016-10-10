@@ -19,7 +19,7 @@ alias gsp='git stash pop'
 alias gam='git commit --amend'
 alias grt='git remote'
 alias gup='git pull upstream master'
-alias grb='git rebase -i'
+alias grb='git rebase -i --autosquash'
 
 # AWS CLI
 alias ec2ls="aws ec2 describe-instances \
