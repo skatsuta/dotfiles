@@ -1,6 +1,8 @@
+[include]
+  path = ~/.gitconfig.local
+
 [user]
   name  = Soshi Katsuta
-  email = soshi.katsuta@gmail.com
 
 [color]
   ui = true
