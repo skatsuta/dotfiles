@@ -53,10 +53,9 @@ export ZSH_HOME=$HOME/.zsh
 export MANPATH=/usr/local/man:$MANPATH
 export JAVA_HOME=$(/usr/libexec/java_home)
 export GOPATH=$HOME
-export LESS=-qRn
+export LESS=-nqR
 export VISUAL=vim
 export EDITOR=$VISUAL
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
 # include Homebrew-installed packages
 export PYTHONPATH=$(brew --prefix)/lib/python2.7/site-packages:$PATHONPATH
