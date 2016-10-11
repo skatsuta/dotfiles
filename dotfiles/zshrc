@@ -247,3 +247,10 @@ function grvi(){
 #==============================
 # Shell Integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+#==============================
+#  AWS CLI
+#==============================
+# Enable command completion
+# See http://docs.aws.amazon.com/cli/latest/userguide/cli-command-completion.html for more details.
+[[ -f /usr/local/bin/aws_zsh_completer.sh ]] && source /usr/local/bin/aws_zsh_completer.sh
