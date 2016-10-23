@@ -103,6 +103,7 @@ setopt hist_no_store
 # expand history automatically at completion
 setopt hist_expand
 # enable completion
+rm -f "$HOME/.zcompdump"
 autoload -U compinit
 compinit -C
 # Disable start/stop control
