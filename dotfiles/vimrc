@@ -173,34 +173,12 @@ au BufNewFile,BufRead *.gradle setf groovy
 au BufNewFile,BufRead .envrc set filetype=sh
 
 
-""""""""""""""""""""""""""""""
-"ステータスラインに文字コード等表示
-"iconvが使用可能の場合、カーソル上の文字コードをエンコードに応じた表示にするFencB()を使用
-""""""""""""""""""""""""""""""
-"if has('iconv')
-"  set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=[0x%{FencB()}]\ (%v,%l)/%L%8P\ 
-"else
-"  set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=\ (%v,%l)/%L%8P\ 
-"endif
-
-" ステータスラインの表示を ファイル名 (ファイルパス)		[ファイル形式][文字コード][改行コード][行,列] にする
-" http://hail2u.net/blog/software/optimize-vim-statusline.html を参照
+"---------------------------------
+" Status Line
+"---------------------------------
+" Format: file name (file path)     [Git(branch)][+][vim][file encoding][line ending][row, column]
+" Ref: http://hail2u.net/blog/software/optimize-vim-statusline.html
 set statusline=%{expand('%:p:t')}\ %<\(%{expand('%:p:h')}\)%=\ %{fugitive#statusline()}%m%r%y%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}[%3l,%3c]
-
-"FencB() : カーソル上の文字コードをエンコードに応じた表示にする
-function! FencB()
-  let c = matchstr(getline('.'), '.', col('.') - 1)
-  let c = iconv(c, &enc, &fenc)
-  return s:Byte2hex(s:Str2byte(c))
-endfunction
-
-function! s:Str2byte(str)
-  return map(range(len(a:str)), 'char2nr(a:str[v:val])')
-endfunction
-
-function! s:Byte2hex(bytes)
-  return join(map(copy(a:bytes), 'printf("%02X", v:val)'), '')
-endfunction
 
 "----------------------------------------
 " diff/patch
