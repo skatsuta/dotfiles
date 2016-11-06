@@ -98,7 +98,6 @@ setopt hist_reduce_blanks
 # ignore commands already saved in history
 setopt hist_save_no_dups
 # don't save history command itself
-# historyコマンドは履歴に登録しない
 setopt hist_no_store
 # expand history automatically at completion
 setopt hist_expand
