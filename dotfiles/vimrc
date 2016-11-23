@@ -509,24 +509,24 @@ let g:neosnippet#snippets_directory = [
 "
 " Syntax checking hacks for vim
 "===================================
+" Normally activate syntactic checking
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 " Always stic any detected errors into the location-list
 let g:syntastic_always_populate_loc_list = 1
 " Automatically open the |location-list| (see |syntastic-error-window|)
 " when a buffer has errors.
-let g:syntastic_auto_loc_list=1
+let g:syntastic_auto_loc_list = 1
 " Ignore AngularJS's directives
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+let g:syntastic_html_tidy_ignore_errors = [" proprietary attribute \"ng-"]
 " Run syntax checks when buffers are first loaded, as well as saving
 let g:syntastic_check_on_open = 1
-" Use eslint as JavaScript checker
+
+" JavaScript
 let g:syntastic_javascript_checkers = ['eslint']
 " Ruby
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
 let g:syntastic_ruby_checkers = ['rubocop']
-
-" Prevent lagging when using vim-go and syntastic
+" Go: Prevent lagging when using vim-go and syntastic
 "let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 
 "===================================
