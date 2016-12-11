@@ -350,6 +350,8 @@ Plug 'rizzatti/dash.vim'
 Plug 'rking/ag.vim'
 " Wisely add 'end' in Ruby, endfunction/endif/more in Vim script, etc
 Plug 'tpope/vim-endwise'
+" Comment functions
+Plug 'scrooloose/nerdcommenter'
 
 "========== Haskell ==========
 " Vim configuration files for Haskell code
@@ -734,3 +736,9 @@ let g:rustfmt_autosave = 1
 "set hidden
 "let g:racer_cmd = '$HOME/.cargo/bin/racer'
 "let $RUST_SRC_PATH = '$HOME/src/github.com/rust-lang/rust/src/'
+
+
+"===========================================
+" NERD Commenter
+"===========================================
+let g:NERDSpaceDelims = 1
