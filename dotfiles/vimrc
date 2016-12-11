@@ -7,7 +7,6 @@ scriptencoding utf-8
 set encoding=utf-8
 set fileencodings=utf-8
 set fileformat=unix
-
 set shell=/bin/bash
 
 "----------------------------------------
@@ -274,16 +273,11 @@ augroup vimrcEx
     \ endif
 augroup END
 
-""""""""""""""""""""""""""""""
-"全角スペースを表示
-""""""""""""""""""""""""""""""
-"コメント以外で全角スペースを指定しているので、scriptencodingと、
-"このファイルのエンコードが一致するよう注意！
-"強調表示されない場合、ここでscriptencodingを指定するとうまくいく事があります。
-"scriptencoding cp932
+"---------------------------------------
+" Show Zenkaku spaces
+"---------------------------------------
 function! ZenkakuSpace()
   highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey
-  "全角スペースを明示的に表示する
   silent! match ZenkakuSpace /　/
 endfunction
 
@@ -293,30 +287,6 @@ if has('syntax')
     autocmd VimEnter,BufEnter * call ZenkakuSpace()
   augroup END
 endif
-
-""""""""""""""""""""""""""""""
-"grep,tagsのためカレントディレクトリをファイルと同じディレクトリに移動する
-""""""""""""""""""""""""""""""
-"if exists('+autochdir')
-"  "autochdirがある場合カレントディレクトリを移動
-"  set autochdir
-"else
-"  "autochdirが存在しないが、カレントディレクトリを移動したい場合
-"  au BufEnter * execute ":silent! lcd " . escape(expand("%:p:h"), ' ')
-"endif
-
-"" テンプレート自動読み込み設定
-""C:.c
-"autocmd BufNewFile *.c 0r $MY_VIMRUNTIME/template/c.txt
-""C++:.cpp,.cc
-"autocmd BufNewFile *.cpp 0r $MY_VIMRUNTIME/template/cpp.txt
-"autocmd BufNewFile *.cc 0r $MY_VIMRUNTIME/template/cpp.txt
-""Java
-"autocmd BufNewFile *.java 0r $MY_VIMRUNTIME/template/java.txt
-""TeX
-"autocmd BufNewFile *.tex 0r $MY_VIMRUNTIME/template/tex.txt
-""TXT
-"autocmd BufNewFile *.txt 0r $MY_VIMRUNTIME/template/txt.txt
 
 
 "===================================
