@@ -352,6 +352,8 @@ Plug 'rking/ag.vim'
 Plug 'tpope/vim-endwise'
 " Comment functions
 Plug 'scrooloose/nerdcommenter'
+" A fast, as-you-type, fuzzy-search code completion engine for Vim
+"Plug 'Valloric/YouCompleteMe'
 
 "========== Haskell ==========
 " Vim configuration files for Haskell code
