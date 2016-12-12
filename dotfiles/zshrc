@@ -57,6 +57,7 @@ export LESS=-nqR
 export VISUAL=vim
 export EDITOR=$VISUAL
 export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
+export PYENV_ROOT=$HOME/.pyenv
 unset PYTHONPATH
 
 # enable Japanese input via SSH by setting the following environmental variables
@@ -173,8 +174,18 @@ command -v rbenv > /dev/null && eval "$(rbenv init -)"
 #==============================
 #  pyenv
 #==============================
-# Load pyenv if it exists
-command -v pyenv > /dev/null && eval "$(pyenv init -)"
+if command -v pyenv > /dev/null; then
+  # Load pyenv
+  eval "$(pyenv init -)"
+
+  # Add aliases for activate/deactivate
+  local python_version=$(pyenv global)
+  if [[ $python_version != 'system' ]]; then
+    for command in activate deactivate; do
+      alias $command="source $PYENV_ROOT/versions/$python_version/bin/$command"
+    done
+  fi
+fi
 
 #==============================
 #  nvm
