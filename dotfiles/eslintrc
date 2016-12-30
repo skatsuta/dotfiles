@@ -2,9 +2,13 @@
 extends:
   # Need to install https://github.com/walmartlabs/eslint-config-defaults
   - defaults/configurations/eslint
+
 env:
   es6: true
   browser: true
   node: true
   jquery: true
   greasemonkey: true
+
+rules:
+  comma-dangle: ['error', 'always-multiline']
