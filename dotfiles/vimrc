@@ -354,6 +354,8 @@ Plug 'tpope/vim-endwise'
 Plug 'scrooloose/nerdcommenter'
 " A fast, as-you-type, fuzzy-search code completion engine for Vim
 "Plug 'Valloric/YouCompleteMe'
+" Easily search for, substitute, and abbreviate multiple variants of a word
+Plug 'tpope/vim-abolish'
 
 "========== Haskell ==========
 " Vim configuration files for Haskell code
