@@ -10,5 +10,39 @@ env:
   jquery: true
   greasemonkey: true
 
+# See http://eslint.org/docs/rules/ for more details.
 rules:
+  # Possible Errors
+  no-console: ['error', { allow: ['error'] }]
+
+  # Best Practices
+  curly: ['error', 'all']
+  # eqeqeq: ['error', 'always']
+  no-else-return: 'error'
+
+  # Stylistic Issues
+  array-bracket-spacing: ['error', 'never']
+  block-spacing: ['error', 'always']
+  # brace-style: ['error', '1tbs', { 'allowSingleLine': true }]
+  # camelcase: 'error'
   comma-dangle: ['error', 'always-multiline']
+  # comma-spacing: ['error', { 'before': false, 'after': true }]
+  comma-style: ['error', 'last']
+  eol-last: ['error', 'always']
+  func-call-spacing: ['error', 'never']
+  # indent: ['error', 2]
+  key-spacing: ['error', { 'beforeColon': false }]
+  keyword-spacing: ['error', { 'before': true, 'after': true }]
+  object-curly-newline: ['error', { 'multiline': true }]
+  object-curly-spacing: ['error', 'always']
+  semi: ['error', 'always']
+  space-before-blocks: ['error', 'always']
+
+  # ECMAScript 6
+  # costructor-super: 'error'
+  no-class-assign: 'error'
+  no-const-assign: 'error'
+  no-dupe-class-members: 'error'
+  no-new-symbol: 'error'
+  no-this-before-super: 'error'
+  prefer-const: 'error'
