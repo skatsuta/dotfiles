@@ -489,9 +489,10 @@ let g:neosnippet#snippets_directory = [
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 " Always stic any detected errors into the location-list
 let g:syntastic_always_populate_loc_list = 1
-" Automatically open the |location-list| (see |syntastic-error-window|)
-" when a buffer has errors.
+" Automatically open the |location-list| (see |syntastic-error-window|) when a buffer has errors.
 let g:syntastic_auto_loc_list = 1
+" Specify the height of the location lists that syntastic opens.
+let g:syntastic_loc_list_height = 5
 " Ignore AngularJS's directives
 let g:syntastic_html_tidy_ignore_errors = [" proprietary attribute \"ng-"]
 " Run syntax checks when buffers are first loaded, as well as saving
