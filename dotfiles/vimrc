@@ -315,8 +315,6 @@ Plug 'skatsuta/vim-snippets'
 Plug 'Shougo/vimproc.vim'
 " Syntax checking hacks for vim
 Plug 'scrooloose/syntastic'
-" Sophisticated comment plugin
-Plug 'tyru/caw.vim'
 " Vim motions on speed!
 Plug 'Lokaltog/vim-easymotion'
 " Git wrapper
@@ -505,14 +503,6 @@ let g:syntastic_ruby_checkers = ['rubocop']
 " Go: Prevent lagging when using vim-go and syntastic
 "let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 
-
-"===================================
-" caw.vim
-"
-" Sophisticated comment plugin
-"===================================
-nnoremap <Leader>c <Plug>(caw:i:toggle)
-vnoremap <Leader>c <Plug>(caw:i:toggle)
 
 "===================================
 " EasyMotion
