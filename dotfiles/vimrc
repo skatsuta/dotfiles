@@ -501,7 +501,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 " Ruby
 let g:syntastic_ruby_checkers = ['rubocop']
 " Go: Prevent lagging when using vim-go and syntastic
-"let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 
 
 "===================================
