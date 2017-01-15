@@ -9,3 +9,6 @@ env:
   node: true
   jquery: true
   greasemonkey: true
+
+rules:
+  class-methods-use-this: 'off'
