@@ -14,3 +14,5 @@ rules:
   class-methods-use-this: 'off'
   no-param-reassign: 'off'
   strict: 'off'
+  quote-props: 'off'
+  arrow-parens: ['error', 'always']
