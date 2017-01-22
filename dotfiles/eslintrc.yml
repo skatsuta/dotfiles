@@ -15,5 +15,5 @@ rules:
   no-param-reassign: 'off'
   strict: 'off'
   quote-props: 'off'
-  arrow-parens: ['error', 'always']
+  arrow-parens: 'off'
   max-len: 'off'
