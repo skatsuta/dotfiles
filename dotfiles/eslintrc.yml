@@ -16,3 +16,4 @@ rules:
   strict: 'off'
   quote-props: 'off'
   arrow-parens: ['error', 'always']
+  max-len: 'off'
