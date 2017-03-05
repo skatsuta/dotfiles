@@ -566,12 +566,8 @@ nnoremap <silent> <Leader>uu :<C-u>Unite file_mru buffer<CR>
 " Happy Haskell programming on Vim, powered by ghc-mod
 "===================================
 autocmd FileType haskell NeoBundleSource ghcmod-vim
-" \t で型判定
-au FileType hs nnoremap <Leader>t :GhcModType<CR>
-au FileType hs vnoremap <Leader>t :GhcModType<CR>
-" \T で型判定のハイライトを消す
-au FileType hs nnoremap <Leader>T :GhcModTypeClear<CR>
-au FileType hs vnoremap <Leader>T :GhcModTypeClear<CR>
+au FileType hs noremap <Leader>t :GhcModType<CR>
+au FileType hs noremap <Leader>T :GhcModTypeClear<CR>
 
 
 "===================================
