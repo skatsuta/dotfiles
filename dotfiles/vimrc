@@ -354,8 +354,8 @@ Plug 'scrooloose/nerdcommenter'
 "Plug 'Valloric/YouCompleteMe'
 " Easily search for, substitute, and abbreviate multiple variants of a word
 Plug 'tpope/vim-abolish'
-" Run Rspec specs from Vim
-Plug 'thoughtbot/vim-rspec'
+" A Vim wrapper for running tests on different granularities
+Plug 'janko-m/vim-test'
 
 "========== Haskell ==========
 " Vim configuration files for Haskell code
@@ -738,9 +738,11 @@ let g:NERDSpaceDelims = 1
 
 
 "===========================================
-" rspec.vim
+" test.vim
 "===========================================
-autocmd FileType ruby map <Leader>t :call RunCurrentSpecFile()<CR>
-autocmd FileType ruby map <Leader>s :call RunNearestSpec()<CR>
-autocmd FileType ruby map <Leader>l :call RunLastSpec()<CR>
-autocmd FileType ruby map <Leader>a :call RunAllSpecs()<CR>
+" Key mappings
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
