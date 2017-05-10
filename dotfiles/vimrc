@@ -321,8 +321,6 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 " Provides insert mode auto-completion for quotes, parens, brackets, etc.
 Plug 'Raimondi/delimitMate'
-" This plugin inserts and updates a time stamp automatically.
-Plug 'autodate.vim'
 " Provides support for expanding abbreviations similar to emmet.
 Plug 'mattn/emmet-vim'
 " Run commands quickly.
