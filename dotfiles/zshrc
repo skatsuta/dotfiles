@@ -45,13 +45,15 @@ alias zshconfig="vim $HOME/.zshrc"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-
 #===== User configuration =====
+
+exist() {
+  command -v $* > /dev/null
+}
 
 # Environmental Variables
 export ZSH_HOME=$HOME/.zsh
 export MANPATH=/usr/local/man:$MANPATH
-export JAVA_HOME=$(/usr/libexec/java_home)
 export GOPATH=$HOME
 export LESS=-nqR
 export VISUAL=vim
@@ -59,6 +61,7 @@ export EDITOR=$VISUAL
 export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
 export PYENV_ROOT=$HOME/.pyenv
 unset PYTHONPATH
+exist /usr/libexec/java_home && export JAVA_HOME=$(/usr/libexec/java_home)
 
 # enable Japanese input via SSH by setting the following environmental variables
 # (ref: http://qiita.com/suin/items/629372fd08ee9e9cf727)
@@ -112,7 +115,7 @@ typeset -U path PATH
 
 
 # tmux
-[[ "$TMUX" = "" ]] && command -v tmux > /dev/null && exec tmux
+[[ "$TMUX" = "" ]] && exist tmux && exec tmux
 
 #==============================
 #  Aliases
@@ -169,12 +172,12 @@ export GRADLE_OPTS='-Dorg.gradle.daemon=true'
 #  rbenv
 #==============================
 # Load rbenv if it exists
-command -v rbenv > /dev/null && eval "$(rbenv init -)"
+exist rbenv && eval "$(rbenv init -)"
 
 #==============================
 #  pyenv
 #==============================
-if command -v pyenv > /dev/null; then
+if exist pyenv; then
   # Load pyenv
   eval "$(pyenv init -)"
 
@@ -198,7 +201,7 @@ export NVM_DIR="$HOME/.nvm"
 #  direnv
 #==============================
 # Load direnv if it exists
-command -v direnv > /dev/null && eval "$(direnv hook zsh)"
+exist direnv && eval "$(direnv hook zsh)"
 
 #==============================
 #  autojump
@@ -223,7 +226,7 @@ unfunction jo
 #  thefuck
 #==============================
 # Load thefuck if it exists
-command -v thefuck > /dev/null && eval "$(thefuck --alias)"
+exist thefuck && eval "$(thefuck --alias)"
 
 #==============================
 #  peco
