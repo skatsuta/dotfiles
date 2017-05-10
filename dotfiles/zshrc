@@ -112,6 +112,8 @@ compinit -C
 stty -ixon
 # remove duplicate entries in PATH
 typeset -U path PATH
+# Use Emacs key bindings
+bindkey -e
 
 
 # tmux
