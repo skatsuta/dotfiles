@@ -120,7 +120,7 @@ typeset -U path PATH
 #==============================
 #  Aliases
 #==============================
-source "$HOME/.zsh_alias"
+[[ -f "$HOME/.zsh_alias" ]] && source "$HOME/.zsh_alias"
 
 alias vi='vim'
 alias vr='vim -R'
