@@ -206,10 +206,12 @@ exist direnv && eval "$(direnv hook zsh)"
 #==============================
 #  autojump
 #==============================
-# Load autojump
-[[ -s $(brew --prefix)/etc/autojump.sh ]] && source $(brew --prefix)/etc/autojump.sh
-# remove 'jo' function for jo command
-unfunction jo
+if exist brew; then
+  # Load autojump
+  [[ -s $(brew --prefix)/etc/autojump.sh ]] && source $(brew --prefix)/etc/autojump.sh
+  # remove 'jo' function for jo command
+  unfunction jo
+fi
 
 #============================================================
 #  Incremental completion on zsh
