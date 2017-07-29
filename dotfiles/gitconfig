@@ -7,6 +7,20 @@
 [color]
   ui = true
 
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+
+[color "diff"]
+  meta = 227
+  flag = magenta bold
+  commit = 227 bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
+
 [push]
   default = current
 
@@ -16,6 +30,7 @@
 [core]
   editor = vim
   excludesfile = ~/.gitignore_global
+  pager = "diff-so-fancy | less --tabs=4 -RFX"
 
 [filter "media"]
   clean    = git media clean %f
@@ -37,11 +52,6 @@
 
 [commit]
   verbose = true
-
-[pager]
-  log  = diff-highlight | less
-  show = diff-highlight | less
-  diff = diff-highlight | less
 
 [interactive]
   diffFilter = diff-highlight
