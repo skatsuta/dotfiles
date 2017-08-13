@@ -379,6 +379,11 @@ Plug 'racer-rust/vim-racer', { 'for': 'rust '}
 "========== JavaScript ==========
 " Vastly improved Javascript indentation and syntax support in Vim.
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+" Prettier: post install (yarn install | npm install) then load plugin only for editing
+" supported files
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
 
 "========== Elixir ==========
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
@@ -744,3 +749,8 @@ nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
+
+"===========================================
+" vim-prettier
+"===========================================
+autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync
