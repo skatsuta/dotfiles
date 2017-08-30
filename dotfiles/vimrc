@@ -753,4 +753,8 @@ nmap <silent> <leader>g :TestVisit<CR>
 "===========================================
 " vim-prettier
 "===========================================
+" max line lengh that prettier will wrap on
+let g:prettier#config#print_width = 100
+" print spaces between brackets
+let g:prettier#config#bracket_spacing = 'true'
 autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync
