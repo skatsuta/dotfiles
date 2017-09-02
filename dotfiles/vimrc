@@ -757,4 +757,6 @@ nmap <silent> <leader>g :TestVisit<CR>
 let g:prettier#config#print_width = 100
 " print spaces between brackets
 let g:prettier#config#bracket_spacing = 'true'
+" none|es5|all
+let g:prettier#config#trailing_comma = 'es5'
 autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync
