@@ -22,4 +22,8 @@ alias gup='git pull upstream master'
 alias grb='git rebase -i --autosquash'
 
 # exa
-command -v exa > /dev/null && alias ls=exa
+if command -v exa > /dev/null; then
+  alias ls='exa'
+  alias la='ll -a'
+  alias lt='ll -T'
+fi
