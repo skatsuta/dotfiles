@@ -62,6 +62,14 @@ export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
 export PYENV_ROOT=$HOME/.pyenv
 unset PYTHONPATH
 exist /usr/libexec/java_home && export JAVA_HOME=$(/usr/libexec/java_home)
+if exist rustup && exist rustc; then
+  local sysroot=$(rustc --print sysroot)
+  if [[ ! -d "$sysroot" ]];then
+    echo "Rust source code not found; installing..."
+    rustup component add rust-src
+  fi
+  export RUST_SRC_PATH="$sysroot/lib/rustlib/src/rust/src"
+fi
 
 # enable Japanese input via SSH by setting the following environmental variables
 # (ref: http://qiita.com/suin/items/629372fd08ee9e9cf727)
