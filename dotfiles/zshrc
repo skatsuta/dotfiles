@@ -104,6 +104,7 @@ setopt hist_no_store
 setopt hist_expand
 # enable completion
 rm -f "$HOME/.zcompdump"
+fpath+=~/.zfunc
 autoload -U compinit
 compinit -C
 # Disable start/stop control
