@@ -395,8 +395,6 @@ Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 
 "========== Systax Highlighting ==========
-" Nginx
-Plug 'evanmiller/nginx-vim-syntax'
 " TOML
 Plug 'cespare/vim-toml'
 " EJS
@@ -593,14 +591,6 @@ autocmd VimEnter,ColorScheme * :hi IndentGuidesEven ctermbg=140
 nnoremap <silent> <Leader>gbl :Gblame<CR>
 nnoremap <silent> <Leader>gdf :Gdiff<CR>
 nnoremap <silent> <Leader>gst :Gstatus<CR>
-
-
-"===================================
-" nginx-vim-syntax
-"
-" Nginx syntax highlighting
-"===================================
-au BufNewFile,BufRead *.conf set filetype=nginx
 
 
 "===================================
