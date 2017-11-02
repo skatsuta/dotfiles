@@ -18,3 +18,4 @@ rules:
   arrow-parens: 'off'
   max-len: 'off'
   no-use-before-define: 'off'
+  no-restricted-globals: 'off'
