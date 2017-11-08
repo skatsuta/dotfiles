@@ -754,4 +754,4 @@ let g:prettier#config#print_width = 100
 let g:prettier#config#bracket_spacing = 'true'
 " none|es5|all
 let g:prettier#config#trailing_comma = 'es5'
-autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync
+autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
