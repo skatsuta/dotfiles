@@ -19,3 +19,4 @@ rules:
   max-len: 'off'
   no-use-before-define: 'off'
   no-restricted-globals: 'off'
+  prefer-destructuring: 'off'
