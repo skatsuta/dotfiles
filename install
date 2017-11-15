@@ -1,12 +1,15 @@
-#!/usr/bin/env bash -u
+#!/usr/bin/env bash
+set -u
 
 DIR="$(cd "$(dirname $0)" && pwd)/dotfiles"
 
 for file in `ls "$DIR"`; do
-  DEST="$HOME/.$file"
+  SRC="$DIR/$file"
+  DST="$HOME/.$file"
 
   # skip if already exists
-  [[ -f "$DEST" ]] && continue
+  [[ -f "$DST" ]] && continue
 
-  ln -s "$DIR/$file" "$DEST"
+  echo "Creating symlink: $SRC => $DST"
+  ln -s "$SRC" "$DST"
 done
