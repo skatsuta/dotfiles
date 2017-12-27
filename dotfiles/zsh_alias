@@ -3,6 +3,20 @@
 #
 # This file is loaded by .zshrc.
 
+# General
+alias lt='ls -t'
+alias rm='rm -i'
+alias cp='cp -i'
+
+# zsh
+alias sz="source $HOME/.zshrc"
+alias zc="vim $HOME/.zshrc"
+
+# Vim
+alias vi='vim'
+alias vr='vim -R'
+alias vf='vim $(fzf)'
+
 # Git
 alias git='hub'
 alias gf='git fetch && git diff HEAD..FETCH_HEAD'
