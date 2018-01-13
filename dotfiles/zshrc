@@ -229,7 +229,7 @@ fi
 #  thefuck
 #==============================
 # Load thefuck if it exists
-exist thefuck && eval "$(thefuck --alias --enable-experimental-instant-mode)"
+exist thefuck && eval "$(thefuck --alias)"
 
 #==============================
 #  peco
