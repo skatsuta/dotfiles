@@ -128,41 +128,12 @@ autocmd BufNewFile,BufRead *.gradle setf groovy
 autocmd BufNewFile,BufRead .envrc set filetype=sh
 
 
-"---------------------------------
+"========================================
 " Status Line
-"---------------------------------
+"========================================
 " Format: file name (file path)     [Git(branch)][+][vim][file encoding][line ending][row, column]
 " Ref: http://hail2u.net/blog/software/optimize-vim-statusline.html
 set statusline=%{expand('%:p:t')}\ %<\(%{expand('%:p:h')}\)%=\ %{fugitive#statusline()}%m%r%y%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}[%3l,%3c]
-
-" Change color of status line in insert mode
-let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
-if has('syntax')
-  augroup InsertHook
-    autocmd!
-    autocmd InsertEnter * call s:StatusLine('Enter')
-    autocmd InsertLeave * call s:StatusLine('Leave')
-  augroup END
-endif
-let s:slhlcmd = ''
-function! s:StatusLine(mode)
-  if a:mode == 'Enter'
-    silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
-    silent exec g:hi_insert
-  else
-    highlight clear StatusLine
-    silent exec s:slhlcmd
-    redraw
-  endif
-endfunction
-function! s:GetHighlight(hi)
-  redir => hl
-  exec 'highlight '.a:hi
-  redir END
-  let hl = substitute(hl, '[\r\n]', '', 'g')
-  let hl = substitute(hl, 'xxx', '', '')
-  return hl
-endfunction
 
 
 "----------------------------------------
