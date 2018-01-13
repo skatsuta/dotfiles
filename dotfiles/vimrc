@@ -50,10 +50,10 @@ if version >= 703
 endif
 
 
-"----------------------------------------
+"========================================
 " Search
-"----------------------------------------
-" Enable case-insensitive
+"========================================
+" Ignore the case of normal letters
 set ignorecase
 " Enable case-sensitive only if a query contains both uppercase and lowercase
 set smartcase
@@ -66,12 +66,12 @@ set nohlsearch
 " 'internal' means setting vimgrep as a default grep command
 "set grepprg=internal
 
-"----------------------------------------
-" Display Options
-"----------------------------------------
-" Color scheme
+
+"========================================
+" Display
+"========================================
 colorscheme molokai
-" Enable lazy redraw
+" Any action that is not typed will not cause the screen to redraw
 set lazyredraw
 " Set the width of Asian characters to double size
 set ambiwidth=double
@@ -81,17 +81,14 @@ set shortmess+=I
 set noerrorbells
 set novisualbell
 set visualbell t_vb=
-" Any action that is not typed will not cause the screen to redraw
-"set lazyredraw
 " A forward slash is used when expanding file names (even on Windows)
 set shellslash
 " Show line number
 set number
 " Time to show the matching paren ('noshowmatch': not display)
-set showmatch matchtime=1
+set showmatch
 " Set the number of spaces that a <Tab> in the file counts for
-"   (ts=tabstop, sw=shiftwidth, sts=softtabstop)
-set ts=2 sw=2 sts=0
+set tabstop=2 shiftwidth=2
 " Copy indent from current line when starting a new line
 set autoindent
 " The title of the window will be set to the value of a filename
@@ -108,18 +105,18 @@ set list
 set listchars=tab:»\ ,trail:~
 " Expand tabs into spaces (noexpandtab: no expanding)
 set expandtab
-" Don't extract tabs in Go file
-autocmd BufRead *.go set noexpandtab
+" Highlight the column
+set colorcolumn=100
 " Enable folding by syntax highlighting ('indent': by groups of lines with the same indent form)
 "set foldmethod=syntax
 " Show the line and column number of the cursor position, separated by a comma
 set ruler
+" Don't extract tabs in Go file
+autocmd BufRead *.go set noexpandtab
 " Enable highlighting
 if &t_Co > 2 || has('gui_running')
   syntax on
 endif
-" Highlight the column
-set colorcolumn=100
 
 
 "---------------------------------
