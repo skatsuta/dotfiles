@@ -312,7 +312,7 @@ Plug 'Shougo/neosnippet-snippets'
 " Vim-SnipMate defalut snippets
 Plug 'skatsuta/vim-snippets'
 " Interactive command execution in Vim.
-Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 " Syntax checking hacks for vim
 Plug 'scrooloose/syntastic'
 " Vim motions on speed!
