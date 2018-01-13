@@ -3,58 +3,22 @@
 "       Author: Soshi Katsuta
 "==========================================================================
 
+"========================================
+" System
+"========================================
 scriptencoding utf-8
 set encoding=utf-8
 set fileencodings=utf-8
 set fileformat=unix
 set shell=zsh
-
-"----------------------------------------
-" User Runtime Path
-"----------------------------------------
-" Absorb the difference of runtime path between Windows and Unix
-" $MY_VIMRUNTIME points to the user's runtime directory
-" To check its value, `:echo $MY_VIMRUNTIME`
-if isdirectory($HOME . '/.vim')
-  let $MY_VIMRUNTIME = $HOME.'/.vim'
-elseif isdirectory($HOME . '\vimfiles')
-  let $MY_VIMRUNTIME = $HOME.'\vimfiles'
-elseif isdirectory($VIM . '\vimfiles')
-  let $MY_VIMRUNTIME = $VIM.'\vimfiles'
-endif
-" If you want to use a plugin that needs to be placed in runtime path,
-" use $MY_VIMRUNTIME to avoid the difference between platforms.
-" For example, to use '~/.vim/qfixapp' in Linux,
-"set runtimepath+=$MY_VIMRUNTIME/qfixapp
-
-"----------------------------------------
-" System Configuration
-"----------------------------------------
-" Do not create a backup before overwriting the file
-"set nowritebackup
-" Do not create a backup/swap file
-"set nobackup
-" Enable only if the version is 7.3 or greater
-if version >= 703
-  " Enable to keep remembering undos even if Vim reloads or restarts
-  set undofile
-  " Save location of undos
-  set undodir=./.vimundo
-  " Delete comment character when joining commented lines
-  set formatoptions+=j
-endif
-" Do not create .swp file
-"set noswapfile
-" Do not create viminfo
-"set viminfo=
+" Change Leader key to ','
+let mapleader=","
 " Share clipboard only if tmux is not running
 if $TMUX == ''
   set clipboard+=unnamed
 endif
 " Disable octal; affects <C-a> and <C-x>
 set nrformats-=octal
-" Timeout to wait for completing key input (miliseconds; default 1000)
-"set timeoutlen=3500
 " Do not show warnings when opening a new buffer from one that is not saved
 set hidden
 " The number of histories saved
@@ -63,12 +27,8 @@ set history=10000
 set formatoptions+=mM
 " Enable free cursor in visual block mode
 set virtualedit=block
-" Enable cursor keys to move beginning/end of line
-"set whichwrap=b,s,[,],<,>
 " Enable backspace to delete indent and line break
 set backspace=indent,eol,start
-" Set width of Asian characters to double size
-set ambiwidth=double
 " Use tab completion in command line mode (ref. :help wildmenu)
 set wildmenu
 " Enable mouse
@@ -77,12 +37,17 @@ set ttymouse=xterm2
 " Backup directory
 set backupdir=/tmp
 set directory=/tmp
-" Enable lazy redraw
-set lazyredraw
 " Connect faster to TTY
 set ttyfast
-" Change Leader key to ','
-let mapleader=","
+" Enable only if the version is 7.3 or newer
+if version >= 703
+  " Enable to keep remembering undos even if Vim reloads or restarts
+  set undofile
+  " Save location of undos
+  set undodir=./.vimundo
+  " Delete comment character when joining commented lines
+  set formatoptions+=j
+endif
 
 
 "----------------------------------------
@@ -106,6 +71,10 @@ set nohlsearch
 "----------------------------------------
 " Color scheme
 colorscheme molokai
+" Enable lazy redraw
+set lazyredraw
+" Set the width of Asian characters to double size
+set ambiwidth=double
 " Do not show splash (starting message)
 set shortmess+=I
 " Disable beeping and flash
