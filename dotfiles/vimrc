@@ -104,6 +104,8 @@ set nohlsearch
 "----------------------------------------
 " Display Options
 "----------------------------------------
+" Color scheme
+colorscheme molokai
 " Do not show splash (starting message)
 set shortmess+=I
 " Disable beeping and flash
@@ -149,8 +151,6 @@ if &t_Co > 2 || has('gui_running')
 endif
 " Highlight the column
 set colorcolumn=100
-" Color scheme
-colorscheme default
 
 
 "---------------------------------
