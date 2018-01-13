@@ -137,36 +137,6 @@ set statusline=%{expand('%:p:t')}\ %<\(%{expand('%:p:h')}\)%=\ %{fugitive#status
 
 
 "----------------------------------------
-" diff/patch
-"----------------------------------------
-if has('win32') || has('win64')
-  set diffexpr=MyDiff()
-  function! MyDiff()
-    let opt = '-a --binary '
-    if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-    if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-    let arg1 = v:fname_in
-    if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-    let arg2 = v:fname_new
-    if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-    let arg3 = v:fname_out
-    if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-    let cmd = '!diff ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
-    silent execute cmd
-  endfunction
-endif
-
-" Show diff in current buffer
-command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
-" Show diff in a specified file or buffer
-command! -nargs=? -complete=file Diff if '<args>'=='' | browse vertical diffsplit|else| vertical diffsplit <args>|endif
-" Patch command
-set patchexpr=MyPatch()
-function! MyPatch()
-   :call system($VIM."\\'.'patch -o " . v:fname_out . " " . v:fname_in . " < " . v:fname_diff)
-endfunction
-
-"----------------------------------------
 " Normal Mode
 "----------------------------------------
 " Help search
