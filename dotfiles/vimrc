@@ -118,6 +118,28 @@ if &t_Co > 2 || has('gui_running')
   syntax on
 endif
 
+" Move cursor to the last position when a file is open
+augroup vimrcEx
+  autocmd!
+  autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line('$') |
+    \   exe "normal! g`\"" |
+    \ endif
+augroup END
+
+" Show Zenkaku spaces
+function! ZenkakuSpace()
+  highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey
+  silent! match ZenkakuSpace /　/
+endfunction
+
+if has('syntax')
+  augroup ZenkakuSpace
+    autocmd!
+    autocmd VimEnter,BufEnter * call ZenkakuSpace()
+  augroup END
+endif
+
 
 "========================================
 " Syntax Highlighting
@@ -158,33 +180,6 @@ endif
 noremap  <C-S> :update<CR>
 inoremap <C-S> <C-O>:update<CR>
 vnoremap <C-S> <C-C>:update<CR>
-
-"----------------------------------------
-" Vim Scripts
-"----------------------------------------
-" Move cursor to the last position when a file is open
-augroup vimrcEx
-  autocmd!
-  autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line('$') |
-    \   exe "normal! g`\"" |
-    \ endif
-augroup END
-
-"---------------------------------------
-" Show Zenkaku spaces
-"---------------------------------------
-function! ZenkakuSpace()
-  highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey
-  silent! match ZenkakuSpace /　/
-endfunction
-
-if has('syntax')
-  augroup ZenkakuSpace
-    autocmd!
-    autocmd VimEnter,BufEnter * call ZenkakuSpace()
-  augroup END
-endif
 
 
 "===================================
