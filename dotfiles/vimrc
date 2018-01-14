@@ -136,9 +136,9 @@ autocmd BufNewFile,BufRead .envrc set filetype=sh
 set statusline=%{expand('%:p:t')}\ %<\(%{expand('%:p:h')}\)%=\ %{fugitive#statusline()}%m%r%y%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}[%3l,%3c]
 
 
-"----------------------------------------
-" Normal Mode
-"----------------------------------------
+"========================================
+" Key Mappings
+"========================================
 " Help search
 nnoremap <F1> K
 " Run the current vim script file
@@ -154,9 +154,10 @@ nnoremap l <Right>
 if has('folding')
   nnoremap <expr> l foldlevel(line('.')) ? "\<Right>zo" : "\<Right>"
 endif
-" <C-s> to save
-inoremap <C-s> <ESC>:w<CR>a
-nnoremap <C-s> :w<CR>
+" Use Ctrl-S for saving, also in insert mode
+noremap  <C-S> :update<CR>
+inoremap <C-S> <C-O>:update<CR>
+vnoremap <C-S> <C-C>:update<CR>
 
 "----------------------------------------
 " Vim Scripts
