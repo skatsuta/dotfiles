@@ -64,7 +64,9 @@ set nohlsearch
 " Characters recognized as a 'word' (affects the movements of 'w' and 'b')
 "set iskeyword=a-z,A-Z,48-57,_,.,-,>
 " 'internal' means setting vimgrep as a default grep command
-"set grepprg=internal
+set grepprg=internal
+" Cause the Quickfix window to open after any grep invocation
+autocmd QuickFixCmdPost *grep* cwindow"
 
 
 "========================================
