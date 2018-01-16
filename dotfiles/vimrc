@@ -148,8 +148,10 @@ endif
 "========================================
 " Highlight Groovy scripts
 autocmd BufNewFile,BufRead *.gradle setf groovy
-" Highlight .envrc as well as shell script
+" Highlight .envrc as shell script
 autocmd BufNewFile,BufRead .envrc set filetype=sh
+" Highlight *.config as YAML
+autocmd BufNewFile,BufRead *.config set filetype=yaml
 
 
 "========================================
