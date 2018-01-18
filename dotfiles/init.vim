@@ -123,32 +123,40 @@ Plug 'Shougo/neoyank.vim'
 Plug 'Shougo/vimproc.vim'
 " Powerful shell implemented by vim.
 Plug 'Shougo/vimshell.vim'
+" Next generation completion framework
+Plug 'Shougo/neocomplete.vim'
+" neo-snippet plugin contains neocomplcache snippets source
+Plug 'Shougo/neosnippet'
+" The standard snippets repository for neosnippet
+Plug 'Shougo/neosnippet-snippets'
+" Vim-SnipMate defalut snippets
+Plug 'skatsuta/vim-snippets'
 " Vim plugin for intensely orgasmic commenting
+Plug 'tpope/vim-fugitive'
+" Easily search for, substitute, and abbreviate multiple variants of a word
+Plug 'tpope/vim-abolish'
+" Wisely add 'end' in Ruby, endfunction/endif/more in Vim script, etc
+Plug 'tpope/vim-endwise'
+" surround.vim: quoting/parenthesizing made simple
+Plug 'tpope/vim-surround'
+" Syntax checking hacks for vim
 Plug 'scrooloose/nerdcommenter'
 " Git wrapper
-Plug 'tpope/vim-fugitive'
-" Syntax checking hacks for vim
 Plug 'scrooloose/syntastic'
 " Provides insert mode auto-completion for quotes, parens, brackets, etc.
 Plug 'Raimondi/delimitMate'
-" Next generation completion framework
-Plug 'Shougo/neocomplete.vim'
-" " neo-snippet plugin contains neocomplcache snippets source
-" Plug 'Shougo/neosnippet'
-" " The standard snippets repository for neosnippet
-" Plug 'Shougo/neosnippet-snippets'
-" " Vim-SnipMate defalut snippets
-" Plug 'skatsuta/vim-snippets'
-" " Vim motions on speed!
-" Plug 'Lokaltog/vim-easymotion'
-" " Provides support for expanding abbreviations similar to emmet.
-" Plug 'mattn/emmet-vim'
-" " Run commands quickly.
-" Plug 'thinca/vim-quickrun'
-" " A Vim plugin for visually displaying indent levels in code
-" Plug 'nathanaelkane/vim-indent-guides'
-" " Monokai theme
-" Plug 'tomasr/molokai'
+" Vim motions on speed!
+Plug 'Lokaltog/vim-easymotion'
+" Provides support for expanding abbreviations similar to emmet.
+Plug 'mattn/emmet-vim'
+" Run commands quickly.
+Plug 'thinca/vim-quickrun'
+" A Vim plugin for visually displaying indent levels in code
+Plug 'nathanaelkane/vim-indent-guides'
+" Monokai theme
+Plug 'tomasr/molokai'
+" A Vim wrapper for running tests on different granularities
+Plug 'janko-m/vim-test'
 " " Alpaca
 " Plug 'alpaca-tc/alpaca_powertabline'
 " " Powerline is a statusline plugin for vim, and provides statuslines and prompts
@@ -158,20 +166,34 @@ Plug 'Shougo/neocomplete.vim'
 " Plug 'szw/vim-tags'
 " " Vim plugin that displays tags in a window, ordered by scope
 " Plug 'majutsushi/tagbar'
-" " surround.vim: quoting/parenthesizing made simple
-" Plug 'tpope/vim-surround'
 " " Search Dash.app from Vim
 " Plug 'rizzatti/dash.vim'
 " " Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'
 " Plug 'rking/ag.vim'
-" " Wisely add 'end' in Ruby, endfunction/endif/more in Vim script, etc
-" Plug 'tpope/vim-endwise'
-" " A fast, as-you-type, fuzzy-search code completion engine for Vim
-" "Plug 'Valloric/YouCompleteMe'
-" " Easily search for, substitute, and abbreviate multiple variants of a word
-" Plug 'tpope/vim-abolish'
-" " A Vim wrapper for running tests on different granularities
-" Plug 'janko-m/vim-test'
+" A fast, as-you-type, fuzzy-search code completion engine for Vim
+"Plug 'Valloric/YouCompleteMe'
+
+"========== Golang ==========
+Plug 'fatih/vim-go', { 'for': 'go' }
+
+"========== Rust ==========
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'racer-rust/vim-racer', { 'for': 'rust '}
+
+"========== JavaScript ==========
+" Vastly improved Javascript indentation and syntax support in Vim.
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+" Prettier: post install (yarn install | npm install) then load plugin only for editing
+" supported files
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
+
+"========== Ruby ==========
+" Vim/Ruby configuration files
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+" rails.vim: Ruby on Rails power tools
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
 
 " "========== Haskell ==========
 " " Vim configuration files for Haskell code
@@ -183,34 +205,8 @@ Plug 'Shougo/neocomplete.vim'
 " " Happy Haskell programming on Vim, powered by ghc-mod
 " Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
 
-" "========== Scala ==========
-" " Integration of Scala into Vim
-" Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
-
-" "========== Golang ==========
-" Plug 'fatih/vim-go', { 'for': 'go' }
-
-" "========== Rust ==========
-" Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-" Plug 'racer-rust/vim-racer', { 'for': 'rust '}
-
-"========== JavaScript ==========
-" Vastly improved Javascript indentation and syntax support in Vim.
-" Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-" Prettier: post install (yarn install | npm install) then load plugin only for editing
-" supported files
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
-
 " "========== Elixir ==========
 " Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
-
-" "========== Ruby ==========
-" " Vim/Ruby configuration files
-" Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-" " rails.vim: Ruby on Rails power tools
-" Plug 'tpope/vim-rails', { 'for': 'ruby' }
 
 " "========== Systax Highlighting ==========
 " " TOML
