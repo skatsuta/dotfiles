@@ -119,6 +119,10 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/neomru.vim'
 " Saves yank history includes unite.vim history/yank source.
 Plug 'Shougo/neoyank.vim'
+" Interactive command execution in Vim.
+Plug 'Shougo/vimproc.vim'
+" Powerful shell implemented by vim.
+Plug 'Shougo/vimshell.vim'
 " Vim plugin for intensely orgasmic commenting
 Plug 'scrooloose/nerdcommenter'
 " Git wrapper
@@ -127,18 +131,14 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
 " Provides insert mode auto-completion for quotes, parens, brackets, etc.
 Plug 'Raimondi/delimitMate'
-" " Next generation completion framework
-" Plug 'Shougo/neocomplete.vim'
-" " Powerful shell implemented by vim.
-" Plug 'Shougo/vimshell.vim'
+" Next generation completion framework
+Plug 'Shougo/neocomplete.vim'
 " " neo-snippet plugin contains neocomplcache snippets source
 " Plug 'Shougo/neosnippet'
 " " The standard snippets repository for neosnippet
 " Plug 'Shougo/neosnippet-snippets'
 " " Vim-SnipMate defalut snippets
 " Plug 'skatsuta/vim-snippets'
-" " Interactive command execution in Vim.
-" Plug 'Shougo/vimproc.vim'
 " " Vim motions on speed!
 " Plug 'Lokaltog/vim-easymotion'
 " " Provides support for expanding abbreviations similar to emmet.
