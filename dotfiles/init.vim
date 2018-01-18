@@ -26,7 +26,6 @@ augroup vimrcEx
 augroup END
 
 
-
 "=========================================
 " Search
 "=========================================
@@ -78,7 +77,6 @@ if has('syntax')
     autocmd VimEnter,BufEnter * call ZenkakuSpace()
   augroup END
 endif
-
 
 
 "=========================================
@@ -569,10 +567,10 @@ nnoremap <silent> <Leader>gst :Gstatus<CR>
 " "===========================================
 " " vim-prettier
 " "===========================================
-" " max line lengh that prettier will wrap on
-" let g:prettier#config#print_width = 100
-" " print spaces between brackets
-" let g:prettier#config#bracket_spacing = 'true'
-" " none|es5|all
-" let g:prettier#config#trailing_comma = 'es5'
-" autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
+" max line lengh that prettier will wrap on
+let g:prettier#config#print_width = 100
+" print spaces between brackets
+let g:prettier#config#bracket_spacing = 'true'
+" none|es5|all
+let g:prettier#config#trailing_comma = 'es5'
+autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync
