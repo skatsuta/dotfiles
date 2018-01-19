@@ -11,12 +11,19 @@ env:
   greasemonkey: true
 
 rules:
-  class-methods-use-this: 'off'
-  no-param-reassign: 'off'
-  strict: 'off'
-  quote-props: 'off'
-  arrow-parens: 'off'
-  max-len: 'off'
-  no-use-before-define: 'off'
-  no-restricted-globals: 'off'
-  prefer-destructuring: 'off'
+  class-methods-use-this: off
+  no-param-reassign: off
+  strict: off
+  quote-props: off
+  arrow-parens: off
+  max-len: off
+  no-use-before-define: off
+  no-restricted-globals: off
+  # prefer-destructuring: off
+  comma-dangle:
+    - error
+    - arrays: always-multiline
+      objects: always-multiline
+      imports: always-multiline
+      exports: always-multiline
+      functions: ignore
