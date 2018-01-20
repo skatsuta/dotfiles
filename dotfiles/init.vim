@@ -83,8 +83,10 @@ endif
 "=========================================
 " Syntax Highlighting
 "=========================================
-" Highlight .envrc as well as shell script
+" Highlight .envrc as shell script
 autocmd BufNewFile,BufRead .envrc set filetype=sh
+" Highlight *.config as YAML
+autocmd BufNewFile,BufRead *.config set filetype=yaml
 
 
 "=========================================
@@ -196,26 +198,26 @@ Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 " rails.vim: Ruby on Rails power tools
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 
-" "========== Haskell ==========
-" " Vim configuration files for Haskell code
-" Plug 'kana/vim-filetype-haskell', { 'for': 'haskell' }
-" " A completion plugin for Haskell, using ghc-mod
-" Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
-" " Vim to Haskell: A collection of vimscripts for Haskell development.
-" Plug 'dag/vim2hs', { 'for': 'haskell' }
-" " Happy Haskell programming on Vim, powered by ghc-mod
-" Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
+"========== Haskell ==========
+" Vim configuration files for Haskell code
+Plug 'kana/vim-filetype-haskell', { 'for': 'haskell' }
+" A completion plugin for Haskell, using ghc-mod
+Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
+" Vim to Haskell: A collection of vimscripts for Haskell development.
+Plug 'dag/vim2hs', { 'for': 'haskell' }
+" Happy Haskell programming on Vim, powered by ghc-mod
+Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
 
-" "========== Elixir ==========
-" Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+"========== Elixir ==========
+Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 
-" "========== Systax Highlighting ==========
-" " TOML
-" Plug 'cespare/vim-toml'
-" " EJS
-" Plug 'briancollins/vim-jst'
-" " Slim
-" Plug 'slim-template/vim-slim'
+"========== Systax Highlighting ==========
+" TOML
+Plug 'cespare/vim-toml'
+" EJS
+Plug 'briancollins/vim-jst'
+" Slim
+Plug 'slim-template/vim-slim'
 
 call plug#end()
 
