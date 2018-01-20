@@ -356,6 +356,40 @@ let g:indent_guides_guide_size=1
 autocmd VimEnter,ColorScheme * :hi IndentGuidesOdd  ctermbg=237
 autocmd VimEnter,ColorScheme * :hi IndentGuidesEven ctermbg=239
 
+"-----------------------------------------
+" vim-go
+" https://github.com/fatih/vim-go
+" Go development plugin for Vim
+"-----------------------------------------
+let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+" Run go tools automatically on save
+let g:go_metalinter_autosave = 1
+
+" gocode
+set completeopt=menu,preview
+
+" Key mappings
+autocmd FileType go nmap <Leader>r <Plug>(go-run)
+autocmd FileType go nmap <Leader>b <Plug>(go-build)
+autocmd FileType go nmap <Leader>t <Plug>(go-test)
+autocmd FileType go nmap <Leader>c <Plug>(go-coverage)
+autocmd FileType go nmap <Leader>ds <Plug>(go-def-split)
+autocmd FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+autocmd FileType go nmap <Leader>dt <Plug>(go-def-tab)
+autocmd FileType go nmap <Leader>n <Plug>(go-rename)
+autocmd FileType go nmap <Leader>gd <Plug>(go-doc)
+autocmd FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+autocmd FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+autocmd FileType go nmap <Leader>s <Plug>(go-implements)
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
+
 " "===================================
 " " vimproc
 " "
@@ -385,44 +419,6 @@ autocmd VimEnter,ColorScheme * :hi IndentGuidesEven ctermbg=239
 " autocmd FileType haskell NeoBundleSource ghcmod-vim
 " au FileType hs noremap <Leader>t :GhcModType<CR>
 " au FileType hs noremap <Leader>T :GhcModTypeClear<CR>
-
-
-
-
-" "===================================
-" " vim-go
-" "
-" " Go development plugin for Vim
-" "===================================
-" let g:go_fmt_command = "goimports"
-" let g:go_highlight_functions = 1
-" let g:go_highlight_methods = 1
-" let g:go_highlight_structs = 1
-" let g:go_highlight_interfaces = 1
-" let g:go_highlight_operators = 1
-" let g:go_highlight_build_constraints = 1
-
-" " Run go tools automatically on save
-" let g:go_metalinter_autosave = 1
-
-" " gocode
-" set completeopt=menu,preview
-
-" " Key mappings
-" au FileType go nmap <Leader>r <Plug>(go-run)
-" au FileType go nmap <Leader>b <Plug>(go-build)
-" au FileType go nmap <Leader>t <Plug>(go-test)
-" au FileType go nmap <Leader>c <Plug>(go-coverage)
-" au FileType go nmap <Leader>ds <Plug>(go-def-split)
-" au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-" au FileType go nmap <Leader>dt <Plug>(go-def-tab)
-" au FileType go nmap <Leader>n <Plug>(go-rename)
-" au FileType go nmap <Leader>gd <Plug>(go-doc)
-" au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-" au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-" au FileType go nmap <Leader>s <Plug>(go-implements)
-" au FileType go nmap <Leader>i <Plug>(go-info)
-
 
 " "===================================
 " " gotags & tagbar
