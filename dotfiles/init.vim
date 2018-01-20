@@ -353,23 +353,21 @@ let g:syntastic_ruby_checkers = ['rubocop']
 " Go: Prevent lagging when using vim-go and syntastic
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 
-
-" "===================================
-" " EasyMotion
-" "
-" " Vim motions on speed!
-" "===================================
-" "Disable default mappings
-" let g:EasyMotion_do_mapping = 0
-" " Enable smartcase
-" let g:EasyMotion_smartcase = 1
-" " Jump to anywhere you want by just `4` or `3` key strokes without thinking!
-" " `s{char}{char}{target}`
-" nmap s <Plug>(easymotion-s2)
-" xmap s <Plug>(easymotion-s2)
-" omap z <Plug>(easymotion-s2)  " Avoid conflict with surround.vim
-" " Of course, you can map to any key you want such as `<Space>`
-" " map <Space>(easymotion-s2)
+"-----------------------------------------
+" EasyMotion
+" https://github.com/easymotion/vim-easymotion
+" Vim motions on speed!
+"-----------------------------------------
+" Disable default mappings
+let g:EasyMotion_do_mapping = 0
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+" Jump to anywhere you want by just `4` or `3` key strokes without thinking!
+" `s{char}{char}{target}`
+nmap s <Plug>(easymotion-overwin-f2)
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 
 
 " "===================================
