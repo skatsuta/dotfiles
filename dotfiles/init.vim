@@ -122,13 +122,13 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/neomru.vim'
 " Saves yank history includes unite.vim history/yank source.
 Plug 'Shougo/neoyank.vim'
+" Dark powered asynchronous completion framework for Neovim/Vim8
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Interactive command execution in Vim.
 Plug 'Shougo/vimproc.vim'
 " Powerful shell implemented by vim.
 Plug 'Shougo/vimshell.vim'
 " Next generation completion framework
-Plug 'Shougo/neocomplete.vim'
-" neo-snippet plugin contains neocomplcache snippets source
 Plug 'Shougo/neosnippet'
 " The standard snippets repository for neosnippet
 Plug 'Shougo/neosnippet-snippets'
@@ -254,49 +254,6 @@ nnoremap <silent> <Leader>gdf :Gdiff<CR>
 nnoremap <silent> <Leader>gst :Gstatus<CR>
 
 "-----------------------------------------
-" neocomplete
-" https://github.com/Shougo/neocomplete.vim
-" Next generation completion framework after neocomplecache
-"-----------------------------------------
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#enable_ignore_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-" Use fuzzy completion.
-let g:neocomplete#enable_fuzzy_completion = 1
-" Define dictionaries
-let g:neocomplete#sources#dictionary#dictionaries = {
-  \ 'default' : '',
-  \ 'vimshell' : $HOME.'/.vimshell_hist',
-  \ 'scala' : $HOME.'/.vim/dict/scala.dict',
-  \ }
-" Omni completion
-if !exists('g:neocomplete#force_omni_input_patterns')
-  let g:neocomplete#force_omni_input_patterns = {}
-endif
-let g:neocomplete#force_omni_input_patterns.ruby = '[^.*\t]\.\w*\|\h\w*::'
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return neocomplete#close_popup() . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
-endfunction
-
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-"autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-"-----------------------------------------
 " Neonsnippet
 " https://github.com/Shougo/neosnippet.vim
 " The Neosnippet plug-In adds snippet support to Vim.
@@ -379,6 +336,14 @@ map <Leader>k <Plug>(easymotion-k)
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
+
+"-----------------------------------------
+" deoplete.nvim
+" https://github.com/Shougo/deoplete.nvim
+" Dark powered asynchronous completion framework for Neovim/Vim8
+"-----------------------------------------
+" Use deoplete
+let g:deoplete#enable_at_startup = 1
 
 " "===================================
 " " vimproc
