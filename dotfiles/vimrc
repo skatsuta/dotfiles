@@ -187,9 +187,7 @@ vnoremap <C-S> <C-C>:update<CR>
 
 
 "===================================
-"
-"  VIM-PLUG
-"
+" Plugins
 "===================================
 call plug#begin('~/.vim/plugged')
 
