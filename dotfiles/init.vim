@@ -111,7 +111,7 @@ vnoremap <C-S> <C-C>:update<CR>
 "=========================================
 " Plugins
 "=========================================
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 
 "========== General ==========
 " Unite and create user interfaces.
