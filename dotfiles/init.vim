@@ -29,6 +29,7 @@ augroup END
 "=========================================
 " Search
 "=========================================
+colorscheme molokai
 " Ignore the case of normal letters
 set ignorecase
 " Enable case-sensitive only if a query contains both uppercase and lowercase
