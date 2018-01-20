@@ -27,3 +27,6 @@ rules:
       imports: always-multiline
       exports: always-multiline
       functions: ignore
+  function-paren-newline:
+    - error
+    - consistent
