@@ -345,6 +345,17 @@ map g/ <Plug>(incsearch-stay)
 " Use deoplete
 let g:deoplete#enable_at_startup = 1
 
+"-----------------------------------------
+" Indent Guides
+" https://github.com/nathanaelkane/vim-indent-guides
+" A Vim plugin for visually displaying indent levels in code
+"-----------------------------------------
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_auto_colors=0
+let g:indent_guides_guide_size=1
+autocmd VimEnter,ColorScheme * :hi IndentGuidesOdd  ctermbg=237
+autocmd VimEnter,ColorScheme * :hi IndentGuidesEven ctermbg=239
+
 " "===================================
 " " vimproc
 " "
@@ -375,17 +386,6 @@ let g:deoplete#enable_at_startup = 1
 " au FileType hs noremap <Leader>t :GhcModType<CR>
 " au FileType hs noremap <Leader>T :GhcModTypeClear<CR>
 
-
-" "===================================
-" " vim-indent-guides
-" "
-" " A Vim plugin for visually displaying indent levels in code
-" "===================================
-" let g:indent_guides_enable_on_vim_startup=1
-" let g:indent_guides_auto_colors=0
-" let g:indent_guides_guide_size=1
-" autocmd VimEnter,ColorScheme * :hi IndentGuidesOdd  ctermbg=110
-" autocmd VimEnter,ColorScheme * :hi IndentGuidesEven ctermbg=140
 
 
 
