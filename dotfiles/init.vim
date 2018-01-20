@@ -295,35 +295,39 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 "autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 
-" "===================================
-" " neonsnippet
-" "
-" " neo-snippet plugin contains neocomplete snippets source
-" "===================================
-" " Plugin key mappings
-" imap <C-k> <Plug>(neosnippet_expand_or_jump)
-" smap <C-k> <Plug>(neosnippet_expand_or_jump)
-" xmap <C-k> <Plug>(neosnippet_expand_or_jump)
-" " SuperTab like snippets behavior.
-" imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-" \ "\<Plug>(neosnippet_expand_or_jump)"
-" \: pumvisible() ? "\<C-n>" : "\<TAB>"
-" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-" \ "\<Plug>(neosnippet_expand_or_jump)"
-" \: "\<TAB>"
+"-----------------------------------------
+" Neonsnippet
+" https://github.com/Shougo/neosnippet.vim
+" The Neosnippet plug-In adds snippet support to Vim.
+"-----------------------------------------
+" Plugin key mappings
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
 
-" " For snippet_complete marker.
-" if has('conceal')
-  " set conceallevel=2 concealcursor=i
-" endif
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
-" " load snippets
-" let g:neosnippet#enable_snipmate_compatibility = 1
-" let g:neosnippet#disable_runtime_snippets = {'_' : 1}
-" let g:neosnippet#snippets_directory = [
-  " \ '~/.vim/plugged/vim-snippets/snippets',
-  " \ '~/.vim/plugged/neosnippet-snippets/neosnippets',
-  " \ ]
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+
+" Enable snipMate compatibility feature.
+let g:neosnippet#enable_snipmate_compatibility = 1
+" Disable all runtime snippets
+let g:neosnippet#disable_runtime_snippets = {'_' : 1}
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory = [
+  \ '~/.vim/plugged/vim-snippets/snippets',
+  \ '~/.vim/plugged/neosnippet-snippets/neosnippets',
+  \ ]
 
 
 " "===================================
