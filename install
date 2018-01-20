@@ -1,15 +1,43 @@
 #!/usr/bin/env bash
 set -u
 
+# Current directory
 DIR="$(cd "$(dirname $0)" && pwd)/dotfiles"
 
-for file in `ls "$DIR"`; do
-  SRC="$DIR/$file"
-  DST="$HOME/.$file"
+# Neovim config file
+NVIM_FILE="init.vim"
+NVIM_CONFIG_DIR="$HOME/.config/nvim"
 
-  # skip if already exists
-  [[ -f "$DST" ]] && continue
+# Create symbolic links for each dotfile except for init.vim
+link_dotfiles() {
+  for file in $(ls "$DIR" | grep -v "${NVIM_FILE}"); do
+    local src="$DIR/$file"
+    local dst="$HOME/.$file"
 
-  echo "Creating symlink: $SRC => $DST"
-  ln -s "$SRC" "$DST"
-done
+    # skip if it already exists
+    [[ -f "$dst" ]] && continue
+
+    echo "Creating symlink: $src => $dst"
+    ln -s "$src" "$dst"
+  done
+}
+
+# Set up init.vim for Neovim
+link_neovim_file() {
+  local src="$DIR/$NVIM_FILE"
+  local dst="$NVIM_CONFIG_DIR/$NVIM_FILE"
+
+  # skip if it already exists
+  [[ -f "$dst" ]] && return
+
+  mkdir -p "$NVIM_CONFIG_DIR"
+  echo "Creating symlink: $src => $dst"
+  ln -s "$src" "$dst"
+}
+
+main() {
+  link_dotfiles
+  link_neovim_file
+}
+
+main
