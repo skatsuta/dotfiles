@@ -294,7 +294,6 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 "autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 "autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-
 "-----------------------------------------
 " Neonsnippet
 " https://github.com/Shougo/neosnippet.vim
@@ -329,31 +328,30 @@ let g:neosnippet#snippets_directory = [
   \ '~/.vim/plugged/neosnippet-snippets/neosnippets',
   \ ]
 
+"-----------------------------------------
+" Syntastic
+" https://github.com/vim-syntastic/syntastic
+" Syntax checking hacks for vim
+"-----------------------------------------
+" Normally activate syntactic checking
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+" Always stic any detected errors into the location-list
+let g:syntastic_always_populate_loc_list = 1
+" Automatically open the |location-list| (see |syntastic-error-window|) when a buffer has errors.
+let g:syntastic_auto_loc_list = 1
+" Specify the height of the location lists that syntastic opens.
+let g:syntastic_loc_list_height = 5
+" Ignore AngularJS's directives
+let g:syntastic_html_tidy_ignore_errors = [" proprietary attribute \"ng-"]
+" Run syntax checks when buffers are first loaded, as well as saving
+let g:syntastic_check_on_open = 1
 
-" "===================================
-" " Syntastic
-" "
-" " Syntax checking hacks for vim
-" "===================================
-" " Normally activate syntactic checking
-" let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-" " Always stic any detected errors into the location-list
-" let g:syntastic_always_populate_loc_list = 1
-" " Automatically open the |location-list| (see |syntastic-error-window|) when a buffer has errors.
-" let g:syntastic_auto_loc_list = 1
-" " Specify the height of the location lists that syntastic opens.
-" let g:syntastic_loc_list_height = 5
-" " Ignore AngularJS's directives
-" let g:syntastic_html_tidy_ignore_errors = [" proprietary attribute \"ng-"]
-" " Run syntax checks when buffers are first loaded, as well as saving
-" let g:syntastic_check_on_open = 1
-
-" " JavaScript
-" let g:syntastic_javascript_checkers = ['eslint']
-" " Ruby
-" let g:syntastic_ruby_checkers = ['rubocop']
-" " Go: Prevent lagging when using vim-go and syntastic
-" let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+" JavaScript
+let g:syntastic_javascript_checkers = ['eslint']
+" Ruby
+let g:syntastic_ruby_checkers = ['rubocop']
+" Go: Prevent lagging when using vim-go and syntastic
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 
 
 " "===================================
