@@ -160,6 +160,8 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tomasr/molokai'
 " A Vim wrapper for running tests on different granularities
 Plug 'janko-m/vim-test'
+" Improved incremental searching for Vim 
+Plug 'haya14busa/incsearch.vim'
 " " Alpaca
 " Plug 'alpaca-tc/alpaca_powertabline'
 " " Powerline is a statusline plugin for vim, and provides statuslines and prompts
@@ -369,6 +371,14 @@ nmap s <Plug>(easymotion-overwin-f2)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
+"-----------------------------------------
+" incsearch.vim
+" https://github.com/haya14busa/incsearch.vim
+" Improved incremental searching for Vim
+"-----------------------------------------
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
 " "===================================
 " " vimproc
