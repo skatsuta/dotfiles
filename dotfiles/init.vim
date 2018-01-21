@@ -124,8 +124,6 @@ Plug 'Shougo/neomru.vim'
 Plug 'Shougo/neoyank.vim'
 " Dark powered asynchronous completion framework for Neovim/Vim8
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Interactive command execution in Vim.
-Plug 'Shougo/vimproc.vim'
 " Powerful shell implemented by vim.
 Plug 'Shougo/vimshell.vim'
 " Next generation completion framework
@@ -152,8 +150,6 @@ Plug 'Raimondi/delimitMate'
 Plug 'Lokaltog/vim-easymotion'
 " Provides support for expanding abbreviations similar to emmet.
 Plug 'mattn/emmet-vim'
-" Run commands quickly.
-Plug 'thinca/vim-quickrun'
 " A Vim plugin for visually displaying indent levels in code
 Plug 'nathanaelkane/vim-indent-guides'
 " Monokai theme
@@ -415,26 +411,27 @@ let g:prettier#config#trailing_comma = 'es5'
 " Run Prettier asynchronously before saving a file
 autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync"
 
-" "===================================
-" " vimproc
-" "
-" " Interactive command execution in Vim.
-" "===================================
-" let vimproc_updcmd = has('win64') ?
-      " \ 'tools\\update-dll-mingw 64' : 'tools\\update-dll-mingw 32'
+"-----------------------------------------
+" rust.vim
+" https://github.com/rust-lang/rust.vim
+" This is a Vim plugin that provides Rust file detection, syntax highlighting, formatting, Syntastic integration, and more.
+"-----------------------------------------
+let g:rustfmt_autosave = 1
 
+"-----------------------------------------
+" Racer
+" https://github.com/racer-rust/vim-racer
+" This plugin allows vim to use Racer for Rust code completion and navigation.
+"-----------------------------------------
+set hidden
+let g:racer_cmd = '$HOME/.cargo/bin/racer'
+let g:racer_experimental_completer = 1
 
-" "===================================
-" " quickrun.vim
-" "
-" " Run commands quickly.
-" "===================================
-" let g:quickrun_config = {'*': {'split': 'vertical'}}
-" " Use vimproc to run
-" let g:quickrun_config._ = {'runner' : 'vimproc'}
-" " Scala 用
-" nnoremap <silent> <Leader>r :QuickRun -cmdopt ''<CR>
-
+" Mappings
+autocmd FileType rust nmap gd <Plug>(rust-def)
+autocmd FileType rust nmap gs <Plug>(rust-def-split)
+autocmd FileType rust nmap gx <Plug>(rust-def-vertical)
+autocmd FileType rust nmap <leader>gd <Plug>(rust-doc)
 
 " "===================================
 " " ghcmod.vim
@@ -527,20 +524,3 @@ autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync"
 " " syntax highlighting for .inc files
 " au BufNewFile,BufRead *.inc set filetype=php
 
-
-" "===========================================
-" " rust.vim
-" "===========================================
-" let g:rustfmt_autosave = 1
-
-" "===========================================
-" " Racer
-" "===========================================
-" set hidden
-" let g:racer_cmd = '$HOME/.cargo/bin/racer'
-" let g:racer_experimental_completer = 1
-
-" au FileType rust nmap gd <Plug>(rust-def)
-" au FileType rust nmap gs <Plug>(rust-def-split)
-" au FileType rust nmap gx <Plug>(rust-def-vertical)
-" au FileType rust nmap <leader>gd <Plug>(rust-doc)
