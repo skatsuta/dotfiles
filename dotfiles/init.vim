@@ -158,6 +158,8 @@ Plug 'tomasr/molokai'
 Plug 'janko-m/vim-test'
 " Improved incremental searching for Vim 
 Plug 'haya14busa/incsearch.vim'
+" fzf is a general-purpose command-line fuzzy finder.
+Plug '/usr/local/opt/fzf'
 " " Alpaca
 " Plug 'alpaca-tc/alpaca_powertabline'
 " " Powerline is a statusline plugin for vim, and provides statuslines and prompts
@@ -433,6 +435,13 @@ autocmd FileType rust nmap gs <Plug>(rust-def-split)
 autocmd FileType rust nmap gx <Plug>(rust-def-vertical)
 autocmd FileType rust nmap <leader>gd <Plug>(rust-doc)
 
+"-----------------------------------------
+" fzf
+" https://github.com/junegunn/fzf
+" A command line fussy finder written in Go
+"-----------------------------------------
+noremap <silent> <Leader>f :FZF<CR>
+
 " "===================================
 " " ghcmod.vim
 " "
@@ -478,15 +487,6 @@ autocmd FileType rust nmap <leader>gd <Plug>(rust-doc)
 
 " " Disable auto comment out
 " autocmd Filetype * set formatoptions-=ro
-
-
-" "===========================================
-" " fzf
-" "
-" " A command line fussy finder written in Go
-" "===========================================
-" set runtimepath+=~/.fzf
-" noremap <silent> <Leader>f :FZF<CR>
 
 
 " "==========================================="
