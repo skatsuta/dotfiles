@@ -61,6 +61,8 @@ set title
 set listchars=tab:»\ ,trail:~
 " Expand tabs into whitespaces (noexpandtab: no expanding)
 set expandtab
+" As much as possible of the last line in a window will be displayed
+set display=lastline
 " Don't extract tabs in Go file
 autocmd BufRead *.go set noexpandtab
 " Highlight the column
