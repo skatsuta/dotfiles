@@ -376,19 +376,18 @@ let g:go_metalinter_autosave = 1
 set completeopt=menu,preview
 
 " Key mappings
-autocmd FileType go nmap <Leader>r <Plug>(go-run)
-autocmd FileType go nmap <Leader>b <Plug>(go-build)
-autocmd FileType go nmap <Leader>t <Plug>(go-test)
-autocmd FileType go nmap <Leader>c <Plug>(go-coverage)
-autocmd FileType go nmap <Leader>ds <Plug>(go-def-split)
-autocmd FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-autocmd FileType go nmap <Leader>dt <Plug>(go-def-tab)
-autocmd FileType go nmap <Leader>n <Plug>(go-rename)
+autocmd FileType go nmap <Leader>gr <Plug>(go-run)
+autocmd FileType go nmap <Leader>gb <Plug>(go-build)
+autocmd FileType go nmap <Leader>gt <Plug>(go-test)
+autocmd FileType go nmap <Leader>gc <Plug>(go-coverage)
+autocmd FileType go nmap <Leader>gds <Plug>(go-def-split)
+autocmd FileType go nmap <Leader>gdv <Plug>(go-def-vertical)
+autocmd FileType go nmap <Leader>gdt <Plug>(go-def-tab)
+autocmd FileType go nmap <Leader>gn <Plug>(go-rename)
 autocmd FileType go nmap <Leader>gd <Plug>(go-doc)
 autocmd FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-autocmd FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-autocmd FileType go nmap <Leader>s <Plug>(go-implements)
-autocmd FileType go nmap <Leader>i <Plug>(go-info)
+autocmd FileType go nmap <Leader>gim <Plug>(go-implements)
+autocmd FileType go nmap <Leader>gif <Plug>(go-info)
 
 "-----------------------------------------
 " test.vim
