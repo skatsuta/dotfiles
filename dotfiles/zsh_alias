@@ -13,9 +13,9 @@ alias sz="source $HOME/.zshrc"
 alias zc="vim $HOME/.zshrc"
 
 # Vim
-alias vi='vim'
-alias vr='vim -R'
-alias vf='vim $(fzf)'
+alias vi='nvim'
+alias vr='nvim -R'
+alias vf='nvim $(fzf)'
 
 # Git
 alias git='hub'
