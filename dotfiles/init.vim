@@ -390,6 +390,32 @@ autocmd FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 autocmd FileType go nmap <Leader>s <Plug>(go-implements)
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
 
+"-----------------------------------------
+" test.vim
+" https://github.com/janko-m/vim-test
+" Run your tests at the speed of thought
+"-----------------------------------------
+" Key mappings
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+
+"-----------------------------------------
+" vim-prettier
+" https://github.com/prettier/vim-prettier
+" A vim plugin wrapper for prettier, pre-configured with custom default prettier settings.
+"-----------------------------------------
+" max line lengh that prettier will wrap on
+let g:prettier#config#print_width = 100
+" print spaces between brackets
+let g:prettier#config#bracket_spacing = 'true'
+" none|es5|all
+let g:prettier#config#trailing_comma = 'es5'
+" Run Prettier asynchronously before saving a file
+autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync"
+
 " "===================================
 " " vimproc
 " "
@@ -519,26 +545,3 @@ autocmd FileType go nmap <Leader>i <Plug>(go-info)
 " au FileType rust nmap gs <Plug>(rust-def-split)
 " au FileType rust nmap gx <Plug>(rust-def-vertical)
 " au FileType rust nmap <leader>gd <Plug>(rust-doc)
-
-
-
-" "===========================================
-" " test.vim
-" "===========================================
-" " Key mappings
-" nmap <silent> <leader>t :TestNearest<CR>
-" nmap <silent> <leader>T :TestFile<CR>
-" nmap <silent> <leader>a :TestSuite<CR>
-" nmap <silent> <leader>l :TestLast<CR>
-" nmap <silent> <leader>g :TestVisit<CR>
-
-" "===========================================
-" " vim-prettier
-" "===========================================
-" max line lengh that prettier will wrap on
-let g:prettier#config#print_width = 100
-" print spaces between brackets
-let g:prettier#config#bracket_spacing = 'true'
-" none|es5|all
-let g:prettier#config#trailing_comma = 'es5'
-autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync
