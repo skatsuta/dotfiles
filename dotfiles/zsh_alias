@@ -12,13 +12,17 @@ alias cp='cp -i'
 alias sz="source $HOME/.zshrc"
 alias zc="vim $HOME/.zshrc"
 
-# Vim
-alias vi='nvim'
-alias vr='nvim -R'
-alias vf='nvim $(fzf)'
+# Vim (Neovim)
+if command -v nvim > /dev/null; then
+  alias vi='nvim'
+  alias vr='nvim -R'
+  alias vf='nvim $(fzf)'
+fi
 
 # Git
-alias git='hub'
+if command -v hub > /dev/null; then
+  alias git='hub'
+fi
 alias gf='git fetch && git diff HEAD..FETCH_HEAD'
 alias gmf='git merge FETCH_HEAD --ff'
 alias gs='git status'
