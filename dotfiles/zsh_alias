@@ -45,3 +45,6 @@ if command -v exa > /dev/null; then
   alias la='ll -a'
   alias lt='ll -T'
 fi
+
+# 2fa
+alias 2fac='2fa -clip'
