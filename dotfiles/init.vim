@@ -411,7 +411,8 @@ let g:prettier#config#bracket_spacing = 'true'
 " none|es5|all
 let g:prettier#config#trailing_comma = 'es5'
 " Run Prettier asynchronously before saving a file
-autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync"
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync
 
 "-----------------------------------------
 " rust.vim
