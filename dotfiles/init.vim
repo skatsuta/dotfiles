@@ -100,6 +100,14 @@ set statusline=%{expand('%:p:t')}\ %<\(%{expand('%:p:h')}\)%=\ %{fugitive#status
 "=========================================
 " Key Mappings
 "=========================================
+" Default to display line upward/downward
+nnoremap j gj
+nnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up>   gk
+nnoremap h <Left>
+nnoremap l <Right>
+
 " Open foldings by l
 if has('folding')
   nnoremap <expr> l foldlevel(line('.')) ? "\<Right>zo" : "\<Right>"
