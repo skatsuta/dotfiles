@@ -65,3 +65,4 @@
   switch = !legit switch
   resync = !legit resync
   undo = !legit undo
+  new = checkout -b
