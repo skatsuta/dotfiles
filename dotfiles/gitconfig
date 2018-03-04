@@ -66,3 +66,4 @@
   resync = !legit resync
   undo = !legit undo
   new = checkout -b
+  rename = branch -m
