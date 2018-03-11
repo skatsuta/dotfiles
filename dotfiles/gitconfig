@@ -57,6 +57,7 @@
   autosquash = true
 
 [alias]
+  # Legit
   branches = !legit branches
   publish = !legit publish
   unpublish = !legit unpublish
@@ -65,8 +66,11 @@
   resync = !legit resync
   undo = !legit undo
 
+  # Shortcuts
   co = checkout
   new = checkout -b
   rename = branch -m
   delete = branch -D
+  cm = commit
+  rb = rebase -i
   dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
