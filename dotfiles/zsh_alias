@@ -41,6 +41,7 @@ alias grb='git rebase -i --autosquash'
 # exa
 if command -v exa > /dev/null; then
   alias ls='exa'
+  alias l='exa -1a'
   alias la='ll -a'
   alias lt='ll -T'
 fi
