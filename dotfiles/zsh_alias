@@ -45,3 +45,6 @@ fi
 
 # 2fa
 alias 2fac='2fa -clip'
+
+# Misc
+alias sl3='sqlite3 -column -header'
