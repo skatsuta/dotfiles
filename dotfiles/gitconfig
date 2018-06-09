@@ -67,11 +67,11 @@
   undo = !legit undo
 
   # Shortcuts
-  co = checkout
-  new = checkout -b
-  rename = branch -m
-  delete = branch -D
+  ammend = commit --amend
   cm = commit
+  co = checkout
+  delete = branch -D
   mf = merge --ff
+  new = checkout -b
   rb = rebase -i
-  dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
+  rename = branch -m
