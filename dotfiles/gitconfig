@@ -71,7 +71,9 @@
   cm = commit
   co = checkout
   delete = branch -D
+  hide = update-index --skip-worktree
   mf = merge --ff
   new = checkout -b
   rb = rebase -i
   rename = branch -m
+  unhide = update-index --no-skip-worktree
