@@ -56,6 +56,9 @@
 [rebase]
   autosquash = true
 
+[rerere]
+  enabled = 1
+
 [alias]
   # Legit
   branches = !legit branches
