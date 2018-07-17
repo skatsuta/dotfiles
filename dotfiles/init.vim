@@ -87,6 +87,8 @@ endif
 autocmd BufNewFile,BufRead .envrc set filetype=sh
 " Highlight *.config as YAML
 autocmd BufNewFile,BufRead *.config set filetype=yaml
+" Highlight Jenkinsfile
+autocmd BufNewFile,BufRead Jenkinsfile set filetype=groovy
 
 
 "=========================================
