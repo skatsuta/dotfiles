@@ -79,4 +79,5 @@
   new = checkout -b
   rb = rebase -i
   rename = branch -m
+  rt = remote
   unhide = update-index --no-skip-worktree
