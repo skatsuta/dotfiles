@@ -208,6 +208,10 @@ Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 " rails.vim: Ruby on Rails power tools
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 
+"========== Python ==========
+" A formatter for Python files
+Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
+
 "========== Haskell ==========
 " Vim configuration files for Haskell code
 Plug 'kana/vim-filetype-haskell', { 'for': 'haskell' }
@@ -452,6 +456,13 @@ autocmd FileType rust nmap <leader>gd <Plug>(rust-doc)
 " A command line fussy finder written in Go
 "-----------------------------------------
 noremap <silent> <Leader>f :FZF<CR>
+
+"-----------------------------------------
+" YAPF
+" https://github.com/google/yapf
+" A formatter for Python files
+"-----------------------------------------
+autocmd BufWritePre *.py call yapf#YAPF()
 
 " "===================================
 " " ghcmod.vim
