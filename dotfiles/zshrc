@@ -51,6 +51,7 @@ exist() {
 }
 
 # Environmental Variables
+unset PYTHONPATH
 export ZSH_HOME=$HOME/.zsh
 export MANPATH=/usr/local/man:$MANPATH
 export GOPATH=$HOME
@@ -59,7 +60,7 @@ export VISUAL=vim
 export EDITOR=$VISUAL
 export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
 export PYENV_ROOT=$HOME/.pyenv
-unset PYTHONPATH
+export NVM_DIR="$HOME/.nvm"
 exist /usr/libexec/java_home && export JAVA_HOME=$(/usr/libexec/java_home)
 if exist rustup && exist rustc; then
   local sysroot=$(rustc --print sysroot)
@@ -79,7 +80,6 @@ export LC_ALL=en_US.UTF-8
 # PATH
 # set /usr/local/bin before /usr/bin
 export PATH=/usr/local/bin:$PATH
-export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=$GOPATH/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 
@@ -275,3 +275,9 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 function ggl() {
   ghq get $@ && ghq look $_
 }
+
+#================================
+#  NVM
+#================================
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
