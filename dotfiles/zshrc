@@ -178,18 +178,8 @@ exist rbenv && eval "$(rbenv init -)"
 #==============================
 #  pyenv
 #==============================
-if exist pyenv; then
-  # Load pyenv
-  eval "$(pyenv init -)"
-
-  # Add aliases for activate/deactivate
-  local python_version=$(pyenv global)
-  if [[ $python_version != 'system' ]]; then
-    for command in activate deactivate; do
-      alias $command="source $PYENV_ROOT/versions/$python_version/bin/$command"
-    done
-  fi
-fi
+# Load pyenv if it exists
+exist pyenv && eval "$(pyenv init -)"
 
 #==============================
 #  direnv
