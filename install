@@ -3,41 +3,27 @@ set -u
 
 # Current directory
 DIR="$(cd "$(dirname $0)" && pwd)/dotfiles"
+cd "$DIR"
 
-# Neovim config file
-NVIM_FILE="init.vim"
-NVIM_CONFIG_DIR="$HOME/.config/nvim"
-
-# Create symbolic links for each dotfile except for init.vim
+# Create symbolic links for each dotfile
 link_dotfiles() {
-  for file in $(ls "$DIR" | grep -v "${NVIM_FILE}"); do
+  for file in $(find . -type f | cut -c 3-); do
     local src="$DIR/$file"
-    local dst="$HOME/.$file"
+    local dst="$HOME/$file"
 
     # skip if it already exists
     [[ -f "$dst" ]] && continue
 
     echo "Creating symlink: $src => $dst"
+    local dir="$(dirname $file)"
+    # create parent directory if it does not exist
+    [[ -d "$HOME/$dir" ]] || mkdir -p "$dir"
     ln -s "$src" "$dst"
   done
 }
 
-# Set up init.vim for Neovim
-link_neovim_file() {
-  local src="$DIR/$NVIM_FILE"
-  local dst="$NVIM_CONFIG_DIR/$NVIM_FILE"
-
-  # skip if it already exists
-  [[ -f "$dst" ]] && return
-
-  mkdir -p "$NVIM_CONFIG_DIR"
-  echo "Creating symlink: $src => $dst"
-  ln -s "$src" "$dst"
-}
-
 main() {
   link_dotfiles
-  link_neovim_file
 }
 
 main
