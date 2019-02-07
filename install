@@ -16,8 +16,11 @@ link_dotfiles() {
 
     echo "Creating symlink: $src => $dst"
     local dir="$(dirname $file)"
+
     # create parent directory if it does not exist
-    [[ -d "$HOME/$dir" ]] || mkdir -p "$dir"
+    local parent_dir="$HOME/$dir"
+    [[ ! -d "$parent_dir" ]] && mkdir -p "$parent_dir"
+
     ln -s "$src" "$dst"
   done
 }
