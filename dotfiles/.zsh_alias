@@ -26,6 +26,7 @@ fi
 alias g='git'
 alias gf='git fetch && git diff HEAD..FETCH_HEAD'
 alias gup='git pull upstream master'
+alias t='tig'
 
 # exa
 if command -v exa > /dev/null; then
