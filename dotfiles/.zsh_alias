@@ -25,14 +25,6 @@ if command -v hub > /dev/null; then
 fi
 alias g='git'
 alias gf='git fetch && git diff HEAD..FETCH_HEAD'
-alias gmf='git merge FETCH_HEAD --ff'
-alias gs='git status'
-alias gp='git push'
-alias gb='git branch'
-alias gr='git reset'
-alias gsh='git stash'
-alias gsp='git stash pop'
-alias grt='git remote'
 alias gup='git pull upstream master'
 
 # exa

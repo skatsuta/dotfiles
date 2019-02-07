@@ -71,15 +71,22 @@
 
   # Shortcuts
   amd = commit --amend
+  br = branch
   cm = commit
   co = checkout
   delete = branch -D
   hide = update-index --skip-worktree
   mf = merge --ff
+  mfh = merge --ff FETCH_HEAD
   new = checkout -b
+  ps = push
   rb = rebase -i
   rename = branch -m
+  rst = reset
   rt = remote
+  sh = stash
+  sp = stash pop
+  st = status
   unhide = update-index --no-skip-worktree
 
 [tig "bind"]
