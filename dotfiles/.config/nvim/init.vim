@@ -201,6 +201,7 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
+Plug 'posva/vim-vue'
 
 "========== Ruby ==========
 " Vim/Ruby configuration files
@@ -241,6 +242,28 @@ call plug#end()
 " Vim plugin for intensely orgasmic commenting
 "-----------------------------------------
 let g:NERDSpaceDelims = 1
+
+" Define `hooks` to temporarily change the filetype of Vue files to Make NERD Commenter work
+" properly
+let g:ft = ''
+function! NERDCommenter_before()
+  if &ft == 'vue'
+    let g:ft = 'vue'
+    let stack = synstack(line('.'), col('.'))
+    if len(stack) > 0
+      let syn = synIDattr((stack)[0], 'name')
+      if len(syn) > 0
+        exe 'setf ' . substitute(tolower(syn), '^vue_', '', '')
+      endif
+    endif
+  endif
+endfunction
+function! NERDCommenter_after()
+  if g:ft == 'vue'
+    setf vue
+    let g:ft = ''
+  endif
+endfunction
 
 "-----------------------------------------
 " Unite.vim
@@ -463,6 +486,14 @@ noremap <silent> <Leader>f :FZF<CR>
 " A formatter for Python files
 "-----------------------------------------
 autocmd BufWritePre *.py call yapf#YAPF()
+
+"-----------------------------------------
+" vim-vue
+" https://github.com/posva/vim-vue
+" Syntax Highlight for Vue.js components
+"-----------------------------------------
+" Highlight *.vue files pre-emptively
+autocmd FileType vue syntax sync fromstart
 
 " "===================================
 " " ghcmod.vim
