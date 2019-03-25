@@ -152,8 +152,6 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 " Syntax checking hacks for vim
 Plug 'scrooloose/nerdcommenter'
-" Git wrapper
-Plug 'scrooloose/syntastic'
 " Provides insert mode auto-completion for quotes, parens, brackets, etc.
 Plug 'Raimondi/delimitMate'
 " Vim motions on speed!
@@ -166,10 +164,12 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'tomasr/molokai'
 " A Vim wrapper for running tests on different granularities
 Plug 'janko-m/vim-test'
-" Improved incremental searching for Vim 
+" Improved incremental searching for Vim
 Plug 'haya14busa/incsearch.vim'
 " fzf is a general-purpose command-line fuzzy finder.
 Plug '/usr/local/opt/fzf'
+" Asynchronous linting/fixing for Vim and Language Server Protocol (LSP) integration
+Plug 'w0rp/ale'
 " " Alpaca
 " Plug 'alpaca-tc/alpaca_powertabline'
 " " Powerline is a statusline plugin for vim, and provides statuslines and prompts
@@ -323,29 +323,22 @@ let g:neosnippet#snippets_directory = [
   \ ]
 
 "-----------------------------------------
-" Syntastic
-" https://github.com/vim-syntastic/syntastic
-" Syntax checking hacks for vim
+" Asynchronous Lint Engine (ALE)
+" https://github.com/w0rp/ale
+" Asynchronous linting/fixing for Vim and Language Server Protocol (LSP) integration
 "-----------------------------------------
-" Normally activate syntactic checking
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-" Always stic any detected errors into the location-list
-let g:syntastic_always_populate_loc_list = 1
-" Automatically open the |location-list| (see |syntastic-error-window|) when a buffer has errors.
-let g:syntastic_auto_loc_list = 1
-" Specify the height of the location lists that syntastic opens.
-let g:syntastic_loc_list_height = 5
-" Ignore AngularJS's directives
-let g:syntastic_html_tidy_ignore_errors = [" proprietary attribute \"ng-"]
-" Run syntax checks when buffers are first loaded, as well as saving
-let g:syntastic_check_on_open = 1
-
-" JavaScript
-let g:syntastic_javascript_checkers = ['eslint']
-" Ruby
-let g:syntastic_ruby_checkers = ['rubocop']
-" Go: Prevent lagging when using vim-go and syntastic
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+" Configure linters
+let g:ale_linters = {
+  \ 'python': ['flake8'],
+  \ }
+" Configure fixers
+let g:ale_fixers = {
+  \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+  \ 'javascript': ['prettier', 'eslint'],
+  \ 'python': ['yapf'],
+  \ }
+" Fix files when saving them
+let g:ale_fix_on_save = 1
 
 "-----------------------------------------
 " EasyMotion
@@ -576,4 +569,3 @@ autocmd FileType vue syntax sync fromstart
 
 " " syntax highlighting for .inc files
 " au BufNewFile,BufRead *.inc set filetype=php
-
