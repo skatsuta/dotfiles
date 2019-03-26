@@ -333,9 +333,10 @@ let g:ale_linters = {
   \ }
 " Configure fixers
 let g:ale_fixers = {
-  \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+  \ 'go': ['goimports'],
   \ 'javascript': ['prettier', 'eslint'],
   \ 'python': ['yapf'],
+  \ '*': ['remove_trailing_lines', 'trim_whitespace'],
   \ }
 " Fix files when saving them
 let g:ale_fix_on_save = 1
