@@ -66,7 +66,7 @@ set display=lastline
 " Don't extract tabs in Go file
 autocmd BufRead *.go set noexpandtab
 " Highlight the column
-set colorcolumn=100
+set colorcolumn=95
 " Show Zenkaku spaces
 function! ZenkakuSpace()
   highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey
@@ -435,7 +435,7 @@ nmap <silent> <leader>g :TestVisit<CR>
 " A vim plugin wrapper for prettier, pre-configured with custom default prettier settings.
 "-----------------------------------------
 " max line lengh that prettier will wrap on
-let g:prettier#config#print_width = 100
+let g:prettier#config#print_width = 95
 " print spaces between brackets
 let g:prettier#config#bracket_spacing = 'true'
 " none|es5|all
