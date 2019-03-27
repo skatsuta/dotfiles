@@ -335,7 +335,7 @@ let g:ale_linters = {
 let g:ale_fixers = {
   \ 'go': ['goimports'],
   \ 'javascript': ['prettier', 'eslint'],
-  \ 'python': ['yapf'],
+  \ 'python': ['isort', 'yapf'],
   \ '*': ['remove_trailing_lines', 'trim_whitespace'],
   \ }
 " Fix files when saving them
