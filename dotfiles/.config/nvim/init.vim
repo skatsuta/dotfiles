@@ -329,6 +329,7 @@ let g:neosnippet#snippets_directory = [
 "-----------------------------------------
 " Configure linters
 let g:ale_linters = {
+  \ 'javascript': ['eslint'],
   \ 'python': ['flake8'],
   \ }
 " Configure fixers
