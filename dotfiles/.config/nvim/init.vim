@@ -196,11 +196,7 @@ Plug 'racer-rust/vim-racer', { 'for': 'rust '}
 "========== JavaScript ==========
 " Vastly improved Javascript indentation and syntax support in Vim.
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-" Prettier: post install (yarn install | npm install) then load plugin only for editing
-" supported files
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
+" Syntax Highlight for Vue.js components
 Plug 'posva/vim-vue'
 
 "========== Ruby ==========
@@ -430,21 +426,6 @@ nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
-
-"-----------------------------------------
-" vim-prettier
-" https://github.com/prettier/vim-prettier
-" A vim plugin wrapper for prettier, pre-configured with custom default prettier settings.
-"-----------------------------------------
-" max line lengh that prettier will wrap on
-let g:prettier#config#print_width = 95
-" print spaces between brackets
-let g:prettier#config#bracket_spacing = 'true'
-" none|es5|all
-let g:prettier#config#trailing_comma = 'es5'
-" Run Prettier asynchronously before saving a file
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql PrettierAsync
 
 "-----------------------------------------
 " rust.vim
