@@ -70,8 +70,8 @@
   undo = !legit undo
 
   # Shortcuts
-  amd = commit --amend
   br = branch
+  ca = commit --amend
   cm = commit
   co = checkout
   delete = branch -D
