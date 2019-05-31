@@ -3,6 +3,10 @@
 #
 # This file is loaded by .zshrc.
 
+exist() {
+  command -v $* > /dev/null
+}
+
 # General
 alias lt='ls -t'
 alias rm='rm -i'
@@ -13,14 +17,14 @@ alias sz="source $HOME/.zshrc"
 alias zc="vim $HOME/.zshrc"
 
 # Vim (Neovim)
-if command -v nvim > /dev/null; then
+if exist nvim; then
   alias vi='nvim'
   alias vr='nvim -R'
   alias vf='nvim $(fzf)'
 fi
 
 # Git
-if command -v hub > /dev/null; then
+if exist hub; then
   alias git='hub'
 fi
 alias g='git'
@@ -29,7 +33,7 @@ alias gup='git pull upstream master'
 alias t='tig'
 
 # exa
-if command -v exa > /dev/null; then
+if exist exa; then
   alias ls='exa -F'
   alias l='exa -1a'
   alias la='ll -a'
@@ -37,11 +41,18 @@ if command -v exa > /dev/null; then
 fi
 
 # 2fa
-alias 2fac='2fa -clip'
+if exist 2fa; then
+  alias 2fac='2fa -clip'
+fi
 
 # Pipenv
-if command -v pipenv > /dev/null; then
+if exist pipenv; then
   alias pe='pipenv'
+fi
+
+# Docker Compose
+if exist docker-compose; then
+  alias dc='docker-compose'
 fi
 
 # Misc
