@@ -70,6 +70,7 @@
   undo = !legit undo
 
   # Shortcuts
+  als = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
   br = branch
   ca = commit --amend
   cm = commit
