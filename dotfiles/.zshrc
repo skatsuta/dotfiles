@@ -82,6 +82,7 @@ export LC_ALL=en_US.UTF-8
 export PATH=/usr/local/bin:$PATH
 export PATH=$GOPATH/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 # location to save command histories
 export HISTFILE=${HOME}/.zsh_history
