@@ -237,7 +237,10 @@ call plug#end()
 " https://github.com/scrooloose/nerdcommenter
 " Vim plugin for intensely orgasmic commenting
 "-----------------------------------------
+" Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
 
 " Define `hooks` to temporarily change the filetype of Vue files to Make NERD Commenter work
 " properly
