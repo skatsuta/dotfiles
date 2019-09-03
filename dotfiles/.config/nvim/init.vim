@@ -475,15 +475,6 @@ autocmd BufWritePre *.py call yapf#YAPF()
 autocmd FileType vue syntax sync fromstart
 
 " "===================================
-" " ghcmod.vim
-" "
-" " Happy Haskell programming on Vim, powered by ghc-mod
-" "===================================
-" autocmd FileType haskell NeoBundleSource ghcmod-vim
-" au FileType hs noremap <Leader>t :GhcModType<CR>
-" au FileType hs noremap <Leader>T :GhcModTypeClear<CR>
-
-" "===================================
 " " gotags & tagbar
 " "
 " " ctags-compatible tag generator for Go
@@ -519,39 +510,3 @@ autocmd FileType vue syntax sync fromstart
 
 " " Disable auto comment out
 " autocmd Filetype * set formatoptions-=ro
-
-
-" "==========================================="
-" " dash.vim
-" "
-" " Search Dash.app from Vim
-" "===========================================
-" nmap <silent> <Leader>d <Plug>DashSearch
-
-
-" "===========================================
-" " pt (the platinum searcher)
-" "===========================================
-" nnoremap <silent> <Leader>g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
-" if executable('pt')
-  " let g:unite_source_grep_command = 'pt'
-  " let g:unite_source_grep_default_opts = '--nogroup --nocolor'
-  " let g:unite_source_grep_recursive_opt = ''
-  " let g:unite_source_grep_encoding = 'utf-8'
-" endif
-
-
-" "===========================================
-" " php.vim
-" "===========================================
-" " $VIMRUNTIME/syntax/php.vim
-" let g:php_baselib = 1
-" let g:php_htmlInStrings = 1
-" let g:php_noShortTags = 1
-" let g:php_sql_query = 1
-
-" " $VIMRUNTIME/syntax/sql.vim
-" let g:sql_type_default = 'mysql'
-
-" " syntax highlighting for .inc files
-" au BufNewFile,BufRead *.inc set filetype=php
