@@ -333,6 +333,8 @@ let g:ale_linters = {
   \ }
 " Configure fixers
 let g:ale_fixers = {
+  \ 'c': ['clang-format'],
+  \ 'cpp': ['clang-format'],
   \ 'go': ['goimports'],
   \ 'javascript': ['prettier', 'eslint'],
   \ 'python': ['isort', 'yapf'],
