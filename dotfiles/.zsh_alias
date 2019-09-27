@@ -11,6 +11,7 @@ exist() {
 alias lt='ls -t'
 alias rm='rm -i'
 alias cp='cp -i'
+alias mk='make'
 
 # zsh
 alias sz="source $HOME/.zshrc"
