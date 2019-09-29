@@ -51,7 +51,10 @@ if exist pipenv; then
   alias pe='pipenv'
 fi
 
-# Docker Compose
+# Docker
+if exist docker; then
+  alias d='docker'
+fi
 if exist docker-compose; then
   alias dc='docker-compose'
 fi
