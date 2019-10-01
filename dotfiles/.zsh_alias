@@ -59,5 +59,10 @@ if exist docker-compose; then
   alias dc='docker-compose'
 fi
 
+# direnv
+if exist direnv; then
+  alias de='direnv'
+fi
+
 # Misc
 alias sl3='sqlite3 -column -header'
