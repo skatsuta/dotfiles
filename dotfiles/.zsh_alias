@@ -41,28 +41,14 @@ if exist exa; then
   alias lt='ll -T'
 fi
 
-# 2fa
-if exist 2fa; then
-  alias 2fac='2fa -clip'
-fi
-
-# Pipenv
-if exist pipenv; then
-  alias pe='pipenv'
-fi
-
 # Docker
 if exist docker; then
   alias d='docker'
 fi
-if exist docker-compose; then
-  alias dc='docker-compose'
-fi
 
-# direnv
-if exist direnv; then
-  alias de='direnv'
-fi
-
-# Misc
+# Others
+alias 2fac='2fa -clip'
+alias dc='docker-compose'
+alias de='direnv'
+alias pe='pipenv'
 alias sl3='sqlite3 -column -header'
