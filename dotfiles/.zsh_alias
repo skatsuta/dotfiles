@@ -50,5 +50,6 @@ fi
 alias 2fac='2fa -clip'
 alias dc='docker-compose'
 alias de='direnv'
+alias i='invoke'
 alias pe='pipenv'
 alias sl3='sqlite3 -column -header'
