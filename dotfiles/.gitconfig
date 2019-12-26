@@ -1,5 +1,5 @@
 [include]
-  path = ~/.gitconfig.local
+  path = ~/.gitconfig_local
 
 [user]
   name  = Soshi Katsuta
