@@ -55,6 +55,7 @@ unset PYTHONPATH
 export ZSH_HOME=$HOME/.zsh
 export MANPATH=/usr/local/man:$MANPATH
 export GOPATH=$HOME
+export GO111MODULE=on
 export LESS=-nqR
 export VISUAL=nvim
 export EDITOR=$VISUAL
