@@ -265,9 +265,9 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 #================================
 #  ghq
 #================================
-# Run `ghq get` and then `ghq look`
+# Run `ghq get` and change the working directory to the cloned repo
 function ggl() {
-  ghq get $@ && ghq look $_
+  ghq get --look $@
 }
 
 #================================
