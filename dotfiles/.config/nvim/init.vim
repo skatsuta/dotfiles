@@ -66,7 +66,7 @@ set display=lastline
 " Don't extract tabs in Go file
 autocmd BufRead *.go set noexpandtab
 " Highlight the column
-set colorcolumn=95
+set colorcolumn=100
 " Show Zenkaku spaces
 function! ZenkakuSpace()
   highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey
