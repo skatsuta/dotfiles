@@ -89,6 +89,8 @@ autocmd BufNewFile,BufRead .envrc set filetype=sh
 autocmd BufNewFile,BufRead *.config,*.dig set filetype=yaml
 " Highlight Jenkinsfile
 autocmd BufNewFile,BufRead Jenkinsfile set filetype=groovy
+" Highlight NASM assembly files
+autocmd BufNewFile,BufRead *.nas set filetype=nasm
 
 
 "=========================================
