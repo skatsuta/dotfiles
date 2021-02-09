@@ -172,6 +172,8 @@ Plug 'haya14busa/incsearch.vim'
 Plug '/usr/local/opt/fzf'
 " Asynchronous linting/fixing for Vim and Language Server Protocol (LSP) integration
 Plug 'w0rp/ale'
+" The latest version of the Jinja2 syntax file for vim with the ability to detect either HTML or Jinja.
+Plug 'Glench/Vim-Jinja2-Syntax'
 " " Alpaca
 " Plug 'alpaca-tc/alpaca_powertabline'
 " " Powerline is a statusline plugin for vim, and provides statuslines and prompts
