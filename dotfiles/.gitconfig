@@ -91,7 +91,13 @@
   unhide = update-index --no-skip-worktree
 
 [tig "bind"]
-diff = F ?!git commit --fixup %(commit)
-diff = S ?!git commit --squash %(commit)
-main = F ?!git commit --fixup %(commit)
-main = S ?!git commit --squash %(commit)
+  diff = F ?!git commit --fixup %(commit)
+  diff = S ?!git commit --squash %(commit)
+  main = F ?!git commit --fixup %(commit)
+  main = S ?!git commit --squash %(commit)
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
