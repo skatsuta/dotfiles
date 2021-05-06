@@ -210,8 +210,8 @@ Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 
 "========== Python ==========
-" A formatter for Python files
-Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
+" The uncompromising Python code formatter
+Plug 'psf/black', { 'tag': 'stable' }
 
 "========== Haskell ==========
 " Vim configuration files for Haskell code
@@ -341,7 +341,7 @@ let g:ale_fixers = {
   \ 'cpp': ['clang-format'],
   \ 'go': ['goimports'],
   \ 'javascript': ['prettier', 'eslint'],
-  \ 'python': ['isort', 'yapf'],
+  \ 'python': ['isort', 'black'],
   \ '*': ['remove_trailing_lines', 'trim_whitespace'],
   \ }
 " Fix files when saving them
@@ -466,11 +466,11 @@ autocmd FileType rust nmap <leader>gd <Plug>(rust-doc)
 noremap <silent> <Leader>f :FZF<CR>
 
 "-----------------------------------------
-" YAPF
-" https://github.com/google/yapf
-" A formatter for Python files
+" Black
+" https://github.com/psf/black
+" The uncompromising Python code formatter
 "-----------------------------------------
-autocmd BufWritePre *.py call yapf#YAPF()
+autocmd BufWritePre *.py execute ':Black'
 
 "-----------------------------------------
 " vim-vue
