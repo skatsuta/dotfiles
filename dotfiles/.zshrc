@@ -60,6 +60,8 @@ export LIBRARY_PATH=/usr/local/opt/openssl/lib:/usr/local/lib:$LIBRARY_PATH
 export MANPATH=/usr/local/man:$MANPATH
 export NVM_DIR="$HOME/.nvm"
 export PYENV_ROOT=$HOME/.pyenv
+# Issue a EncodingWarning when the locale-specific default encoding is used
+export PYTHONDEFAULTENCODING=1
 export VISUAL=nvim
 export ZSH_HOME=$HOME/.zsh
 exist /usr/libexec/java_home && export JAVA_HOME=$(/usr/libexec/java_home)
