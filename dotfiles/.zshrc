@@ -52,16 +52,16 @@ exist() {
 
 # Environmental Variables
 unset PYTHONPATH
-export ZSH_HOME=$HOME/.zsh
-export MANPATH=/usr/local/man:$MANPATH
-export GOPATH=$HOME
-export GO111MODULE=on
-export LESS=-nqR
-export VISUAL=nvim
 export EDITOR=$VISUAL
+export GO111MODULE=on
+export GOPATH=$HOME
+export LESS=-nqR
 export LIBRARY_PATH=/usr/local/opt/openssl/lib:/usr/local/lib:$LIBRARY_PATH
-export PYENV_ROOT=$HOME/.pyenv
+export MANPATH=/usr/local/man:$MANPATH
 export NVM_DIR="$HOME/.nvm"
+export PYENV_ROOT=$HOME/.pyenv
+export VISUAL=nvim
+export ZSH_HOME=$HOME/.zsh
 exist /usr/libexec/java_home && export JAVA_HOME=$(/usr/libexec/java_home)
 if exist rustup && exist rustc; then
   local sysroot=$(rustc --print sysroot)
