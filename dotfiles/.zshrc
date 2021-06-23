@@ -52,6 +52,7 @@ exist() {
 
 # Environmental Variables
 unset PYTHONPATH
+export VISUAL=nvim
 export EDITOR=$VISUAL
 export GO111MODULE=on
 export GOPATH=$HOME
@@ -62,7 +63,6 @@ export NVM_DIR="$HOME/.nvm"
 export PYENV_ROOT=$HOME/.pyenv
 # Issue a EncodingWarning when the locale-specific default encoding is used
 export PYTHONDEFAULTENCODING=1
-export VISUAL=nvim
 export ZSH_HOME=$HOME/.zsh
 exist /usr/libexec/java_home && export JAVA_HOME=$(/usr/libexec/java_home)
 if exist rustup && exist rustc; then
