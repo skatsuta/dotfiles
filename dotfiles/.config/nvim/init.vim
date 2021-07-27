@@ -45,6 +45,8 @@ autocmd QuickFixCmdPost *grep* cwindow
 "=========================================
 " Display Options
 "=========================================
+" Enable syntax highlighting
+syntax on
 " Any action that is not typed will not cause the screen to redraw
 set lazyredraw
 " Set the width of Asian characters to double size
@@ -66,7 +68,9 @@ set display=lastline
 " Don't extract tabs in Go file
 autocmd BufRead *.go set noexpandtab
 " Highlight the column
-set colorcolumn=90
+set colorcolumn=88
+" Change the ruler color to a darker grey
+highlight ColorColumn ctermbg=238
 " Show Zenkaku spaces
 function! ZenkakuSpace()
   highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey
