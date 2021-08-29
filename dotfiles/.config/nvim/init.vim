@@ -345,6 +345,7 @@ let g:ale_fixers = {
   \ 'cpp': ['clang-format'],
   \ 'go': ['goimports'],
   \ 'javascript': ['prettier', 'eslint'],
+  \ 'json': ['prettier'],
   \ 'python': ['isort', 'black'],
   \ '*': ['remove_trailing_lines', 'trim_whitespace'],
   \ }
