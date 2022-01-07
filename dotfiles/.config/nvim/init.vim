@@ -173,7 +173,7 @@ Plug 'janko-m/vim-test'
 " Improved incremental searching for Vim
 Plug 'haya14busa/incsearch.vim'
 " fzf is a general-purpose command-line fuzzy finder.
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Asynchronous linting/fixing for Vim and Language Server Protocol (LSP) integration
 Plug 'w0rp/ale'
 " The latest version of the Jinja2 syntax file for vim with the ability to detect either HTML or Jinja.
