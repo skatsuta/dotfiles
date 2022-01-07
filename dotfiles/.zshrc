@@ -127,9 +127,6 @@ typeset -U path PATH
 bindkey -e
 
 
-# tmux
-[[ "$TMUX" = "" ]] && exist tmux && exec tmux
-
 #==============================
 #  Aliases
 #==============================
