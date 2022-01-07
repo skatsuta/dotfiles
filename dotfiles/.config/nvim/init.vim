@@ -338,6 +338,7 @@ let g:neosnippet#snippets_directory = [
 let g:ale_linters = {
   \ 'javascript': ['eslint'],
   \ 'python': ['flake8'],
+  \ 'go': [],
   \ }
 " Configure fixers
 let g:ale_fixers = {
@@ -409,6 +410,20 @@ let g:go_highlight_interfaces = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
+" Metalinter settings
+" Default linters in golangci-lint
+let g:go_metalinter_enabled = [
+  \ 'deadcode',
+  \ 'errcheck',
+  \ 'gosimple',
+  \ 'govet',
+  \ 'ineffassign',
+  \ 'staticcheck',
+  \ 'structcheck',
+  \ 'typecheck',
+  \ 'unused',
+  \ 'varcheck',
+  \ ]
 " Run go tools automatically on save
 let g:go_metalinter_autosave = 1
 
