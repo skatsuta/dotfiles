@@ -64,7 +64,6 @@ export PYENV_ROOT=$HOME/.pyenv
 # Issue a EncodingWarning when the locale-specific default encoding is used
 export PYTHONDEFAULTENCODING=1
 export ZSH_HOME=$HOME/.zsh
-exist /usr/libexec/java_home && export JAVA_HOME=$(/usr/libexec/java_home)
 if exist rustup && exist rustc; then
   local sysroot=$(rustc --print sysroot)
   if [[ ! -d "$sysroot" ]];then
