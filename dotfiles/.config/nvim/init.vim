@@ -336,6 +336,7 @@ let g:neosnippet#snippets_directory = [
 "-----------------------------------------
 " Configure linters
 let g:ale_linters = {
+  \ 'typescript': ['eslint'],
   \ 'javascript': ['eslint'],
   \ 'python': ['flake8'],
   \ 'go': [],
@@ -345,6 +346,7 @@ let g:ale_fixers = {
   \ 'c': ['clang-format'],
   \ 'cpp': ['clang-format'],
   \ 'go': ['goimports'],
+  \ 'typescript': ['prettier', 'eslint'],
   \ 'javascript': ['prettier', 'eslint'],
   \ 'json': ['prettier'],
   \ 'python': ['isort', 'black'],
