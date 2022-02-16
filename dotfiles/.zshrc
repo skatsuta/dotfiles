@@ -180,8 +180,10 @@ exist rbenv && eval "$(rbenv init -)"
 #==============================
 #  pyenv
 #==============================
-# Load pyenv if it exists
-exist pyenv && eval "$(pyenv init -)"
+if exist pyenv; then
+  eval "$(pyenv init --path)"
+  eval "$(pyenv init -)"
+fi
 
 #==============================
 #  direnv
