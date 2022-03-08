@@ -44,7 +44,7 @@ fi
 # Docker
 if exist docker; then
   alias d='docker'
-  alias dc='docker-compose'
+  alias dc='docker compose'
 fi
 alias drun='docker container run --rm --mount type=bind,source=$PWD,target=/tmp,consistency=delegated --workdir /tmp'
 
