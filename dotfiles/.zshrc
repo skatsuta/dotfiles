@@ -57,7 +57,6 @@ export EDITOR=$VISUAL
 export GO111MODULE=on
 export GOPATH=$HOME
 export LESS=-nqR
-export LIBRARY_PATH=/usr/local/opt/openssl/lib:/usr/local/lib:$LIBRARY_PATH
 export MANPATH=/usr/local/man:$MANPATH
 export NVM_DIR="$HOME/.nvm"
 export PYENV_ROOT=$HOME/.pyenv
