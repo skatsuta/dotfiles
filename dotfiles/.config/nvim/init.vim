@@ -176,26 +176,26 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Asynchronous linting/fixing for Vim and Language Server Protocol (LSP) integration
 Plug 'w0rp/ale'
-" The latest version of the Jinja2 syntax file for vim with the ability to detect either HTML or Jinja.
+" The latest version of the Jinja2 syntax file for vim with the ability to detect
+" either HTML or Jinja.
 Plug 'Glench/Vim-Jinja2-Syntax'
-" " Alpaca
-" Plug 'alpaca-tc/alpaca_powertabline'
-" " Powerline is a statusline plugin for vim, and provides statuslines and prompts
-" " for several other applications
-" Plug 'Lokaltog/powerline'
-" " Ctags generator for Vim
-" Plug 'szw/vim-tags'
-" " Vim plugin that displays tags in a window, ordered by scope
-" Plug 'majutsushi/tagbar'
-" " Search Dash.app from Vim
-" Plug 'rizzatti/dash.vim'
-" " Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'
-" Plug 'rking/ag.vim'
-" A fast, as-you-type, fuzzy-search code completion engine for Vim
-"Plug 'Valloric/YouCompleteMe'
+
+"========== Language Servers ==========
+" Normalize async job control api for vim and neovim.
+Plug 'prabirshrestha/async.vim'
+" Async autocompletion for Vim 8 and Neovim with |timers|.
+Plug 'prabirshrestha/asyncomplete.vim'
+" Provide Language Server Protocol autocompletion source for asyncomplete.vim and
+" vim-lsp.
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Async Language Server Protocol plugin for vim8 and neovim.
+ Plug 'prabirshrestha/vim-lsp'
+" Auto configurations for Language Servers for vim-lsp.
+Plug 'mattn/vim-lsp-settings'
 
 "========== Golang ==========
-Plug 'fatih/vim-go', { 'for': 'go' }
+" Vim plugin for Minimalist Gopher.
+Plug 'mattn/vim-goimports'
 
 "========== Rust ==========
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
@@ -400,51 +400,20 @@ autocmd VimEnter,ColorScheme * :hi IndentGuidesOdd  ctermbg=237
 autocmd VimEnter,ColorScheme * :hi IndentGuidesEven ctermbg=239
 
 "-----------------------------------------
-" vim-go
-" https://github.com/fatih/vim-go
-" Go development plugin for Vim
+" vim-lsp
+" https://github.com/prabirshrestha/vim-lsp
+" Async Language Server Protocol plugin for vim8 and neovim.
 "-----------------------------------------
-let g:go_fmt_command = "goimports"
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_interfaces = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
+nmap <silent> <Leader>d :LspDefinition<CR>
+nmap <silent> <Leader>td :LspTypeDefinition<CR>
+nmap <silent> <Leader>r :LspReferences<CR>
+nmap <silent> <Leader>i :LspImplementation<CR>
+nmap <silent> <Leader>n :LspRename<CR>
 
-" Metalinter settings
-" Default linters in golangci-lint
-let g:go_metalinter_enabled = [
-  \ 'deadcode',
-  \ 'errcheck',
-  \ 'gosimple',
-  \ 'govet',
-  \ 'ineffassign',
-  \ 'staticcheck',
-  \ 'structcheck',
-  \ 'typecheck',
-  \ 'unused',
-  \ 'varcheck',
-  \ ]
-" Run go tools automatically on save
-let g:go_metalinter_autosave = 1
-
-" gocode
-set completeopt=menu,preview
-
-" Key mappings
-autocmd FileType go nmap <Leader>gr <Plug>(go-run)
-autocmd FileType go nmap <Leader>gb <Plug>(go-build)
-autocmd FileType go nmap <Leader>gt <Plug>(go-test)
-autocmd FileType go nmap <Leader>gc <Plug>(go-coverage)
-autocmd FileType go nmap <Leader>gds <Plug>(go-def-split)
-autocmd FileType go nmap <Leader>gdv <Plug>(go-def-vertical)
-autocmd FileType go nmap <Leader>gdt <Plug>(go-def-tab)
-autocmd FileType go nmap <Leader>gn <Plug>(go-rename)
-autocmd FileType go nmap <Leader>gd <Plug>(go-doc)
-autocmd FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-autocmd FileType go nmap <Leader>gim <Plug>(go-implements)
-autocmd FileType go nmap <Leader>gif <Plug>(go-info)
+let g:asyncomplete_popup_delay = 200
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_text_edit_enabled = 1
 
 "-----------------------------------------
 " test.vim
