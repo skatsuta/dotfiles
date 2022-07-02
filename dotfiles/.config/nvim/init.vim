@@ -404,11 +404,13 @@ autocmd VimEnter,ColorScheme * :hi IndentGuidesEven ctermbg=239
 " https://github.com/prabirshrestha/vim-lsp
 " Async Language Server Protocol plugin for vim8 and neovim.
 "-----------------------------------------
-nmap <silent> <Leader>d :LspDefinition<CR>
+nmap <silent> <Leader>d  :LspDefinition<CR>
+nmap <silent> <Leader>i  :LspImplementation<CR>
+nmap <silent> <Leader>h  :LspHover<CR>
+nmap <silent> <Leader>r  :LspReferences<CR>
+nmap <silent> <Leader>n  :LspRename<CR>
+nmap <silent> <Leader>s  :LspSignatureHelp<CR>
 nmap <silent> <Leader>td :LspTypeDefinition<CR>
-nmap <silent> <Leader>r :LspReferences<CR>
-nmap <silent> <Leader>i :LspImplementation<CR>
-nmap <silent> <Leader>n :LspRename<CR>
 
 let g:asyncomplete_popup_delay = 200
 let g:lsp_diagnostics_enabled = 1
