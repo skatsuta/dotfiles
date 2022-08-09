@@ -91,9 +91,9 @@ exist brew && FPATH="$(brew --prefix)/share/zsh/site-functions:$FPATH"
 # location to save command histories
 export HISTFILE=${HOME}/.zsh_history
 # number of histories saved in memory
-export HISTSIZE=100000
+export HISTSIZE=1000000
 # number of histories saved in file
-export SAVEHIST=1000000
+export SAVEHIST=10000000
 # ignore duplicate command
 setopt hist_ignore_dups
 # share history between screens
