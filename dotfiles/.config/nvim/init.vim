@@ -423,11 +423,11 @@ let g:lsp_text_edit_enabled = 1
 " Run your tests at the speed of thought
 "-----------------------------------------
 " Key mappings
-nmap <silent> <leader>t :TestNearest<CR>
-nmap <silent> <leader>T :TestFile<CR>
-nmap <silent> <leader>a :TestSuite<CR>
-nmap <silent> <leader>l :TestLast<CR>
-nmap <silent> <leader>g :TestVisit<CR>
+nmap <silent> <Leader>t :TestNearest<CR>
+nmap <silent> <Leader>T :TestFile<CR>
+nmap <silent> <Leader>a :TestSuite<CR>
+nmap <silent> <Leader>l :TestLast<CR>
+nmap <silent> <Leader>g :TestVisit<CR>
 
 "-----------------------------------------
 " rust.vim
@@ -449,7 +449,7 @@ let g:racer_experimental_completer = 1
 autocmd FileType rust nmap gd <Plug>(rust-def)
 autocmd FileType rust nmap gs <Plug>(rust-def-split)
 autocmd FileType rust nmap gx <Plug>(rust-def-vertical)
-autocmd FileType rust nmap <leader>gd <Plug>(rust-doc)
+autocmd FileType rust nmap <Leader>gd <Plug>(rust-doc)
 
 "-----------------------------------------
 " fzf
