@@ -404,13 +404,14 @@ autocmd VimEnter,ColorScheme * :hi IndentGuidesEven ctermbg=239
 " https://github.com/prabirshrestha/vim-lsp
 " Async Language Server Protocol plugin for vim8 and neovim.
 "-----------------------------------------
-nmap <silent> <Leader>d  :LspDefinition<CR>
-nmap <silent> <Leader>i  :LspImplementation<CR>
-nmap <silent> <Leader>h  :LspHover<CR>
-nmap <silent> <Leader>r  :LspReferences<CR>
-nmap <silent> <Leader>n  :LspRename<CR>
-nmap <silent> <Leader>s  :LspSignatureHelp<CR>
-nmap <silent> <Leader>td :LspTypeDefinition<CR>
+nmap <silent> <Leader>la :LspCodeAction<CR>
+nmap <silent> <Leader>ld :LspDefinition<CR>
+nmap <silent> <Leader>li :LspImplementation<CR>
+nmap <silent> <Leader>lh :LspHover<CR>
+nmap <silent> <Leader>lr :LspReferences<CR>
+nmap <silent> <Leader>ln :LspRename<CR>
+nmap <silent> <Leader>ls :LspSignatureHelp<CR>
+nmap <silent> <Leader>lt :LspTypeDefinition<CR>
 
 let g:asyncomplete_popup_delay = 200
 let g:lsp_diagnostics_enabled = 1
@@ -423,11 +424,11 @@ let g:lsp_text_edit_enabled = 1
 " Run your tests at the speed of thought
 "-----------------------------------------
 " Key mappings
-nmap <silent> <Leader>t :TestNearest<CR>
-nmap <silent> <Leader>T :TestFile<CR>
-nmap <silent> <Leader>a :TestSuite<CR>
-nmap <silent> <Leader>l :TestLast<CR>
-nmap <silent> <Leader>g :TestVisit<CR>
+nmap <silent> <Leader>tn :TestNearest<CR>
+nmap <silent> <Leader>tf :TestFile<CR>
+nmap <silent> <Leader>ts :TestSuite<CR>
+nmap <silent> <Leader>tl :TestLast<CR>
+nmap <silent> <Leader>tv :TestVisit<CR>
 
 "-----------------------------------------
 " rust.vim
