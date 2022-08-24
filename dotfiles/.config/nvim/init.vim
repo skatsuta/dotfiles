@@ -213,10 +213,6 @@ Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 " rails.vim: Ruby on Rails power tools
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 
-"========== Python ==========
-" The uncompromising Python code formatter
-Plug 'psf/black', { 'tag': 'stable' }
-
 "========== Haskell ==========
 " Vim configuration files for Haskell code
 Plug 'kana/vim-filetype-haskell', { 'for': 'haskell' }
@@ -458,13 +454,6 @@ autocmd FileType rust nmap <Leader>gd <Plug>(rust-doc)
 " A command line fussy finder written in Go
 "-----------------------------------------
 noremap <silent> <Leader>f :FZF<CR>
-
-"-----------------------------------------
-" Black
-" https://github.com/psf/black
-" The uncompromising Python code formatter
-"-----------------------------------------
-autocmd BufWritePre *.py execute ':Black'
 
 "-----------------------------------------
 " vim-vue
