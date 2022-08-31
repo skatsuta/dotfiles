@@ -82,7 +82,6 @@ export LC_ALL=en_US.UTF-8
 # set /usr/local/bin before /usr/bin
 export PATH="/usr/local/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
-export PATH="$HOME/.poetry/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 # Make Homebrew's completions available
