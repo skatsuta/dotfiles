@@ -55,6 +55,7 @@
 
 [rebase]
   autosquash = true
+  updateRefs = true
 
 [rerere]
   enabled = 1
