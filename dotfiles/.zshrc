@@ -237,7 +237,7 @@ bindkey '^[' peco-src
 #  grep + vi
 #==============================
 function grvi() {
-  local filepath="$(echo $(rg -n $@ | peco --query "$LBUFFER" | awk -F : '{print "+" $2 " \047" $1 "\047"}'))"
+  local filepath="$(rg --line-number --sort-files $@ | peco --query "$LBUFFER" | awk -F : '{print "+" $2 " \047" $1 "\047"}')"
   if [ "$filepath" != "" ]; then
     eval $(echo "nvim $filepath")
   fi
