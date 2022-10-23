@@ -62,21 +62,20 @@
 
 [alias]
   # Legit
-  branches = !legit branches
-  publish = !legit publish
-  unpublish = !legit unpublish
-  sync = !legit sync
-  switch = !legit switch
-  resync = !legit resync
-  undo = !legit undo
+  brs = !legit branches
+  pub = !legit publish
+  un = !legit undo
+  unp = !legit unpublish
+  sw = !legit switch
+  sy = !legit sync
 
   # Shortcuts
-  als = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
+  als = !git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
   br = branch
   ca = commit --amend
   cm = commit
   co = checkout
-  delete = branch -D
+  del = branch -D
   hide = update-index --skip-worktree
   mf = merge --ff
   mfh = merge --ff FETCH_HEAD
@@ -85,7 +84,7 @@
   rb = rebase -i
   rename = branch -m
   rst = reset
-  rt = remote
+  rmt = remote
   sh = stash
   sp = stash pop
   st = status
