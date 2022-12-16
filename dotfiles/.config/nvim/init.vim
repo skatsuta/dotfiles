@@ -29,7 +29,6 @@ augroup END
 "=========================================
 " Search
 "=========================================
-colorscheme default
 " Ignore the case of normal letters
 set ignorecase
 " Enable case-sensitive only if a query contains both uppercase and lowercase
@@ -45,6 +44,9 @@ autocmd QuickFixCmdPost *grep* cwindow
 "=========================================
 " Display Options
 "=========================================
+" Set color scheme
+set background=dark
+colorscheme molokai
 " Enable syntax highlighting
 syntax on
 " Any action that is not typed will not cause the screen to redraw
