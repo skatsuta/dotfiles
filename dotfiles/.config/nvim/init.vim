@@ -338,7 +338,7 @@ let g:ale_linters = {
   \ 'typescript': ['eslint'],
   \ 'javascript': ['eslint'],
   \ 'python': ['flake8'],
-  \ 'go': [],
+  \ 'go': ['golangci-lint'],
   \ }
 " Configure fixers
 let g:ale_fixers = {
@@ -353,6 +353,12 @@ let g:ale_fixers = {
   \ }
 " Fix files when saving them
 let g:ale_fix_on_save = 1
+
+" Configuration for golangci-lint
+" Disable the default --enable-all option
+let g:ale_go_golangci_lint_options = ''
+" Check the whole Go package instead of only the current file
+let g:ale_go_golangci_lint_package = 1
 
 "-----------------------------------------
 " EasyMotion
