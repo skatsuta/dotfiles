@@ -207,8 +207,6 @@ Plug 'racer-rust/vim-racer', { 'for': 'rust '}
 "========== JavaScript ==========
 " Vastly improved Javascript indentation and syntax support in Vim.
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-" Syntax Highlight for Vue.js components
-Plug 'posva/vim-vue'
 
 "========== Ruby ==========
 " Vim/Ruby configuration files
@@ -248,28 +246,6 @@ call plug#end()
 let g:NERDSpaceDelims = 1
 " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDDefaultAlign = 'left'
-
-" Define `hooks` to temporarily change the filetype of Vue files to Make NERD Commenter work
-" properly
-let g:ft = ''
-function! NERDCommenter_before()
-  if &ft == 'vue'
-    let g:ft = 'vue'
-    let stack = synstack(line('.'), col('.'))
-    if len(stack) > 0
-      let syn = synIDattr((stack)[0], 'name')
-      if len(syn) > 0
-        exe 'setf ' . substitute(tolower(syn), '^vue_', '', '')
-      endif
-    endif
-  endif
-endfunction
-function! NERDCommenter_after()
-  if g:ft == 'vue'
-    setf vue
-    let g:ft = ''
-  endif
-endfunction
 
 "-----------------------------------------
 " Unite.vim
@@ -463,14 +439,6 @@ autocmd FileType rust nmap <Leader>gd <Plug>(rust-doc)
 " A command line fussy finder written in Go
 "-----------------------------------------
 noremap <silent> <Leader>f :FZF<CR>
-
-"-----------------------------------------
-" vim-vue
-" https://github.com/posva/vim-vue
-" Syntax Highlight for Vue.js components
-"-----------------------------------------
-" Highlight *.vue files pre-emptively
-autocmd FileType vue syntax sync fromstart
 
 " "===================================
 " " gotags & tagbar
