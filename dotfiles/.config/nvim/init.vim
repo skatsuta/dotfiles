@@ -171,7 +171,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 " Monokai theme
 Plug 'tomasr/molokai'
 " A Vim wrapper for running tests on different granularities
-Plug 'janko-m/vim-test'
+Plug 'vim-test/vim-test'
 " Improved incremental searching for Vim
 Plug 'haya14busa/incsearch.vim'
 " fzf is a general-purpose command-line fuzzy finder.
@@ -401,9 +401,13 @@ let g:lsp_text_edit_enabled = 1
 
 "-----------------------------------------
 " test.vim
-" https://github.com/janko-m/vim-test
+" https://github.com/vim-test/vim-test
 " Run your tests at the speed of thought
 "-----------------------------------------
+" Test strategy
+"   - neovim: runs test commands with :terminal in a split window
+let test#strategy = "neovim"
+
 " Key mappings
 nmap <silent> <Leader>tn :TestNearest<CR>
 nmap <silent> <Leader>tf :TestFile<CR>
