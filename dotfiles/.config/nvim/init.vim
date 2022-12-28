@@ -265,9 +265,10 @@ nnoremap <silent> <Leader>uy :<C-u>Unite history/yank<CR>
 " https://github.com/tpope/vim-fugitive
 " A Git wrapper so awsome, it should be illegal
 "-----------------------------------------
-nnoremap <silent> <Leader>gbl :Gblame<CR>
-nnoremap <silent> <Leader>gdf :Gdiff<CR>
-nnoremap <silent> <Leader>gst :Gstatus<CR>
+nnoremap <silent> <Leader>gc :Git commit<CR>
+nnoremap <silent> <Leader>gd :Git diff<CR>
+nnoremap <silent> <Leader>gs :Git status<CR>
+nnoremap <silent> <Leader>gw :Gwrite<CR>
 
 "-----------------------------------------
 " Neonsnippet
