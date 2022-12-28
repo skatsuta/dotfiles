@@ -202,7 +202,6 @@ Plug 'mattn/vim-goimports'
 
 "========== Rust ==========
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-Plug 'racer-rust/vim-racer', { 'for': 'rust '}
 
 "========== JavaScript ==========
 " Vastly improved Javascript indentation and syntax support in Vim.
@@ -417,21 +416,6 @@ nmap <silent> <Leader>tv :TestVisit<CR>
 " This is a Vim plugin that provides Rust file detection, syntax highlighting, formatting, Syntastic integration, and more.
 "-----------------------------------------
 let g:rustfmt_autosave = 1
-
-"-----------------------------------------
-" Racer
-" https://github.com/racer-rust/vim-racer
-" This plugin allows vim to use Racer for Rust code completion and navigation.
-"-----------------------------------------
-set hidden
-let g:racer_cmd = '$HOME/.cargo/bin/racer'
-let g:racer_experimental_completer = 1
-
-" Mappings
-autocmd FileType rust nmap gd <Plug>(rust-def)
-autocmd FileType rust nmap gs <Plug>(rust-def-split)
-autocmd FileType rust nmap gx <Plug>(rust-def-vertical)
-autocmd FileType rust nmap <Leader>gd <Plug>(rust-doc)
 
 "-----------------------------------------
 " fzf
