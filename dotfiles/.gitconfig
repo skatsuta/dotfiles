@@ -72,7 +72,7 @@
   # Shortcuts
   als = !git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
   br = branch
-  ca = commit --amend
+  ca = commit --amend --date now
   cm = commit
   co = checkout
   del = branch -D
