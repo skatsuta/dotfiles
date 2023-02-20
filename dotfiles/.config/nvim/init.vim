@@ -38,8 +38,6 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'mattn/emmet-vim'
 " A Vim plugin for visually displaying indent levels in code
 Plug 'nathanaelkane/vim-indent-guides'
-" Monokai theme
-Plug 'tomasr/molokai'
 " A Vim wrapper for running tests on different granularities
 Plug 'vim-test/vim-test'
 " Improved incremental searching for Vim
@@ -52,6 +50,16 @@ Plug 'dense-analysis/ale'
 " The latest version of the Jinja2 syntax file for vim with the ability to detect
 " either HTML or Jinja.
 Plug 'Glench/Vim-Jinja2-Syntax'
+
+"========== Color schemes ==========
+" Monokai theme
+Plug 'tomasr/molokai'
+" Catppuccin theme
+" https://github.com/catppuccin/nvim
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+" Ayu theme
+" https://github.com/Shatur/neovim-ayu
+Plug 'Shatur/neovim-ayu', { 'as': 'ayu' }
 
 "========== Language Servers ==========
 " Normalize async job control api for vim and neovim.
@@ -154,7 +162,7 @@ autocmd QuickFixCmdPost *grep* cwindow
 "=========================================
 " Set color scheme
 set background=dark
-colorscheme molokai
+colorscheme catppuccin
 " Enable syntax highlighting
 syntax on
 " Any action that is not typed will not cause the screen to redraw
