@@ -1,4 +1,112 @@
 "=========================================
+" Plugins
+"=========================================
+call plug#begin('~/.local/share/nvim/plugged')
+
+"========== General ==========
+" Unite and create user interfaces.
+Plug 'Shougo/unite.vim'
+" MRU plugin includes unite.vim MRU sources
+Plug 'Shougo/neomru.vim'
+" Saves yank history includes unite.vim history/yank source.
+Plug 'Shougo/neoyank.vim'
+" Dark powered asynchronous completion framework for Neovim/Vim8
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Powerful shell implemented by vim.
+Plug 'Shougo/vimshell.vim'
+" Next generation completion framework
+Plug 'Shougo/neosnippet'
+" The standard snippets repository for neosnippet
+Plug 'Shougo/neosnippet-snippets'
+" Vim-SnipMate defalut snippets
+Plug 'skatsuta/vim-snippets'
+" Vim plugin for intensely orgasmic commenting
+Plug 'tpope/vim-fugitive'
+" Easily search for, substitute, and abbreviate multiple variants of a word
+Plug 'tpope/vim-abolish'
+" Wisely add 'end' in Ruby, endfunction/endif/more in Vim script, etc
+Plug 'tpope/vim-endwise'
+" surround.vim: quoting/parenthesizing made simple
+Plug 'tpope/vim-surround'
+" Syntax checking hacks for vim
+Plug 'scrooloose/nerdcommenter'
+" Provides insert mode auto-completion for quotes, parens, brackets, etc.
+Plug 'Raimondi/delimitMate'
+" Vim motions on speed!
+Plug 'Lokaltog/vim-easymotion'
+" Provides support for expanding abbreviations similar to emmet.
+Plug 'mattn/emmet-vim'
+" A Vim plugin for visually displaying indent levels in code
+Plug 'nathanaelkane/vim-indent-guides'
+" Monokai theme
+Plug 'tomasr/molokai'
+" A Vim wrapper for running tests on different granularities
+Plug 'vim-test/vim-test'
+" Improved incremental searching for Vim
+Plug 'haya14busa/incsearch.vim'
+" fzf is a general-purpose command-line fuzzy finder.
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Check syntax in Vim asynchronously and fix files,
+" with Language Server Protocol (LSP) support
+Plug 'dense-analysis/ale'
+" The latest version of the Jinja2 syntax file for vim with the ability to detect
+" either HTML or Jinja.
+Plug 'Glench/Vim-Jinja2-Syntax'
+
+"========== Language Servers ==========
+" Normalize async job control api for vim and neovim.
+Plug 'prabirshrestha/async.vim'
+" Async autocompletion for Vim 8 and Neovim with |timers|.
+Plug 'prabirshrestha/asyncomplete.vim'
+" Provide Language Server Protocol autocompletion source for asyncomplete.vim and
+" vim-lsp.
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Async Language Server Protocol plugin for vim8 and neovim.
+ Plug 'prabirshrestha/vim-lsp'
+" Auto configurations for Language Servers for vim-lsp.
+Plug 'mattn/vim-lsp-settings'
+
+"========== Golang ==========
+" Vim plugin for Minimalist Gopher.
+Plug 'mattn/vim-goimports'
+
+"========== Rust ==========
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+
+"========== JavaScript ==========
+" Vastly improved Javascript indentation and syntax support in Vim.
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+
+"========== Ruby ==========
+" Vim/Ruby configuration files
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+" rails.vim: Ruby on Rails power tools
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
+
+"========== Haskell ==========
+" Vim configuration files for Haskell code
+Plug 'kana/vim-filetype-haskell', { 'for': 'haskell' }
+" A completion plugin for Haskell, using ghc-mod
+Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
+" Vim to Haskell: A collection of vimscripts for Haskell development.
+Plug 'dag/vim2hs', { 'for': 'haskell' }
+" Happy Haskell programming on Vim, powered by ghc-mod
+Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
+
+"========== Elixir ==========
+Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+
+"========== Systax Highlighting ==========
+" TOML
+Plug 'cespare/vim-toml'
+" EJS
+Plug 'briancollins/vim-jst'
+" Slim
+Plug 'slim-template/vim-slim'
+
+call plug#end()
+
+"=========================================
 " System
 "=========================================
 scriptencoding utf-8
@@ -127,114 +235,6 @@ noremap  <C-S> :update<CR>
 inoremap <C-S> <C-O>:update<CR>
 vnoremap <C-S> <C-C>:update<CR>
 
-
-"=========================================
-" Plugins
-"=========================================
-call plug#begin('~/.local/share/nvim/plugged')
-
-"========== General ==========
-" Unite and create user interfaces.
-Plug 'Shougo/unite.vim'
-" MRU plugin includes unite.vim MRU sources
-Plug 'Shougo/neomru.vim'
-" Saves yank history includes unite.vim history/yank source.
-Plug 'Shougo/neoyank.vim'
-" Dark powered asynchronous completion framework for Neovim/Vim8
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Powerful shell implemented by vim.
-Plug 'Shougo/vimshell.vim'
-" Next generation completion framework
-Plug 'Shougo/neosnippet'
-" The standard snippets repository for neosnippet
-Plug 'Shougo/neosnippet-snippets'
-" Vim-SnipMate defalut snippets
-Plug 'skatsuta/vim-snippets'
-" Vim plugin for intensely orgasmic commenting
-Plug 'tpope/vim-fugitive'
-" Easily search for, substitute, and abbreviate multiple variants of a word
-Plug 'tpope/vim-abolish'
-" Wisely add 'end' in Ruby, endfunction/endif/more in Vim script, etc
-Plug 'tpope/vim-endwise'
-" surround.vim: quoting/parenthesizing made simple
-Plug 'tpope/vim-surround'
-" Syntax checking hacks for vim
-Plug 'scrooloose/nerdcommenter'
-" Provides insert mode auto-completion for quotes, parens, brackets, etc.
-Plug 'Raimondi/delimitMate'
-" Vim motions on speed!
-Plug 'Lokaltog/vim-easymotion'
-" Provides support for expanding abbreviations similar to emmet.
-Plug 'mattn/emmet-vim'
-" A Vim plugin for visually displaying indent levels in code
-Plug 'nathanaelkane/vim-indent-guides'
-" Monokai theme
-Plug 'tomasr/molokai'
-" A Vim wrapper for running tests on different granularities
-Plug 'vim-test/vim-test'
-" Improved incremental searching for Vim
-Plug 'haya14busa/incsearch.vim'
-" fzf is a general-purpose command-line fuzzy finder.
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" Check syntax in Vim asynchronously and fix files,
-" with Language Server Protocol (LSP) support
-Plug 'dense-analysis/ale'
-" The latest version of the Jinja2 syntax file for vim with the ability to detect
-" either HTML or Jinja.
-Plug 'Glench/Vim-Jinja2-Syntax'
-
-"========== Language Servers ==========
-" Normalize async job control api for vim and neovim.
-Plug 'prabirshrestha/async.vim'
-" Async autocompletion for Vim 8 and Neovim with |timers|.
-Plug 'prabirshrestha/asyncomplete.vim'
-" Provide Language Server Protocol autocompletion source for asyncomplete.vim and
-" vim-lsp.
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-" Async Language Server Protocol plugin for vim8 and neovim.
- Plug 'prabirshrestha/vim-lsp'
-" Auto configurations for Language Servers for vim-lsp.
-Plug 'mattn/vim-lsp-settings'
-
-"========== Golang ==========
-" Vim plugin for Minimalist Gopher.
-Plug 'mattn/vim-goimports'
-
-"========== Rust ==========
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-
-"========== JavaScript ==========
-" Vastly improved Javascript indentation and syntax support in Vim.
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-
-"========== Ruby ==========
-" Vim/Ruby configuration files
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-" rails.vim: Ruby on Rails power tools
-Plug 'tpope/vim-rails', { 'for': 'ruby' }
-
-"========== Haskell ==========
-" Vim configuration files for Haskell code
-Plug 'kana/vim-filetype-haskell', { 'for': 'haskell' }
-" A completion plugin for Haskell, using ghc-mod
-Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
-" Vim to Haskell: A collection of vimscripts for Haskell development.
-Plug 'dag/vim2hs', { 'for': 'haskell' }
-" Happy Haskell programming on Vim, powered by ghc-mod
-Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
-
-"========== Elixir ==========
-Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
-
-"========== Systax Highlighting ==========
-" TOML
-Plug 'cespare/vim-toml'
-" EJS
-Plug 'briancollins/vim-jst'
-" Slim
-Plug 'slim-template/vim-slim'
-
-call plug#end()
 
 "-----------------------------------------
 " NERD Commenter
