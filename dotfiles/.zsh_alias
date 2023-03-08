@@ -49,9 +49,8 @@ fi
 alias drun='docker container run --rm --mount type=bind,source=$PWD,target=/tmp,consistency=delegated --workdir /tmp'
 
 # Python
-alias pe='pipenv'
+alias py='python'
 alias po='poetry'
-alias i='invoke'
 
 # Others
 alias 2fac='2fa -clip'
