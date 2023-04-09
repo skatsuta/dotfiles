@@ -79,11 +79,11 @@ export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # PATH
-# set /usr/local/bin before /usr/bin
-export PATH="/usr/local/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.docker/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 # Make Homebrew's completions available
 exist brew && FPATH="$(brew --prefix)/share/zsh/site-functions:$FPATH"
 
