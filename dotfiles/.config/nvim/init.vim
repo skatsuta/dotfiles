@@ -73,6 +73,8 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
  Plug 'prabirshrestha/vim-lsp'
 " Auto configurations for Language Servers for vim-lsp.
 Plug 'mattn/vim-lsp-settings'
+" Neovim plugin for GitHub Copilot
+Plug 'github/copilot.vim'
 
 "========== Golang ==========
 " Vim plugin for Minimalist Gopher.
