@@ -70,7 +70,7 @@ Plug 'prabirshrestha/asyncomplete.vim'
 " vim-lsp.
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 " Async Language Server Protocol plugin for vim8 and neovim.
- Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/vim-lsp'
 " Auto configurations for Language Servers for vim-lsp.
 Plug 'mattn/vim-lsp-settings'
 " Neovim plugin for GitHub Copilot
