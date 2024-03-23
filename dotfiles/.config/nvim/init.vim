@@ -337,6 +337,7 @@ let g:ale_fixers = {
   \ 'javascript': ['prettier', 'eslint'],
   \ 'json': ['prettier'],
   \ 'python': ['isort', 'black'],
+  \ 'terraform': ['terraform'],
   \ '*': ['remove_trailing_lines', 'trim_whitespace'],
   \ }
 " Fix files when saving them
