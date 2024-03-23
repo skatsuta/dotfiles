@@ -113,6 +113,8 @@ Plug 'cespare/vim-toml'
 Plug 'briancollins/vim-jst'
 " Slim
 Plug 'slim-template/vim-slim'
+" HashiCorp Configuration Language (HCL)
+Plug 'hashivim/vim-terraform'
 
 call plug#end()
 
