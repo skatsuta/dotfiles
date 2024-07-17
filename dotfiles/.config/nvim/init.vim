@@ -115,6 +115,8 @@ Plug 'briancollins/vim-jst'
 Plug 'slim-template/vim-slim'
 " HashiCorp Configuration Language (HCL)
 Plug 'hashivim/vim-terraform'
+" GraphQL
+Plug 'jparise/vim-graphql'
 
 call plug#end()
 
