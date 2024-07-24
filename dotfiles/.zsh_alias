@@ -33,10 +33,10 @@ alias gf='git fetch && git diff HEAD..FETCH_HEAD'
 alias gup='git pull upstream master'
 alias t='tig'
 
-# exa
-if exist exa; then
-  alias ls='exa -F'
-  alias l='exa -1a'
+# eza
+if exist eza; then
+  alias ls='eza -F'
+  alias l='eza -1a'
   alias la='ll -a'
   alias lt='ll -T'
 fi
