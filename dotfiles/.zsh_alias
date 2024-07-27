@@ -15,7 +15,7 @@ alias m='make'
 
 # zsh
 alias sz="source $HOME/.zshrc"
-alias zc="vim $HOME/.zshrc"
+alias vz="vim $HOME/.zshrc"
 
 # Vim (Neovim)
 if exist nvim; then
