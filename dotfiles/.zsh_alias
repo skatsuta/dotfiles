@@ -8,7 +8,6 @@ exist() {
 }
 
 # General
-alias lt='ls -t'
 alias rm='rm -i'
 alias cp='cp -i'
 alias m='make'
@@ -38,7 +37,7 @@ if exist eza; then
   alias ls='eza -F'
   alias l='eza -1a'
   alias la='ll -a'
-  alias lt='ll -T'
+  alias lt='ls -T'
 fi
 
 # Docker
