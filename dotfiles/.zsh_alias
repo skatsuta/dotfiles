@@ -8,8 +8,9 @@ exist() {
 }
 
 # General
-alias rm='rm -i'
+alias la='ll -a'
 alias cp='cp -i'
+alias rm='rm -i'
 alias m='make'
 
 # zsh
@@ -36,7 +37,6 @@ alias t='tig'
 if exist eza; then
   alias ls='eza -F'
   alias l='eza -1a'
-  alias la='ll -a'
   alias lt='ls -T'
 fi
 
