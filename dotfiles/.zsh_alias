@@ -37,7 +37,7 @@ alias t='tig'
 if exist eza; then
   alias ls='eza -F'
   alias l='eza -1a'
-  alias lt='ls -T'
+  alias lt='eza --tree --ignore-glob="__pycache__"'
 fi
 
 # Docker
