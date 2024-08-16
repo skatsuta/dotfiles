@@ -54,7 +54,6 @@ exist() {
 unset PYTHONPATH
 export VISUAL=nvim
 export EDITOR=$VISUAL
-export GO111MODULE=on
 export GOPATH=$HOME
 export LESS=-nqR
 export MANPATH=/usr/local/man:$MANPATH
