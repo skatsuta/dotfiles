@@ -10,8 +10,6 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/neomru.vim'
 " Saves yank history includes unite.vim history/yank source.
 Plug 'Shougo/neoyank.vim'
-" Dark powered asynchronous completion framework for Neovim/Vim8
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Powerful shell implemented by vim.
 Plug 'Shougo/vimshell.vim'
 " Next generation completion framework
@@ -375,14 +373,6 @@ map <Leader>k <Plug>(easymotion-k)
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
-
-"-----------------------------------------
-" deoplete.nvim
-" https://github.com/Shougo/deoplete.nvim
-" Dark powered asynchronous completion framework for Neovim/Vim8
-"-----------------------------------------
-" Use deoplete
-let g:deoplete#enable_at_startup = 1
 
 "-----------------------------------------
 " Indent Guides
