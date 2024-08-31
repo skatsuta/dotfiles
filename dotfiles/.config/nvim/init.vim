@@ -45,9 +45,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Check syntax in Vim asynchronously and fix files,
 " with Language Server Protocol (LSP) support
 Plug 'dense-analysis/ale'
-" The latest version of the Jinja2 syntax file for vim with the ability to detect
-" either HTML or Jinja.
-Plug 'Glench/Vim-Jinja2-Syntax'
 
 "========== Color schemes ==========
 " Monokai theme
@@ -101,14 +98,9 @@ Plug 'dag/vim2hs', { 'for': 'haskell' }
 " Happy Haskell programming on Vim, powered by ghc-mod
 Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
 
-"========== Elixir ==========
-Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
-
 "========== Systax Highlighting ==========
 " TOML
 Plug 'cespare/vim-toml'
-" EJS
-Plug 'briancollins/vim-jst'
 " Slim
 Plug 'slim-template/vim-slim'
 " HashiCorp Configuration Language (HCL)
