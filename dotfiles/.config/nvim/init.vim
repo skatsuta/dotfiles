@@ -333,9 +333,15 @@ let g:EasyMotion_smartcase = 1
 " Jump to anywhere you want by just `4` or `3` key strokes without thinking!
 " `s{char}{char}{target}`
 nmap s <Plug>(easymotion-overwin-f2)
-" JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
+" Move to char
+map  <Leader>ef <Plug>(easymotion-bd-f)
+nmap <Leader>ef <Plug>(easymotion-overwin-f)
+" Move to line
+map <Leader>el <Plug>(easymotion-bd-jk)
+nmap <Leader>el <Plug>(easymotion-overwin-line)
+" Move to word
+map  <Leader>ew <Plug>(easymotion-bd-w)
+nmap <Leader>ew <Plug>(easymotion-overwin-w)
 
 "-----------------------------------------
 " incsearch.vim
