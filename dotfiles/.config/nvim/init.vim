@@ -4,12 +4,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 "========== General ==========
-" Unite and create user interfaces.
-Plug 'Shougo/unite.vim'
-" MRU plugin includes unite.vim MRU sources
-Plug 'Shougo/neomru.vim'
-" Saves yank history includes unite.vim history/yank source.
-Plug 'Shougo/neoyank.vim'
 " Powerful shell implemented by vim.
 Plug 'Shougo/vimshell.vim'
 " Next generation completion framework
@@ -239,7 +233,6 @@ noremap  <C-S> :update<CR>
 inoremap <C-S> <C-O>:update<CR>
 vnoremap <C-S> <C-C>:update<CR>
 
-
 "-----------------------------------------
 " NERD Commenter
 " https://github.com/scrooloose/nerdcommenter
@@ -249,20 +242,6 @@ vnoremap <C-S> <C-C>:update<CR>
 let g:NERDSpaceDelims = 1
 " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDDefaultAlign = 'left'
-
-"-----------------------------------------
-" Unite.vim
-" https://github.com/Shougo/unite.vim
-" Unite and create user interfaces.
-"-----------------------------------------
-let g:unite_enable_start_insert=1
-let g:unite_source_history_yank_enable=1
-let g:unite_source_file_mru_limit=100
-nnoremap <silent> <Leader>ub :<C-u>Unite file buffer<CR>
-nnoremap <silent> <Leader>uu :<C-u>Unite file_mru buffer<CR>
-nnoremap <silent> <Leader>uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-nnoremap <silent> <Leader>ur :<C-u>Unite -buffer-name=register register<CR>
-nnoremap <silent> <Leader>uy :<C-u>Unite history/yank<CR>
 
 "-----------------------------------------
 " fugitive.vim
