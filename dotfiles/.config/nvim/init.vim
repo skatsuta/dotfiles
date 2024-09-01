@@ -36,6 +36,7 @@ Plug 'vim-test/vim-test'
 Plug 'haya14busa/incsearch.vim'
 " fzf is a general-purpose command-line fuzzy finder.
 Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 " Check syntax in Vim asynchronously and fix files,
 " with Language Server Protocol (LSP) support
 Plug 'dense-analysis/ale'
@@ -55,8 +56,8 @@ Plug 'Shatur/neovim-ayu', { 'as': 'ayu' }
 Plug 'prabirshrestha/async.vim'
 " Async autocompletion for Vim 8 and Neovim with |timers|.
 Plug 'prabirshrestha/asyncomplete.vim'
-" Provide Language Server Protocol autocompletion source for asyncomplete.vim and
-" vim-lsp.
+" Provide Language Server Protocol autocompletion source
+" for asyncomplete.vim and vim-lsp.
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 " Async Language Server Protocol plugin for vim8 and neovim.
 Plug 'prabirshrestha/vim-lsp'
@@ -401,6 +402,16 @@ let g:rustfmt_autosave = 1
 "-----------------------------------------
 " fzf
 " https://github.com/junegunn/fzf
+" https://github.com/junegunn/fzf.vim
 " A command line fussy finder written in Go
 "-----------------------------------------
-noremap <silent> <Leader>f :FZF<CR>
+noremap <silent> <Leader>ff :Files<CR>
+noremap <silent> <Leader>fb :Buffers<CR>
+noremap <silent> <Leader>fr :Rg<CR>
+noremap <silent> <Leader>fl :Lines<CR>
+noremap <silent> <Leader>fbl :BLines<CR>
+noremap <silent> <Leader>fh :History<CR>
+" Command history
+noremap <silent> <Leader>fch :History:<CR>
+" Search history
+noremap <silent> <Leader>fsh :History/<CR>
