@@ -35,7 +35,7 @@ Plug 'vim-test/vim-test'
 " Improved incremental searching for Vim
 Plug 'haya14busa/incsearch.vim'
 " fzf is a general-purpose command-line fuzzy finder.
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf'
 " Check syntax in Vim asynchronously and fix files,
 " with Language Server Protocol (LSP) support
 Plug 'dense-analysis/ale'
