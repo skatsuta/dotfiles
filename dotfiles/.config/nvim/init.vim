@@ -73,7 +73,7 @@ Plug 'github/copilot.vim'
 
 "========== Golang ==========
 " Vim plugin for Minimalist Gopher.
-Plug 'mattn/vim-goimports'
+Plug 'mattn/vim-goimports', { 'for': 'go' }
 
 "========== Rust ==========
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
@@ -100,13 +100,13 @@ Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
 
 "========== Systax Highlighting ==========
 " TOML
-Plug 'cespare/vim-toml'
+Plug 'cespare/vim-toml', { 'for': 'toml' }
 " Slim
-Plug 'slim-template/vim-slim'
+Plug 'slim-template/vim-slim', { 'for': 'slim' }
 " HashiCorp Configuration Language (HCL)
-Plug 'hashivim/vim-terraform'
+Plug 'hashivim/vim-terraform', { 'for': 'terraform' }
 " GraphQL
-Plug 'jparise/vim-graphql'
+Plug 'jparise/vim-graphql', { 'for': 'graphql' }
 
 call plug#end()
 
