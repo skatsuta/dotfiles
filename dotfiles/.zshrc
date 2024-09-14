@@ -112,11 +112,6 @@ setopt hist_save_no_dups
 setopt hist_no_store
 # expand history automatically at completion
 setopt hist_expand
-# enable completion
-rm -f "$HOME/.zcompdump"
-fpath+=~/.zfunc
-autoload -U compinit
-compinit -C
 # Disable start/stop control
 stty -ixon
 # remove duplicate entries in PATH
@@ -124,6 +119,24 @@ typeset -U path PATH
 # Use Emacs key bindings
 bindkey -e
 
+#==============================
+# Completion
+#==============================
+fpath+=~/.zfunc
+autoload -Uz compinit
+
+function run_compinit() {
+  local now=$(date +"%s")
+  local updated=$(date -r ~/.zcompdump +"%s")
+  local threshold=$((60 * 60 * 24)) # 1 day
+  if [[ $((${now} - ${updated})) -gt ${threshold} ]]; then
+    compinit
+  else
+    compinit -C
+  fi
+}
+
+run_compinit
 
 #==============================
 #  Aliases
