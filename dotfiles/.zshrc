@@ -271,9 +271,22 @@ function ggl() {
 #================================
 #  NVM
 #================================
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+function load-nvm() {
+  export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+}
+
+function load-nvmrc() {
+  if [[ -f .nvmrc && -r .nvmrc ]]; then
+    if ! type nvm >/dev/null; then
+      load-nvm
+    fi
+    nvm use
+  fi
+}
+
+add-zsh-hook chpwd load-nvmrc
 
 #================================
 #  Terraform
