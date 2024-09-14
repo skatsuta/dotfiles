@@ -83,6 +83,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.docker/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 # Make Homebrew's completions available
 exist brew && FPATH="$(brew --prefix)/share/zsh/site-functions:$FPATH"
 
@@ -191,10 +192,7 @@ exist rbenv && eval "$(rbenv init -)"
 #==============================
 #  pyenv
 #==============================
-if exist pyenv; then
-  eval "$(pyenv init --path)"
-  eval "$(pyenv init -)"
-fi
+exist pyenv && eval "$(pyenv init -)"
 
 #==============================
 #  direnv
