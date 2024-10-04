@@ -75,6 +75,7 @@
   ca = commit --amend --date now
   cm = commit
   co = checkout
+  cp = cherry-pick
   del = branch -D
   hide = update-index --skip-worktree
   mf = merge --ff
