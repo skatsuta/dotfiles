@@ -177,7 +177,7 @@ set display=lastline
 " Don't extract tabs in Go file
 autocmd BufRead *.go set noexpandtab
 " Highlight the column
-set colorcolumn=90
+set colorcolumn=100
 " Change the ruler color to a darker grey
 highlight ColorColumn ctermbg=238
 " Show Zenkaku spaces
