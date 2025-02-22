@@ -51,6 +51,9 @@ alias drun='docker container run --rm --mount type=bind,source=$PWD,target=/tmp,
 alias py='python'
 alias po='poetry'
 
+# curl
+alias curl2='curl --compressed --fail --location --no-progress-meter'
+
 # Others
 alias 2fac='2fa -clip'
 alias de='direnv'
