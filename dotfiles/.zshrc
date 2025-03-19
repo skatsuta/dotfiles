@@ -163,8 +163,6 @@ zstyle ':filter-select' case-insensitive yes
 bindkey '^@' zaw
 bindkey '^r' zaw-history
 bindkey '^s' zaw-cdr
-#bindkey '^o' zaw-open-file
-bindkey '^j' zaw-applications
 bindkey '^g' zaw-git-branches
 bindkey '^o' zaw-git-status
 bindkey '^z' zaw-git-files
