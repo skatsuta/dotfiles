@@ -383,6 +383,13 @@ let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_text_edit_enabled = 1
 
 "-----------------------------------------
+" vim-lsp-settings
+" https://github.com/mattn/vim-lsp-settings
+" Auto configurations for Language Servers for vim-lsp.
+"-----------------------------------------
+let g:lsp_settings_filetype_vue = ['typescript-language-server', 'volar-server']
+
+"-----------------------------------------
 " test.vim
 " https://github.com/vim-test/vim-test
 " Run your tests at the speed of thought
