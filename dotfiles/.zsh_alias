@@ -40,12 +40,15 @@ if exist eza; then
   alias lt='eza --tree --ignore-glob="__pycache__"'
 fi
 
-# Docker
+# Docker/Kubernetes
 if exist docker; then
   alias d='docker'
   alias dc='docker compose'
 fi
 alias drun='docker container run --rm --mount type=bind,source=$PWD,target=/tmp,consistency=delegated --workdir /tmp'
+if exist kubectl; then
+  alias kc='kubectl'
+fi
 
 # Python
 alias py='python'
