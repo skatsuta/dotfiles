@@ -59,6 +59,7 @@ alias curl2='curl --compressed --fail --location --no-progress-meter'
 
 # Others
 alias 2fac='2fa -clip'
+alias claude='~/.claude/local/claude'
 alias de='direnv'
 alias sl3='sqlite3 -column -header'
 alias tf='terraform'
