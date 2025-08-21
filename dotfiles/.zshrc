@@ -210,12 +210,6 @@ exist direnv && eval "$(direnv hook zsh)"
 #[[ -f $HOME/.fzf.zsh ]] && source $HOME/.fzf.zsh
 
 #==============================
-#  thefuck
-#==============================
-# Load thefuck if it exists
-exist thefuck && eval "$(thefuck --alias)"
-
-#==============================
 #  peco
 #==============================
 # list repos under ghq
