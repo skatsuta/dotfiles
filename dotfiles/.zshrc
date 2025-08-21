@@ -198,16 +198,6 @@ exist pyenv && eval "$(pyenv init -)"
 # Load direnv if it exists
 exist direnv && eval "$(direnv hook zsh)"
 
-#==============================
-#  autojump
-#==============================
-if exist brew; then
-  # Load autojump
-  [[ -s $(brew --prefix)/etc/autojump.sh ]] && source $(brew --prefix)/etc/autojump.sh
-  # remove 'jo' function for jo command
-  unfunction jo
-fi
-
 #============================================================
 #  Incremental completion on zsh
 #  (http://mimosa-pudica.net/zsh-incremental.html)
