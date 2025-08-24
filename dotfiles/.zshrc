@@ -87,32 +87,23 @@ export PATH="/usr/local/bin:$PATH"
 # Make Homebrew's completions available
 exist brew && FPATH="$(brew --prefix)/share/zsh/site-functions:$FPATH"
 
-# location to save command histories
+# Location to save command history
 export HISTFILE=${HOME}/.zsh_history
-# number of histories saved in memory
+# Number of histories saved in memory
 export HISTSIZE=1000000
-# number of histories saved in file
+# Number of histories saved in file
 export SAVEHIST=10000000
-# ignore duplicate command
-setopt hist_ignore_dups
-# share history between screens
-setopt share_history
-# save each command's beginning timestamp and the duration to the history file
-setopt extended_history
-# remove old command if added one is same
-setopt hist_ignore_all_dups
-# remove command that starts with space from history
-setopt hist_ignore_space
-# don't execute the line directly
-setopt hist_verify
-# remove unnecessary whitespaces
-setopt hist_reduce_blanks
-# ignore commands already saved in history
-setopt hist_save_no_dups
-# don't save history command itself
-setopt hist_no_store
-# expand history automatically at completion
-setopt hist_expand
+# Options to keep history clean and consistent
+setopt HIST_IGNORE_DUPS        # Ignore consecutive duplicates
+setopt HIST_IGNORE_ALL_DUPS    # Remove all older duplicates
+setopt HIST_SAVE_NO_DUPS       # Don’t write duplicates to history file
+setopt HIST_IGNORE_SPACE       # Don’t record commands starting with a space
+setopt HIST_REDUCE_BLANKS      # Remove superfluous blanks from commands
+setopt HIST_VERIFY             # Show command after history expansion before running
+setopt HIST_EXPAND             # Enable !-style expansion (e.g., !!, !$)
+setopt SHARE_HISTORY           # Share history across multiple shells in real time
+setopt EXTENDED_HISTORY        # Record timestamp + duration with each command
+
 # Disable start/stop control
 stty -ixon
 # remove duplicate entries in PATH
