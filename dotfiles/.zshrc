@@ -71,11 +71,11 @@ if exist rustup && exist rustc; then
   export RUST_SRC_PATH="$sysroot/lib/rustlib/src/rust/src"
 fi
 
-# enable Japanese input via SSH by setting the following environmental variables
+# Enable Japanese input via SSH by setting the following environmental variables
 # (ref: http://qiita.com/suin/items/629372fd08ee9e9cf727)
-export LANG=en_US.UTF-8
-export LC_CTYPE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
+export LANG=ja_JP.UTF-8
+export LC_CTYPE=ja_JP.UTF-8
+export LC_ALL=ja_JP.UTF-8
 
 # PATH
 export PATH="$GOPATH/bin:$PATH"
@@ -103,6 +103,7 @@ setopt HIST_VERIFY             # Show command after history expansion before run
 setopt HIST_EXPAND             # Enable !-style expansion (e.g., !!, !$)
 setopt SHARE_HISTORY           # Share history across multiple shells in real time
 setopt EXTENDED_HISTORY        # Record timestamp + duration with each command
+setopt INC_APPEND_HISTORY      # Add commands to the history file immediately, not when the shell exits
 
 # Disable start/stop control
 stty -ixon
