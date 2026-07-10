@@ -81,6 +81,7 @@
   mfh = merge --ff FETCH_HEAD
   new = checkout -b
   ps = push
+  psf = push --force-with-lease
   rb = rebase -i
   rename = branch -m
   rst = reset
@@ -104,3 +105,11 @@
 
 [init]
 	defaultBranch = main
+
+[credential "https://github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
