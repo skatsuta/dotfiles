@@ -297,7 +297,7 @@ let g:neosnippet#snippets_directory = [
 let g:ale_linters = {
   \ 'typescript': ['eslint'],
   \ 'javascript': ['eslint'],
-  \ 'python': ['flake8'],
+  \ 'python': ['ruff'],
   \ 'go': ['golangci-lint'],
   \ }
 " Configure fixers
@@ -308,7 +308,7 @@ let g:ale_fixers = {
   \ 'typescript': ['prettier', 'eslint'],
   \ 'javascript': ['prettier', 'eslint'],
   \ 'json': ['prettier'],
-  \ 'python': ['isort', 'black'],
+  \ 'python': ['ruff', 'ruff_format'],
   \ 'terraform': ['terraform'],
   \ '*': ['remove_trailing_lines', 'trim_whitespace'],
   \ }
