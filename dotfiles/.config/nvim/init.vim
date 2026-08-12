@@ -295,21 +295,21 @@ let g:neosnippet#snippets_directory = [
 "-----------------------------------------
 " Configure linters
 let g:ale_linters = {
-  \ 'typescript': ['eslint'],
+  \ 'go': ['golangci-lint'],
   \ 'javascript': ['eslint'],
   \ 'python': ['ruff'],
-  \ 'go': ['golangci-lint'],
+  \ 'typescript': ['eslint'],
   \ }
 " Configure fixers
 let g:ale_fixers = {
   \ 'c': ['clang-format'],
   \ 'cpp': ['clang-format'],
-  \ 'go': ['goimports'],
-  \ 'typescript': ['prettier', 'eslint'],
+  \ 'go': ['gofumpt', 'goimports'],
   \ 'javascript': ['prettier', 'eslint'],
   \ 'json': ['prettier'],
   \ 'python': ['ruff', 'ruff_format'],
   \ 'terraform': ['terraform'],
+  \ 'typescript': ['prettier', 'eslint'],
   \ '*': ['remove_trailing_lines', 'trim_whitespace'],
   \ }
 " Fix files when saving them
